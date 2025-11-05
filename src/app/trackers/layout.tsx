@@ -1,0 +1,23 @@
+import { TrackerTabs } from './TrackerTabs';
+
+export default function TrackersLayout(props: LayoutProps<'/trackers'>) {
+  return (
+    <div>
+      <div className="bg-hero-gradient">
+        <div className="px-6 py-20 text-center">
+          <h1 className="m-auto max-w-md text-5xl">Advantage trackers</h1>
+          <h2 className="m-auto my-6 max-w-xl">
+            Track verifiable quantum advantage claims across three pathways,
+            with clear evidence requirements and contributing institutions.
+          </h2>
+
+          <TrackerTabs />
+        </div>
+      </div>
+
+      <div>
+        <div className="m-auto max-w-6xl px-6">{props.children}</div>
+      </div>
+    </div>
+  );
+}
