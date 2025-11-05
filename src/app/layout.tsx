@@ -23,7 +23,7 @@ export default function RootLayout(props: LayoutProps<'/'>) {
     <html lang="en">
       <body className={`${interSans.variable} font-sans antialiased`}>
         <nav className="h-14">
-          <div className="m-auto flex h-full max-w-6xl flex-row items-center justify-between px-6">
+          <div className="m-auto flex h-full max-w-7xl flex-row items-center justify-between px-6">
             <Link href="/" className="font-semibold">
               Quantum Advantage Tracker
             </Link>

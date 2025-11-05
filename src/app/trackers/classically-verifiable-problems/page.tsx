@@ -1,4 +1,14 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import type { CVPSubmission } from '@/types/submissions';
 import type { Metadata } from 'next';
+import { submissions } from '../../../../data/classically-verifiable-problems/submissions';
 import { ParticipateSection } from '../ParticipateSection';
 
 export const metadata: Metadata = {
@@ -14,11 +24,75 @@ export default async function TrackersCVP() {
         against known answers or efficiently checkable witnesses.
       </h4>
 
-      <div>LINKS</div>
+      <div className="mb-16">LINKS</div>
 
-      <div className="text-left">SUBMISSIONS TABLE</div>
+      <div className="text-left">
+        <SubmissionsTable submissions={submissions} />
+      </div>
 
       <ParticipateSection />
     </div>
+  );
+}
+
+export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
+  const { submissions } = props;
+
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Date</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Method</TableHead>
+          <TableHead>Circuit</TableHead>
+          <TableHead>Value</TableHead>
+          <TableHead>Runtime</TableHead>
+          <TableHead>Compute resources</TableHead>
+          <TableHead>Institution</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {submissions.length === 0 ? (
+          <TableRow>
+            <TableCell colSpan={8}>There are no submissions yet.</TableCell>
+          </TableRow>
+        ) : (
+          submissions.map((submission, index) => (
+            <TableRow key={`submission-cvp-${index}`}>
+              <TableCell>{submission.date}</TableCell>
+              <TableCell>
+                <a
+                  href={submission.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600"
+                >
+                  {submission.name}
+                </a>
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {submission.method}
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {submission.circuit}
+              </TableCell>
+              <TableCell>{submission.value}</TableCell>
+              <TableCell>
+                <div>Q: {submission.runtime.quantum}</div>
+                <div>C: {submission.runtime.classic}</div>
+              </TableCell>
+              <TableCell>
+                <div>Q: {submission.computeResources.quantum}</div>
+                <div>C: {submission.computeResources.classic}</div>
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {submission.institution}
+              </TableCell>
+            </TableRow>
+          ))
+        )}
+      </TableBody>
+    </Table>
   );
 }

@@ -21,7 +21,7 @@ export default function Participate() {
       </div>
 
       <div>
-        <div className="m-auto max-w-6xl px-6"></div>
+        <div className="m-auto max-w-7xl px-6"></div>
       </div>
     </div>
   );

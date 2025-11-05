@@ -1,0 +1,46 @@
+import type { OESubmission } from '../../src/types/submissions';
+
+export const submissions: OESubmission[] = [
+  {
+    date: '2025-11-12',
+    name: 'Submission name',
+    link: 'https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io/issues/6',
+    method: 'Global Rescaling',
+    circuit: 'Operator Loschmidth Echo_49_2400',
+    runtime: {
+      quantum: 7200,
+      classic: 0,
+    },
+    computeResources: {
+      quantum: 'ibm_pittsburgh',
+      classic: '',
+    },
+    institution: 'IBM Research, Algorithmiq, Flatiron',
+    observableValue: 0.7,
+    errorBound: {
+      low: -0.3,
+      high: 1.1,
+    },
+  },
+  {
+    date: '2025-11-12',
+    name: 'Submission name',
+    link: 'https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io/issues/6',
+    method: 'Belief propagation tensor network',
+    circuit: 'Operator Loschmidth Echo_49_2400',
+    runtime: {
+      quantum: 0,
+      classic: 21600,
+    },
+    computeResources: {
+      quantum: '',
+      classic: '8x NVIDIA H100',
+    },
+    institution: 'IBM Research, Algorithmiq, Flatiron',
+    observableValue: 0.98,
+    errorBound: {
+      low: -0.3,
+      high: 1.1,
+    },
+  },
+];
