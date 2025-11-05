@@ -1,6 +1,6 @@
 'use client';
 
-import clsx from 'clsx/lite';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -23,16 +23,16 @@ export function TrackerTabs() {
   const pathname = usePathname();
 
   return (
-    <ul className="flex flex-row justify-center gap-4">
+    <ul className="border-primary inline-flex flex-row justify-center gap-4 rounded-full border p-2">
       {tabs.map((tab) => {
         const href = `/trackers/${tab.slug}` as const;
         const isActive = pathname === href;
 
         return (
           <li key={tab.slug}>
-            <Link href={href} className={clsx(isActive && 'underline')}>
-              {tab.label}
-            </Link>
+            <Button size="lg" asChild variant={isActive ? 'default' : 'ghost'}>
+              <Link href={href}>{tab.label}</Link>
+            </Button>
           </li>
         );
       })}

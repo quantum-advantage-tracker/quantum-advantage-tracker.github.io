@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableBody,
@@ -6,6 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { GithubIcon } from '@/icons';
 import type { OESubmission } from '@/types/submissions';
 import type { Metadata } from 'next';
 import { submissions } from '../../../../data/observable-estimations/submissions';
@@ -25,7 +27,26 @@ export default async function TrackersOE() {
         provable confidence intervals over the reported value.
       </h4>
 
-      <div className="mb-16">LINKS</div>
+      <div className="m-auto mb-16 flex flex-row gap-6">
+        <Button variant="secondary" size="lg" asChild>
+          <a
+            href="https://github.com/quantum-advantage-pathways"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View circuit options <GithubIcon />
+          </a>
+        </Button>
+        <Button variant="secondary" size="lg" asChild>
+          <a
+            href="https://github.com/quantum-advantage-pathways"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open submission ticket <GithubIcon />
+          </a>
+        </Button>
+      </div>
 
       <div className="text-left">
         <SubmissionsTable submissions={submissions} />
