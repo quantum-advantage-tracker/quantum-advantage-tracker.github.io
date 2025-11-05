@@ -9,6 +9,18 @@
     "lint": "eslint",
     "start": "next start"
   },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md}": [
+      "prettier --write"
+    ]
+  },
   "prettier": {
     "organizeImportsSkipDestructiveCodeActions": true,
     "plugins": [
@@ -31,10 +43,12 @@
     "@types/react-dom": "^19.2.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.1",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-packagejson": "^2.5.19",
     "prettier-plugin-tailwindcss": "^0.7.1",
+    "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3"
   }
