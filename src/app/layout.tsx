@@ -22,31 +22,29 @@ export default function RootLayout(props: LayoutProps<'/'>) {
   return (
     <html lang="en">
       <body className={`${interSans.variable} font-sans antialiased`}>
-        <nav className="h-14">
-          <div className="m-auto flex h-full max-w-7xl flex-row items-center justify-between px-6">
-            <Link href="/" className="font-semibold">
-              Quantum Advantage Tracker
-            </Link>
+        <header>
+          <nav className="h-14">
+            <div className="m-auto flex h-full max-w-7xl flex-row items-center justify-between px-6">
+              <Link href="/" className="font-semibold">
+                Quantum Advantage Tracker
+              </Link>
 
-            <ul className="flex flex-row gap-5">
-              <li>
-                <Link href="/trackers">Advantage trackers</Link>
-              </li>
-              <li>
-                <Link href="/participate">Participate</Link>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubIcon className="size-6" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+              <ul className="flex flex-row gap-5">
+                <li>
+                  <Link href="/trackers">Advantage trackers</Link>
+                </li>
+                <li>
+                  <Link href="/participate">Participate</Link>
+                </li>
+                <li>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    <GithubIcon className="size-6" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
 
         <main>{props.children}</main>
       </body>
