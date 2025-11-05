@@ -1,6 +1,6 @@
+import { GithubIcon } from '@/icons';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import './globals.css';
@@ -41,12 +41,7 @@ export default function RootLayout(props: LayoutProps<'/'>) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Image
-                    src="/github-icon.svg"
-                    alt="GitHub logo"
-                    width={24}
-                    height={24}
-                  />
+                  <GithubIcon className="size-6" />
                 </a>
               </li>
             </ul>
