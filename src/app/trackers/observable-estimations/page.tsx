@@ -29,20 +29,12 @@ export default async function TrackersOE() {
 
       <div className="mx-auto mb-16 flex flex-row gap-6">
         <Button variant="secondary" size="lg" asChild>
-          <a
-            href="https://github.com/quantum-advantage-pathways"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#TODO" target="_blank" rel="noopener noreferrer">
             View circuit options <GithubIcon />
           </a>
         </Button>
         <Button variant="secondary" size="lg" asChild>
-          <a
-            href="https://github.com/quantum-advantage-pathways"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#TODO" target="_blank" rel="noopener noreferrer">
             Open submission ticket <GithubIcon />
           </a>
         </Button>

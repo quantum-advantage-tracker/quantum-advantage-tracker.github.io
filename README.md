@@ -1,11 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quantum Advantage Tracker
 
-## Getting Started
+This repository hosts the source code for the Quantum Advantage Tracker website, a resource for understanding the pathways to achieving quantum advantage.
 
-First, run the development server:
+## About the Project
+
+The website provides a collection of resources and explanations on various topics related to quantum computing, including:
+
+- Observable estimations
+- Variational problems
+- Classically verifiable problems
+
+## Running locally
+
+### Prerequisites
+
+- [node.js](https://nodejs.org)
+
+### Install the dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Build for production
+
+```bash
+npm run build
+```

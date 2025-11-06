@@ -4,7 +4,7 @@ export const submissions: OESubmission[] = [
   {
     date: '2025-11-12',
     name: 'Submission name',
-    link: 'https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io/issues/6',
+    link: '#',
     method: 'Global Rescaling',
     circuit: 'Operator Loschmidth Echo_49_2400',
     runtime: {
@@ -25,7 +25,7 @@ export const submissions: OESubmission[] = [
   {
     date: '2025-11-12',
     name: 'Submission name',
-    link: 'https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io/issues/6',
+    link: '#',
     method: 'Belief propagation tensor network',
     circuit: 'Operator Loschmidth Echo_49_2400',
     runtime: {

@@ -4,7 +4,7 @@ export const submissions: VPSubmission[] = [
   {
     date: '2025-11-12',
     name: 'Submission name',
-    link: 'https://github.com/quantum-advantage-pathways/quantum-advantage-pathways.github.io/issues/6',
+    link: '#',
     method: 'SQD',
     circuit: 'Some hamiltonian_52_1600',
     runtime: {
