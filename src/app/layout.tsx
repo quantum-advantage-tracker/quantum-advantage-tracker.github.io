@@ -47,6 +47,10 @@ export default function RootLayout(props: LayoutProps<'/'>) {
         </header>
 
         <main>{props.children}</main>
+
+        <footer className="px-6 py-6 text-center">
+          <div>Quantum Advantage Tracker © 2025</div>
+        </footer>
       </body>
     </html>
   );
