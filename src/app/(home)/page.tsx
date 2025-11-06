@@ -47,19 +47,24 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-2xl px-6 py-20 text-center">
-        <h3 className="mb-6 text-4xl">Why is it hard to verify?</h3>
-        <p>
-          Quantum advantage isn’t a single milestone - it’s a falsifiable
-          scientific hypothesis that must be tested through rigorous
-          experimentation. Because quantum computers tackle problems that
-          classical systems can’t easily replicate, direct comparison is
-          challenging. Verifying any claim of advantage therefore demands
-          several multiple points of analysis.
-        </p>
-        <pre className="bg-secondary mt-6 rounded-md border p-6">
-          ✏️ &quot;The test of all knowledge is experiment&quot; — R. P. Feynman
-        </pre>
+      <section className="py-20 text-center">
+        <div className="mx-auto max-w-2xl px-6">
+          <h3 className="mb-6 text-4xl">Why is it hard to verify?</h3>
+          <p>
+            Quantum advantage isn’t a single milestone - it’s a falsifiable
+            scientific hypothesis that must be tested through rigorous
+            experimentation. Because quantum computers tackle problems that
+            classical systems can’t easily replicate, direct comparison is
+            challenging. Verifying any claim of advantage therefore demands
+            several multiple points of analysis.
+          </p>
+        </div>
+        <div className="mx-auto max-w-3xl px-6">
+          <pre className="bg-secondary mt-6 rounded-md border p-6 whitespace-pre-wrap">
+            ✏️ &quot;The test of all knowledge is experiment&quot; — R. P.
+            Feynman
+          </pre>
+        </div>
       </section>
 
       <section className="mx-auto px-6 py-20 text-center">
@@ -69,7 +74,7 @@ export default function Home() {
           pathways for analysis. Learn more about how these pathways were
           identified in{' '}
           <a
-            href="#"
+            href="https://arxiv.org/pdf/2506.20658"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600"
@@ -78,7 +83,7 @@ export default function Home() {
           </a>
           .
         </p>
-        <ul className="mx-auto mt-20 flex max-w-7xl flex-row gap-4 text-left">
+        <ul className="mx-auto mt-20 flex max-w-7xl flex-col gap-4 text-left md:flex-row">
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
             <div className="text-3xl">Observable estimations 📊</div>
             <div className="font-semibold">
