@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ChevronRightIcon } from 'lucide-react';
 import Link from 'next/link';
+import { Contributors } from './Contributors';
 
 export default function Home() {
   return (
@@ -24,6 +25,13 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <section className="px-6 py-10 text-center">
+        <div className="text-secondary-foreground text-sm">
+          Project contributors include
+        </div>
+        <Contributors />
+      </section>
 
       <section className="mx-auto max-w-2xl px-6 py-20 text-center">
         <h3 className="mb-6 text-4xl">What is quantum advantage?</h3>
