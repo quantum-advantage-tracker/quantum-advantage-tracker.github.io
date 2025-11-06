@@ -21,12 +21,12 @@ export default async function TrackersCVP() {
   return (
     <div className="flex flex-col gap-4 py-20 text-center">
       <h3 className="text-3xl">Classically verifiable problems 🗝️</h3>
-      <h4 className="m-auto max-w-xl">
+      <h4 className="mx-auto max-w-xl">
         Submissions must demonstrate quantum advantage by scoring solutions
         against known answers or efficiently checkable witnesses.
       </h4>
 
-      <div className="m-auto mb-16 flex flex-row gap-6">
+      <div className="mx-auto mb-16 flex flex-row gap-6">
         <Button variant="secondary" size="lg" asChild>
           <a
             href="https://github.com/quantum-advantage-pathways"
