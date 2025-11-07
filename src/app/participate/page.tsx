@@ -160,7 +160,7 @@ export default function Participate() {
             </a>{' '}
             to provide your thoughts or{' '}
             <a
-              href="#TODO"
+              href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/discussions"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600"
