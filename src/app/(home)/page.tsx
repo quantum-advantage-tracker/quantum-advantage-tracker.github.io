@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className="px-6 py-10 text-center">
         <div className="text-secondary-foreground text-sm">
-          Project contributors include
+          Contributors include researchers from:
         </div>
         <Contributors />
       </section>
