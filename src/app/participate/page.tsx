@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { GithubIcon } from '@/icons';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Participate',
@@ -117,14 +118,9 @@ export default function Participate() {
               </li>
               <li>
                 Once your submission has been verified, it will show up in the{' '}
-                <a
-                  href="https://quantum-advantage-tracker.github.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600"
-                >
+                <Link href="/trackers" className="text-blue-600">
                   Advantage Tracker
-                </a>
+                </Link>
               </li>
             </ul>
             <p className="mt-6 font-medium">Status details:</p>
