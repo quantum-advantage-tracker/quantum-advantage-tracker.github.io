@@ -11,7 +11,7 @@ export const submissions: OESubmission[] = [
     computeResources: { quantum: 'ibm_pittsburgh', classic: '' },
     institution: 'IBM Research, Algorithmiq, Flatiron',
     observableValue: 0.7,
-    errorBound: { low: -0.3, high: 1.1 },
+    errorBound: { low: 0.3, high: 1.1 },
   },
   {
     date: '2025-11-07T19:07:27.611Z',
@@ -23,6 +23,6 @@ export const submissions: OESubmission[] = [
     computeResources: { quantum: '', classic: '8x NVIDIA H100' },
     institution: 'IBM Research, Algorithmiq, Flatiron',
     observableValue: 0.98,
-    errorBound: { low: -0.3, high: 1.1 },
+    errorBound: { low: 0.3, high: 1.1 },
   },
 ];

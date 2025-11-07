@@ -97,7 +97,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                 {submission.circuit}
               </TableCell>
               <TableCell>
-                {submission.observableValue} [{submission.errorBound.high},{' '}
+                {submission.observableValue} [+{submission.errorBound.high}, -
                 {submission.errorBound.low}]
               </TableCell>
               <TableCell>
