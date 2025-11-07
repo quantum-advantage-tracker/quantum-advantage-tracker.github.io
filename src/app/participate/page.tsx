@@ -26,7 +26,8 @@ export default function Participate() {
       <div className="mx-auto flex max-w-7xl flex-col gap-20 px-6 py-20">
         <section className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <span className="text-primary">01</span> Choose a pathway
+            <span className="text-primary">01</span> Choose a pathway and
+            circuit instance
           </h3>
           <p className="max-w-2xl">
             Select the pathway below that best aligns with your submission. Each
@@ -37,17 +38,29 @@ export default function Participate() {
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
-              <a href="#TODO" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Observable estimations <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#TODO" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Variational problems <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#TODO" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-instances"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Classically verifiable problems <GithubIcon />
               </a>
             </Button>

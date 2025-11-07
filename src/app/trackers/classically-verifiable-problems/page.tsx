@@ -29,8 +29,12 @@ export default async function TrackersCVP() {
 
       <div className="mx-auto mb-16 flex flex-row gap-6">
         <Button variant="secondary" size="lg" asChild>
-          <a href="#TODO" target="_blank" rel="noopener noreferrer">
-            View circuit options <GithubIcon />
+          <a
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-instances"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View circuit instances <GithubIcon />
           </a>
         </Button>
         <Button variant="secondary" size="lg" asChild>
