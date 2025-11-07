@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
 import type { OESubmission } from '@/types/submissions';
+import { formatDate } from '@/utils';
 import type { Metadata } from 'next';
 import { submissions } from '../../../../data/observable-estimations/submissions';
 import { ParticipateSection } from '../ParticipateSection';
@@ -78,7 +79,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
         ) : (
           submissions.map((submission, index) => (
             <TableRow key={`submission-oe-${index}`}>
-              <TableCell>{submission.date}</TableCell>
+              <TableCell>{formatDate(submission.date)}</TableCell>
               <TableCell>
                 <a
                   href={submission.link}
@@ -100,12 +101,12 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                 {submission.errorBound.low}]
               </TableCell>
               <TableCell>
-                <div>Q: {submission.runtime.quantum}</div>
-                <div>C: {submission.runtime.classic}</div>
+                <div>Q: {submission.runtime.quantum || '-'}</div>
+                <div>C: {submission.runtime.classic || '-'}</div>
               </TableCell>
               <TableCell>
-                <div>Q: {submission.computeResources.quantum}</div>
-                <div>C: {submission.computeResources.classic}</div>
+                <div>Q: {submission.computeResources.quantum || '-'}</div>
+                <div>C: {submission.computeResources.classic || '-'}</div>
               </TableCell>
               <TableCell className="whitespace-normal">
                 {submission.institution}

@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
 import type { CVPSubmission } from '@/types/submissions';
+import { formatDate } from '@/utils';
 import type { Metadata } from 'next';
 import { submissions } from '../../../../data/classically-verifiable-problems/submissions';
 import { ParticipateSection } from '../ParticipateSection';
@@ -77,7 +78,7 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
         ) : (
           submissions.map((submission, index) => (
             <TableRow key={`submission-cvp-${index}`}>
-              <TableCell>{submission.date}</TableCell>
+              <TableCell>{formatDate(submission.date)}</TableCell>
               <TableCell>
                 <a
                   href={submission.link}
@@ -96,12 +97,12 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
               </TableCell>
               <TableCell>{submission.value}</TableCell>
               <TableCell>
-                <div>Q: {submission.runtime.quantum}</div>
-                <div>C: {submission.runtime.classic}</div>
+                <div>Q: {submission.runtime.quantum || '-'}</div>
+                <div>C: {submission.runtime.classic || '-'}</div>
               </TableCell>
               <TableCell>
-                <div>Q: {submission.computeResources.quantum}</div>
-                <div>C: {submission.computeResources.classic}</div>
+                <div>Q: {submission.computeResources.quantum || '-'}</div>
+                <div>C: {submission.computeResources.classic || '-'}</div>
               </TableCell>
               <TableCell className="whitespace-normal">
                 {submission.institution}

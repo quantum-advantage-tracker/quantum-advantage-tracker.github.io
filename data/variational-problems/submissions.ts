@@ -2,24 +2,15 @@ import type { VPSubmission } from '../../src/types/submissions';
 
 export const submissions: VPSubmission[] = [
   {
-    date: '2025-11-12',
+    date: '2025-11-06T19:07:27.611Z',
     name: 'Submission name',
     link: '#',
     method: 'SQD',
     circuit: 'Some hamiltonian_52_1600',
-    runtime: {
-      quantum: 7200,
-      classic: 0,
-    },
-    computeResources: {
-      quantum: 'ibm_pittsburgh',
-      classic: '',
-    },
+    runtime: { quantum: 7200, classic: 0 },
+    computeResources: { quantum: 'ibm_pittsburgh', classic: '' },
     institution: 'IBM Research, Algorithmiq, Flatiron',
     energyValue: -1123.4,
-    errorBound: {
-      low: 1,
-      high: 1,
-    },
+    errorBound: { low: 1, high: 1 },
   },
 ];

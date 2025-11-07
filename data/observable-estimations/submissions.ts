@@ -2,45 +2,27 @@ import type { OESubmission } from '../../src/types/submissions';
 
 export const submissions: OESubmission[] = [
   {
-    date: '2025-11-12',
+    date: '2025-11-07T19:07:27.611Z',
     name: 'Submission name',
     link: '#',
     method: 'Global Rescaling',
     circuit: 'Operator Loschmidth Echo_49_2400',
-    runtime: {
-      quantum: 7200,
-      classic: 0,
-    },
-    computeResources: {
-      quantum: 'ibm_pittsburgh',
-      classic: '',
-    },
+    runtime: { quantum: 7200, classic: 0 },
+    computeResources: { quantum: 'ibm_pittsburgh', classic: '' },
     institution: 'IBM Research, Algorithmiq, Flatiron',
     observableValue: 0.7,
-    errorBound: {
-      low: -0.3,
-      high: 1.1,
-    },
+    errorBound: { low: -0.3, high: 1.1 },
   },
   {
-    date: '2025-11-12',
+    date: '2025-11-07T19:07:27.611Z',
     name: 'Submission name',
     link: '#',
     method: 'Belief propagation tensor network',
     circuit: 'Operator Loschmidth Echo_49_2400',
-    runtime: {
-      quantum: 0,
-      classic: 21600,
-    },
-    computeResources: {
-      quantum: '',
-      classic: '8x NVIDIA H100',
-    },
+    runtime: { quantum: 0, classic: 21600 },
+    computeResources: { quantum: '', classic: '8x NVIDIA H100' },
     institution: 'IBM Research, Algorithmiq, Flatiron',
     observableValue: 0.98,
-    errorBound: {
-      low: -0.3,
-      high: 1.1,
-    },
+    errorBound: { low: -0.3, high: 1.1 },
   },
 ];
