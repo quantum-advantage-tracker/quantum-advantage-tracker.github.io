@@ -1,17 +1,25 @@
 name: 🌀 Path 2 - Variational problems submission
-description: Submit a problem solution for the variational problems pathway - Certifiable quantum solutions via the variational principle
-labels: ['pathway: variational-problems', 'submission']
+description: Submit a problem solution to the Variational problems tracker - Certifiable quantum solutions via the variational principle
+labels: ['path: variational-problems', 'submission']
 body:
   - type: markdown
     attributes:
       value: |
-        ## 🌀 Path 2 - Variational problems pathway
+        ## 🌀 Path 2 - Variational problems
 
-        Thank you for submitting a solution to the **variational problems** pathway!
+        Thank you for submitting a solution to the **variational problems tracker**!
 
         This pathway focuses on guaranteed solution bounds and benchmarking against classical methods. Your submission should demonstrate variational bounds (energy values as upper bounds to true ground-state energy).
 
         Please provide detailed information about your submission below.
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Please provide a unique and identifiable name for your submission
+    validations:
+      required: true
 
   - type: dropdown
     id: circuit
@@ -19,8 +27,7 @@ body:
       label: Circuit
       description: The problem instance this submission addresses
       options:
-        - circuit_a
-        - circuit_b
+        - lih_molecule
     validations:
       required: true
 
@@ -28,7 +35,7 @@ body:
     id: energy
     attributes:
       label: Energy
-      description: The ground-state energy value (upper bound)
+      description: The ground-state energy value (upper bound) in UNIT OF MEASURE NEEDED.
       placeholder: e.g., "-7.8823"
     validations:
       required: true
@@ -54,21 +61,31 @@ body:
   - type: input
     id: method
     attributes:
-      label: Method (name)
-      description: Method name
+      label: Method
+      description: Name for the method used in submission
+      placeholder: e.g., "SQD"
     validations:
       required: true
 
   - type: textarea
     id: methodProof
     attributes:
-      label: Method (proof)
+      label: Method proof
       description: Link to paper, code repository, or detailed explanation of the method (required for verification)
       placeholder: |
         Provide at least one of:
         - Paper/preprint: https://arxiv.org/abs/...
         - Code repository: https://github.com/...
         - Method explanation: Detailed description of the approach
+    validations:
+      required: true
+
+  - type: input
+    id: institutions
+    attributes:
+      label: Institutions
+      description: The institution(s) or organization(s) involved in the submission, separated by commas
+      placeholder:
     validations:
       required: true
 
@@ -108,15 +125,6 @@ body:
     validations:
       required: false
 
-  - type: input
-    id: institution
-    attributes:
-      label: Institution
-      description: Your institution or organization
-      placeholder: e.g., "IBM Quantum"
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
@@ -126,8 +134,8 @@ body:
 
         Maintainers will review your submission for:
         - ✅ Reproducibility
-        - ✅ Compliance with validation criteria
+        - ✅ Compliance with validation criteria (variational property)
         - ✅ Data fidelity and traceability
         - ✅ Transparent documentation of assumptions and uncertainties
 
-        Thank you for contributing to Quantum Advantage Tracker! 🚀
+        Thank you for contributing to the Quantum Advantage Tracker! 🚀
