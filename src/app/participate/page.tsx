@@ -36,17 +36,17 @@ export default function Participate() {
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#TODO" target="_blank" rel="noopener noreferrer">
                 Observable estimations <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#TODO" target="_blank" rel="noopener noreferrer">
                 Variational problems <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#TODO" target="_blank" rel="noopener noreferrer">
                 Classically verifiable problems <GithubIcon />
               </a>
             </Button>
@@ -65,17 +65,29 @@ export default function Participate() {
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-1-observable-estimations.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Observable estimations <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-2-variational-problems.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Variational problems <GithubIcon />
               </a>
             </Button>
             <Button variant="secondary" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-3-classically-verifiable-problems.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Classically verifiable problems <GithubIcon />
               </a>
             </Button>
@@ -94,7 +106,7 @@ export default function Participate() {
               <li>
                 By looking up your submission name in the{' '}
                 <a
-                  href="#"
+                  href="https://github.com/orgs/quantum-advantage-tracker/projects/1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600"
@@ -106,7 +118,7 @@ export default function Participate() {
               <li>
                 Once your submission has been verified, it will show up in the{' '}
                 <a
-                  href="#"
+                  href="https://quantum-advantage-tracker.github.io"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600"
@@ -139,7 +151,7 @@ export default function Participate() {
           <p className="max-w-2xl">
             You can review and comment on{' '}
             <a
-              href="#"
+              href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600"
@@ -148,7 +160,7 @@ export default function Participate() {
             </a>{' '}
             to provide your thoughts or{' '}
             <a
-              href="#"
+              href="#TODO"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600"

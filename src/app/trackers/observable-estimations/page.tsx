@@ -34,7 +34,11 @@ export default async function TrackersOE() {
           </a>
         </Button>
         <Button variant="secondary" size="lg" asChild>
-          <a href="#TODO" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-1-observable-estimations.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Open submission ticket <GithubIcon />
           </a>
         </Button>

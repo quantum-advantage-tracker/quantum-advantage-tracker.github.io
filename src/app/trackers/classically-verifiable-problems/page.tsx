@@ -33,7 +33,11 @@ export default async function TrackersCVP() {
           </a>
         </Button>
         <Button variant="secondary" size="lg" asChild>
-          <a href="#TODO" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-3-classically-verifiable-problems.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Open submission ticket <GithubIcon />
           </a>
         </Button>

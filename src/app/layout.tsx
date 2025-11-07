@@ -37,7 +37,11 @@ export default function RootLayout(props: LayoutProps<'/'>) {
                   <Link href="/participate">Participate</Link>
                 </li>
                 <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <GithubIcon className="size-6" />
                   </a>
                 </li>

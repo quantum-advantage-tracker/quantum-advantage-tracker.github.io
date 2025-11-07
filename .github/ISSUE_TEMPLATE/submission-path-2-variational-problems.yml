@@ -1,0 +1,133 @@
+name: 🌀 Path 2 - Variational problems submission
+description: Submit a problem solution for the variational problems pathway - Certifiable quantum solutions via the variational principle
+labels: ['pathway: variational-problems', 'submission']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌀 Path 2 - Variational problems pathway
+
+        Thank you for submitting a solution to the **variational problems** pathway!
+
+        This pathway focuses on guaranteed solution bounds and benchmarking against classical methods. Your submission should demonstrate variational bounds (energy values as upper bounds to true ground-state energy).
+
+        Please provide detailed information about your submission below.
+
+  - type: dropdown
+    id: circuit
+    attributes:
+      label: Circuit
+      description: The problem instance this submission addresses
+      options:
+        - circuit_a
+        - circuit_b
+    validations:
+      required: true
+
+  - type: input
+    id: energy
+    attributes:
+      label: Energy
+      description: The ground-state energy value (upper bound)
+      placeholder: e.g., "-7.8823"
+    validations:
+      required: true
+
+  - type: input
+    id: errorBoundLow
+    attributes:
+      label: Error bound (low)
+      description: Lower error bound
+      placeholder: e.g., "-0.05"
+    validations:
+      required: true
+
+  - type: input
+    id: errorBoundHigh
+    attributes:
+      label: Error bound (high)
+      description: Upper error bound
+      placeholder: e.g., "+0.05"
+    validations:
+      required: true
+
+  - type: input
+    id: method
+    attributes:
+      label: Method (name)
+      description: Method name
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodProof
+    attributes:
+      label: Method (proof)
+      description: Link to paper, code repository, or detailed explanation of the method (required for verification)
+      placeholder: |
+        Provide at least one of:
+        - Paper/preprint: https://arxiv.org/abs/...
+        - Code repository: https://github.com/...
+        - Method explanation: Detailed description of the approach
+    validations:
+      required: true
+
+  - type: input
+    id: runtimeQuantum
+    attributes:
+      label: Runtime (quantum)
+      description: Quantum execution time in seconds
+      placeholder: e.g., "5"
+    validations:
+      required: false
+
+  - type: input
+    id: runtimeClassical
+    attributes:
+      label: Runtime (classical)
+      description: Classical computation time in seconds
+      placeholder: e.g., "9000"
+    validations:
+      required: false
+
+  - type: input
+    id: computeResourcesQuantum
+    attributes:
+      label: Compute resources (quantum)
+      description: Quantum hardware specification
+      placeholder: e.g., "IBM Heron r2"
+    validations:
+      required: false
+
+  - type: input
+    id: computeResourcesClassical
+    attributes:
+      label: Compute resources (classical)
+      description: Classical hardware specification
+      placeholder: e.g., "AMD EPYC 7763, 128 cores"
+    validations:
+      required: false
+
+  - type: input
+    id: institution
+    attributes:
+      label: Institution
+      description: Your institution or organization
+      placeholder: e.g., "IBM Quantum"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### What happens next?
+
+        Maintainers will review your submission for:
+        - ✅ Reproducibility
+        - ✅ Compliance with validation criteria
+        - ✅ Data fidelity and traceability
+        - ✅ Transparent documentation of assumptions and uncertainties
+
+        Thank you for contributing to Quantum Advantage Tracker! 🚀
