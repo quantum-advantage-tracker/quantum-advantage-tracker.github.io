@@ -28,7 +28,7 @@ export default async function TrackersVP() {
         variational principle.
       </h4>
 
-      <div className="mx-auto mb-16 flex flex-row gap-6">
+      <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
         <Button variant="secondary" size="lg" asChild>
           <a
             href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances"
