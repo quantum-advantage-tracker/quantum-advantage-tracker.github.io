@@ -23,7 +23,7 @@ export function TrackerTabs() {
   const pathname = usePathname();
 
   return (
-    <ul className="border-primary inline-flex flex-row justify-center gap-4 rounded-full border p-2">
+    <ul className="border-primary inline-flex flex-col justify-center gap-4 rounded-3xl border p-2 md:flex-row md:rounded-full">
       {tabs.map((tab) => {
         const href = `/trackers/${tab.slug}` as const;
         const isActive = pathname === href;
