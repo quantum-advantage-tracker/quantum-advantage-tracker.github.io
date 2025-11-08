@@ -11,7 +11,7 @@ import { GithubIcon } from '@/icons';
 import type { CVPSubmission } from '@/types/submissions';
 import { formatDate } from '@/utils';
 import type { Metadata } from 'next';
-import { submissions } from '../../../../data/classically-verifiable-problems/submissions';
+import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
 
 export const metadata: Metadata = {
