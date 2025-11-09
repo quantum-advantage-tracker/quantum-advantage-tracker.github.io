@@ -47,12 +47,21 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: institutions
+    attributes:
+      label: Institutions
+      description: The institution(s) or organization(s) involved in the submission, separated by commas
+      placeholder:
+    validations:
+      required: true
+
       
   - type: input
     id: qasmFile
     attributes:
-      label: Circuit instnace QASM file
-      description: Please provide a link to the QASM file for your circuit problem instance. The file should be publically available so maintainters can pull it into the repo.
+      label: Circuit instance QASM file
+      description: Please provide a link to the QASM file for your circuit problem instance. The file should be publically available so maintainters can reviewand pull it into the repo.
     validations:
       required: true
   
@@ -65,7 +74,7 @@ body:
         ### What happens next?
 
         1. Maintainers will review your circuit details and QASM file
-        2. Once approved, a new file will be created in the relevant data folder for your selected submission path
-        3. You or others can then use the new link for the circuit instance (living in this project) to run and submit Quantum Advantage Tracker candidates. 
+        2. Once approved, a new file will be created in the relevant [data folder](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data) for your selected submission path
+        3. You or others can then use the new link for the circuit instance to run and submit Quantum Advantage Tracker candidates. 
 
         Thank you for contributing to the Quantum Advantage Tracker! 🚀
