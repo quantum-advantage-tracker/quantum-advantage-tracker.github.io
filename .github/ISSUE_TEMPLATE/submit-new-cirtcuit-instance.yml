@@ -39,11 +39,7 @@ body:
     attributes:
       label: Description
       description: Please provide more information on the circuit's type, design, and any other relevant details.
-      placeholder: |
-        Provide at least one of:
-        - Paper/preprint: https://arxiv.org/abs/...
-        - Code repository: https://github.com/...
-        - Method explanation: Detailed description of the approach
+      placeholder: 
     validations:
       required: true
 
