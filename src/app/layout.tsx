@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   },
   description:
     'As claims of quantum advantage emerge, this project provides a platform-agnostic framework to collect, validate, and compare experimental results.',
+  icons: {
+    icon: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">📐</text></svg>')}`,
+  },
 };
 
 export default function RootLayout(props: LayoutProps<'/'>) {
