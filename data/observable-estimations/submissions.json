@@ -1,32 +1,32 @@
 [
   {
     "createdAt": "2025-11-07T19:07:27.611Z",
+    "url": "#",
     "name": "Submission name",
-    "link": "#",
-    "method": "Global Rescaling",
     "circuit": "Operator Loschmidth Echo_49_2400",
+    "observableValue": 0.7,
+    "errorBoundLow": 0.3,
+    "errorBoundHigh": 1.1,
+    "method": "Global Rescaling",
+    "institution": "IBM Research, Algorithmiq, Flatiron",
     "runtimeQuantum": 7200,
     "runtimeClassic": 0,
     "computeResourcesQuantum": "ibm_pittsburgh",
-    "computeResourcesClassic": "",
-    "institution": "IBM Research, Algorithmiq, Flatiron",
-    "observableValue": 0.7,
-    "errorBoundLow": 0.3,
-    "errorBoundHigh": 1.1
+    "computeResourcesClassic": ""
   },
   {
     "createdAt": "2025-11-07T19:07:27.611Z",
+    "url": "#",
     "name": "Submission name",
-    "link": "#",
-    "method": "Belief propagation tensor network",
     "circuit": "Operator Loschmidth Echo_49_2400",
+    "observableValue": 0.98,
+    "errorBoundLow": 0.3,
+    "errorBoundHigh": 1.1,
+    "method": "Belief propagation tensor network",
+    "institution": "IBM Research, Algorithmiq, Flatiron",
     "runtimeQuantum": 0,
     "runtimeClassic": 21600,
     "computeResourcesQuantum": "",
-    "computeResourcesClassic": "8x NVIDIA H100",
-    "institution": "IBM Research, Algorithmiq, Flatiron",
-    "observableValue": 0.98,
-    "errorBoundLow": 0.3,
-    "errorBoundHigh": 1.1
+    "computeResourcesClassic": "8x NVIDIA H100"
   }
 ]

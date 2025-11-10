@@ -85,7 +85,7 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
               <TableCell>{formatDate(submission.createdAt)}</TableCell>
               <TableCell>
                 <a
-                  href={submission.link}
+                  href={submission.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600"

@@ -70,6 +70,7 @@ jobs:
         env:
           INPUT_JSON: ${{ steps.issue_form_parser.outputs.json }}
           ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
           SUBMISSION=$(node -e "
             const data = JSON.parse(process.env.INPUT_JSON);
@@ -77,6 +78,7 @@ jobs:
             delete data.methodProof;
             console.log(JSON.stringify({
               createdAt: process.env.ISSUE_CREATED_AT,
+              url: process.env.ISSUE_URL,
               ...data
             }));
           ")

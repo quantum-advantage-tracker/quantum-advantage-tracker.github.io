@@ -1,17 +1,17 @@
 [
   {
     "createdAt": "2025-11-06T19:07:27.611Z",
+    "url": "#",
     "name": "Submission name",
-    "link": "#",
-    "method": "SQD",
     "circuit": "Some hamiltonian_52_1600",
+    "energyValue": -1123.4,
+    "errorBoundLow": 1,
+    "errorBoundHigh": 1,
+    "method": "SQD",
+    "institution": "IBM Research, Algorithmiq, Flatiron",
     "runtimeQuantum": 7200,
     "runtimeClassic": 0,
     "computeResourcesQuantum": "ibm_pittsburgh",
-    "computeResourcesClassic": "",
-    "institution": "IBM Research, Algorithmiq, Flatiron",
-    "energyValue": -1123.4,
-    "errorBoundLow": 1,
-    "errorBoundHigh": 1
+    "computeResourcesClassic": ""
   }
 ]

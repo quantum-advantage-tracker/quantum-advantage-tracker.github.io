@@ -1,9 +1,9 @@
 type BaseSubmission = {
   createdAt: string;
+  url: string;
   name: string;
-  link: string;
-  method: string;
   circuit: string;
+  method: string;
   runtimeQuantum?: number;
   runtimeClassic?: number;
   computeResourcesQuantum?: string;
