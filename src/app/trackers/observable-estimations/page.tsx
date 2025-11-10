@@ -89,7 +89,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                   href={submission.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-link hover:underline"
+                  className="text-link-foreground hover:underline"
                 >
                   {submission.name}
                 </a>

@@ -135,7 +135,7 @@ export default function Participate() {
                   href="https://github.com/orgs/quantum-advantage-tracker/projects/1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-link hover:underline"
+                  className="text-link-foreground hover:underline"
                 >
                   Github project board
                 </a>{' '}
@@ -143,7 +143,10 @@ export default function Participate() {
               </li>
               <li>
                 Once your submission has been verified, it will show up in the{' '}
-                <Link href="/trackers" className="text-link hover:underline">
+                <Link
+                  href="/trackers"
+                  className="text-link-foreground hover:underline"
+                >
                   Advantage Tracker
                 </Link>
               </li>
@@ -171,7 +174,7 @@ export default function Participate() {
               href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-link hover:underline"
+              className="text-link-foreground hover:underline"
             >
               other issues in the repo
             </a>{' '}
@@ -180,7 +183,7 @@ export default function Participate() {
               href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/discussions"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-link hover:underline"
+              className="text-link-foreground hover:underline"
             >
               contribute to the discussion board
             </a>

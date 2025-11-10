@@ -77,7 +77,7 @@ export default function Home() {
             href="https://arxiv.org/pdf/2506.20658"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-link hover:underline"
+            className="text-link-foreground hover:underline"
           >
             our paper
           </a>
