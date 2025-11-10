@@ -89,7 +89,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                   href={submission.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600"
+                  className="text-link hover:underline"
                 >
                   {submission.name}
                 </a>
