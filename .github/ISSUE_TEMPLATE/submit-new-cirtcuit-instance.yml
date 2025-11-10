@@ -1,5 +1,5 @@
 name: 📦 Submit new circuit instance
-description: Submit a new circuit instance to accompany a Quantum Advantage Tracker submission.
+description: Submit a new circuit instance to accompany a Quantum Advantage Tracker submission
 labels: ['new circuit instance']
 body:
   - type: markdown

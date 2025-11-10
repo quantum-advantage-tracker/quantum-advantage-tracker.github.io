@@ -5,10 +5,13 @@
     "link": "#",
     "method": "SQD",
     "circuit": "Some hamiltonian_52_1600",
-    "runtime": { "quantum": 7200, "classic": 0 },
-    "computeResources": { "quantum": "ibm_pittsburgh", "classic": "" },
+    "runtimeQuantum": 7200,
+    "runtimeClassic": 0,
+    "computeResourcesQuantum": "ibm_pittsburgh",
+    "computeResourcesClassic": "",
     "institution": "IBM Research, Algorithmiq, Flatiron",
     "energyValue": -1123.4,
-    "errorBound": { "low": 1, "high": 1 }
+    "errorBoundLow": 1,
+    "errorBoundHigh": 1
   }
 ]

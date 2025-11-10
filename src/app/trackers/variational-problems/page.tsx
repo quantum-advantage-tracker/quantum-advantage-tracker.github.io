@@ -101,16 +101,16 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                 {submission.circuit}
               </TableCell>
               <TableCell>
-                {submission.energyValue} [+{submission.errorBound.high}, -
-                {submission.errorBound.low}]
+                {submission.energyValue} [+
+                {submission.errorBoundHigh}, -{submission.errorBoundLow}]
               </TableCell>
               <TableCell>
-                <div>Q: {submission.runtime.quantum || '-'}</div>
-                <div>C: {submission.runtime.classic || '-'}</div>
+                <div>Q: {submission.runtimeQuantum || '-'}</div>
+                <div>C: {submission.runtimeClassic || '-'}</div>
               </TableCell>
               <TableCell>
-                <div>Q: {submission.computeResources.quantum || '-'}</div>
-                <div>C: {submission.computeResources.classic || '-'}</div>
+                <div>Q: {submission.computeResourcesQuantum || '-'}</div>
+                <div>C: {submission.computeResourcesClassic || '-'}</div>
               </TableCell>
               <TableCell className="whitespace-normal">
                 {submission.institution}

@@ -4,31 +4,23 @@ type BaseSubmission = {
   link: string;
   method: string;
   circuit: string;
-  runtime: {
-    quantum?: number;
-    classic?: number;
-  };
-  computeResources: {
-    quantum?: string;
-    classic?: string;
-  };
+  runtimeQuantum?: number;
+  runtimeClassic?: number;
+  computeResourcesQuantum?: string;
+  computeResourcesClassic?: string;
   institution: string;
 };
 
 export type OESubmission = BaseSubmission & {
   observableValue: number;
-  errorBound: {
-    low: number;
-    high: number;
-  };
+  errorBoundLow: number;
+  errorBoundHigh: number;
 };
 
 export type VPSubmission = BaseSubmission & {
   energyValue: number;
-  errorBound: {
-    low: number;
-    high: number;
-  };
+  errorBoundLow: number;
+  errorBoundHigh: number;
 };
 
 export type CVPSubmission = BaseSubmission & {
