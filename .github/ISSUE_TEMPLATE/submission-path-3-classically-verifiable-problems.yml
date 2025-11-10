@@ -41,15 +41,6 @@ body:
       required: true
 
   - type: input
-    id: observableValue
-    attributes:
-      label: Observable value
-      description: Observable value measurement
-      placeholder: e.g., "0.156"
-    validations:
-      required: false
-
-  - type: input
     id: errorBoundLow
     attributes:
       label: Error bound (low)
