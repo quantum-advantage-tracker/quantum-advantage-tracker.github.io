@@ -83,9 +83,11 @@ export default function Home() {
           </a>
           .
         </p>
-        <ul className="mx-auto mt-20 flex max-w-7xl flex-col gap-4 text-left md:flex-row">
+        <ul className="mx-auto mt-20 grid max-w-7xl gap-4 text-left md:grid-cols-3">
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
-            <div className="text-3xl">Observable estimations 📊</div>
+            <div className="text-3xl md:max-w-72">
+              Observable estimations 📊
+            </div>
             <div className="font-semibold">
               Trust through rigorous error control.
             </div>
@@ -94,14 +96,14 @@ export default function Home() {
               observables, and include mathematically grounded error bars for
               validating quantum computations.
             </div>
-            <Button asChild>
+            <Button asChild size="lg">
               <Link href="/trackers/observable-estimations">
                 View the tracker <ChevronRightIcon />
               </Link>
             </Button>
           </li>
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
-            <div className="text-3xl">Variational problems 🌀</div>
+            <div className="text-3xl md:max-w-72">Variational problems 🌀</div>
             <div className="font-semibold">
               Certifiable quantum solutions via the variational principle.
             </div>
@@ -110,14 +112,16 @@ export default function Home() {
               and enable benchmarking against classical methods - even when
               exact answers are unknown.
             </div>
-            <Button asChild>
+            <Button asChild size="lg">
               <Link href="/trackers/variational-problems">
                 View the tracker <ChevronRightIcon />
               </Link>
             </Button>
           </li>
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
-            <div className="text-3xl">Classically verifiable problems 🗝️</div>
+            <div className="text-3xl md:max-w-80">
+              Classically verifiable problems 🗝️
+            </div>
             <div className="font-semibold">
               Leveraging classical resources to validate quantum outputs.
             </div>
@@ -126,7 +130,7 @@ export default function Home() {
               outputs without requiring full classical simulation of the quantum
               process.
             </div>
-            <Button asChild>
+            <Button asChild size="lg">
               <Link href="/trackers/classically-verifiable-problems">
                 View the tracker <ChevronRightIcon />
               </Link>
