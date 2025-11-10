@@ -5,9 +5,9 @@ type BaseSubmission = {
   circuit: string;
   method: string;
   runtimeQuantum?: number;
-  runtimeClassic?: number;
+  runtimeClassical?: number;
   computeResourcesQuantum?: string;
-  computeResourcesClassic?: string;
+  computeResourcesClassical?: string;
   institutions: string;
 };
 

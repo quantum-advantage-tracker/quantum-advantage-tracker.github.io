@@ -105,12 +105,24 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                 {submission.errorBoundHigh}, -{submission.errorBoundLow}]
               </TableCell>
               <TableCell>
-                <div>Q: {submission.runtimeQuantum || '-'}</div>
-                <div>C: {submission.runtimeClassic || '-'}</div>
+                <div>
+                  <span title="Quantum">Q</span>:{' '}
+                  {submission.runtimeQuantum || '-'}
+                </div>
+                <div>
+                  <span title="Classical">C</span>:{' '}
+                  {submission.runtimeClassical || '-'}
+                </div>
               </TableCell>
               <TableCell>
-                <div>Q: {submission.computeResourcesQuantum || '-'}</div>
-                <div>C: {submission.computeResourcesClassic || '-'}</div>
+                <div>
+                  <span title="Quantum">Q</span>:{' '}
+                  {submission.computeResourcesQuantum || '-'}
+                </div>
+                <div>
+                  <span title="Classical">C</span>:{' '}
+                  {submission.computeResourcesClassical || '-'}
+                </div>
               </TableCell>
               <TableCell className="whitespace-normal">
                 {submission.institutions}
