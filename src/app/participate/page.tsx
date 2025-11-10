@@ -168,7 +168,7 @@ export default function Participate() {
           <p className="max-w-2xl">
             You can review and comment on{' '}
             <a
-              href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io"
+              href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600"
