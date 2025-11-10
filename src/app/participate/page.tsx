@@ -63,6 +63,22 @@ export default function Participate() {
               </a>
             </Button>
           </div>
+          <p className="max-w-2xl">
+            To submit your own circuit instance, fill out the following issue
+            template. Once it has been reviewed and moved to the relevant folder
+            above, you can link to it in your advantage tracker submission.
+          </p>
+          <div className="flex flex-row flex-wrap gap-4">
+            <Button variant="secondary" size="lg" asChild>
+              <a
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submit-new-cirtcuit-instance.yml"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Create a new circuit instance <GithubIcon />
+              </a>
+            </Button>
+          </div>
         </section>
         <section className="flex flex-col gap-6">
           <h3 className="text-4xl">
