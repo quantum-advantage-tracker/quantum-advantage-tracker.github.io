@@ -1,0 +1,94 @@
+name: Submissions workflow
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  process_verified_submission:
+    runs-on: ubuntu-latest
+
+    if: contains(github.event.issue.labels.*.name, 'submission') && github.event.label.name == 'verified'
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Determine path based on labels
+        id: path_selector
+        run: |
+          ISSUE_TEMPLATE_PATH=""
+          SUBMISSIONS_PATH=""
+
+          JSON_LABELS='${{ toJSON(github.event.issue.labels.*.name) }}'
+          readarray -t LABELS <<< "$(echo "$JSON_LABELS" | jq -r '.[]')"
+
+          for LABEL in "${LABELS[@]}"; do
+            case "$LABEL" in
+              "path: observable-estimations")
+                ISSUE_TEMPLATE_PATH="submission-path-1-observable-estimations.yml"
+                SUBMISSIONS_PATH="data/observable-estimations/submissions.json"
+                break
+                ;;
+              "path: variational-problems")
+                ISSUE_TEMPLATE_PATH="submission-path-2-variational-problems.yml"
+                SUBMISSIONS_PATH="data/variational-problems/submissions.json"
+                break
+                ;;
+              "path: classically-verifiable-problems")
+                ISSUE_TEMPLATE_PATH="submission-path-3-classically-verifiable-problems.yml"
+                SUBMISSIONS_PATH="data/classically-verifiable-problems/submissions.json"
+                break
+                ;;
+            esac
+          done
+
+          if [ -z "$ISSUE_TEMPLATE_PATH" ]; then
+            echo "::error::No valid template label was found on the issue."
+            echo "::error::Processing skipped as the correct form template cannot be determined."
+            exit 1
+          fi
+
+          echo "selected_issue_template=$ISSUE_TEMPLATE_PATH" >> $GITHUB_OUTPUT
+          echo "Selected issue template: $ISSUE_TEMPLATE_PATH"
+          echo "selected_submissions_path=$SUBMISSIONS_PATH" >> $GITHUB_OUTPUT
+          echo "Selected submissions path: $SUBMISSIONS_PATH"
+
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Parse issue body
+        id: issue_form_parser
+        uses: issue-ops/parser@v4
+        with:
+          body: ${{ github.event.issue.body }}
+          issue-form-template: ${{ steps.path_selector.outputs.selected_issue_template }}
+
+      - name: Modify parsed JSON
+        id: modify_json
+        env:
+          INPUT_JSON: ${{ steps.issue_form_parser.outputs.json }}
+        run: |
+          SUBMISSION=$(node -e "
+            const data = JSON.parse(process.env.INPUT_JSON);
+            data.circuit = data.circuit[0];
+            console.log(JSON.stringify(data));
+          ")
+          echo "submission=$SUBMISSION" >> $GITHUB_OUTPUT
+
+      - name: Modify submissions file
+        env:
+          SUBMISSIONS_PATH: ${{ steps.path_selector.outputs.selected_submissions_path }}
+          SUBMISSION: ${{ steps.modify_json.outputs.submission }}
+        run: |
+          tmp_file=$(mktemp)
+          jq ". += [${SUBMISSION}]" "$SUBMISSIONS_PATH" > "$tmp_file" && mv "$tmp_file" "$SUBMISSIONS_PATH"
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Add new submission from issue #${{ github.event.issue.number }}"
+          title: "Add new submission from issue #${{ github.event.issue.number }}"
+          body: "Closes #${{ github.event.issue.number }}."
+          branch: submission-issue-${{ github.event.issue.number }}

@@ -31,10 +31,8 @@ export default function Participate() {
           </h3>
           <p className="max-w-2xl">
             Select the pathway below that best aligns with your submission. Each
-            link takes you to a Github folder with a readme outlining submission
-            requirements and circuit/problem files for your experiment. The
-            readme also includes circuit criteria if you choose to submit a
-            custom circuit.
+            link takes you to a Github folder with circuit instances for you to
+            run your experiment with.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
@@ -71,11 +69,9 @@ export default function Participate() {
             <span className="text-primary">02</span> Enter your submission
           </h3>
           <p className="max-w-2xl">
-            Select and fill out an issue template below and submit it. Don’t
+            Fill out the relevant issue template below and submit it. Don’t
             worry about filling out any assignees, tags, etc. on the right side
-            of the template. For submitting custom circuits, make sure to
-            provide X, Y, Z in the relevant field and follow the standard naming
-            schema “circuit type_qubits_gates”
+            of the template.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
@@ -138,17 +134,13 @@ export default function Participate() {
             </ul>
             <p className="mt-6 font-medium">Status details:</p>
             <ul className="ml-5 list-disc">
+              <li>Backlog: awaiting review or review in progress</li>
+              <li>In review: project reviewer has been assigned</li>
+              <li>Incomplete: submission missing details</li>
+              <li>Verified: submission approved and added to tracker</li>
               <li>
-                Verified: meets submission criteria and approved by reviewers,
-                added to relevant tracker
-              </li>
-              <li>Pending: awaiting review or review in progress</li>
-              <li>
-                Unverifiable: results cannot be repeated or deemed inaccurate
-              </li>
-              <li>
-                Incomplete: submission missing criteria for verification, issue
-                will be closed
+                Closed: submission closed due to technical issues or
+                incompleteness
               </li>
             </ul>
           </div>
