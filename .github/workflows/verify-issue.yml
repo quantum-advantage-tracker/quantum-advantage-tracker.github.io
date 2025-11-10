@@ -69,12 +69,16 @@ jobs:
         id: modify_json
         env:
           INPUT_JSON: ${{ steps.issue_form_parser.outputs.json }}
+          ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
         run: |
           SUBMISSION=$(node -e "
             const data = JSON.parse(process.env.INPUT_JSON);
             data.circuit = data.circuit[0];
             delete data.methodProof;
-            console.log(JSON.stringify(data));
+            console.log(JSON.stringify({
+              createdAt: process.env.ISSUE_CREATED_AT,
+              ...data
+            }));
           ")
           echo "submission=$SUBMISSION" >> $GITHUB_OUTPUT
 

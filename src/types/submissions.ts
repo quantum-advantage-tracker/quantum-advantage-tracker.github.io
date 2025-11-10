@@ -1,5 +1,5 @@
 type BaseSubmission = {
-  date: string;
+  createdAt: string;
   name: string;
   link: string;
   method: string;

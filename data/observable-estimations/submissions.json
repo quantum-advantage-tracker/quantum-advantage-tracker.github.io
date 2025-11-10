@@ -1,6 +1,6 @@
 [
   {
-    "date": "2025-11-07T19:07:27.611Z",
+    "createdAt": "2025-11-07T19:07:27.611Z",
     "name": "Submission name",
     "link": "#",
     "method": "Global Rescaling",
@@ -15,7 +15,7 @@
     "errorBoundHigh": 1.1
   },
   {
-    "date": "2025-11-07T19:07:27.611Z",
+    "createdAt": "2025-11-07T19:07:27.611Z",
     "name": "Submission name",
     "link": "#",
     "method": "Belief propagation tensor network",
