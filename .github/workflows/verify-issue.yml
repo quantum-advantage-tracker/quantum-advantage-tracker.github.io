@@ -73,6 +73,7 @@ jobs:
           SUBMISSION=$(node -e "
             const data = JSON.parse(process.env.INPUT_JSON);
             data.circuit = data.circuit[0];
+            delete data.methodProof;
             console.log(JSON.stringify(data));
           ")
           echo "submission=$SUBMISSION" >> $GITHUB_OUTPUT
