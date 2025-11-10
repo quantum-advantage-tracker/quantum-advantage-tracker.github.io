@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import AlgorithmiqLogo from './logo-algorithmiq.png';
-import BluequbitLogo from './logo-bluequbit.png';
-import FlatironLogo from './logo-flatiron.png';
-import IbmLogo from './logo-ibm.png';
+import AlgorithmiqLogo from './logo_algorithmiq.png';
+import BluequbitLogo from './logo_bluequbit.png';
+import FlatironLogo from './logo_flatiron.png';
+import IbmLogo from './logo_ibm.png';
 
 const contributors = [
   { name: 'Algorithmiq', logo: AlgorithmiqLogo },
@@ -13,13 +13,13 @@ const contributors = [
 
 export function Contributors() {
   return (
-    <ul className="mx-auto inline-flex flex-row gap-10 pt-4">
+    <ul className="mx-auto inline-flex flex-row flex-wrap justify-center pt-2">
       {contributors.map((contributor) => (
         <li key={contributor.name}>
           <Image
             src={contributor.logo}
             alt={`${contributor.name} logo`}
-            className="max-h-8 w-full grayscale"
+            className="max-h-16 w-full grayscale"
           />
         </li>
       ))}
