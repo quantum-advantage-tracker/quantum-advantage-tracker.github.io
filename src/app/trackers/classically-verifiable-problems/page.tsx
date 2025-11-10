@@ -109,7 +109,7 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
                 <div>C: {submission.computeResourcesClassic || '-'}</div>
               </TableCell>
               <TableCell className="whitespace-normal">
-                {submission.institution}
+                {submission.institutions}
               </TableCell>
             </TableRow>
           ))

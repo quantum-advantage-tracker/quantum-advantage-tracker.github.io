@@ -113,7 +113,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                 <div>C: {submission.computeResourcesClassic || '-'}</div>
               </TableCell>
               <TableCell className="whitespace-normal">
-                {submission.institution}
+                {submission.institutions}
               </TableCell>
             </TableRow>
           ))

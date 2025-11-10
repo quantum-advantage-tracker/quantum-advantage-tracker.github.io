@@ -8,7 +8,7 @@ type BaseSubmission = {
   runtimeClassic?: number;
   computeResourcesQuantum?: string;
   computeResourcesClassic?: string;
-  institution: string;
+  institutions: string;
 };
 
 export type OESubmission = BaseSubmission & {
