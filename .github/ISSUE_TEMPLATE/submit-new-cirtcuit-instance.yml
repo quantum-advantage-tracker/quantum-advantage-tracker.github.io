@@ -19,9 +19,9 @@ body:
       label: Submission path
       description: Please select the path that this circuit instance supports
       options:
-        - Path 1: 📊 Observable estimations
-        - Path 2: 🌀 Variational problems
-        - Path 3: 🗝️ Classically verifiable problems
+        - '📊 Path 1 - Observable estimations'
+        - '🌀 Path 2 - Variational problems'
+        - '🗝️ Path 3 - Classically verifiable problems'
     validations:
       required: true
 
