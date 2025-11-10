@@ -1,6 +1,6 @@
 name: 📦 Submit new circuit instance
-description: Submit a new circuit instance to accompany a Quantum Advantage Tracker submission. 
-labels: ['new circuit instance', 'submission']
+description: Submit a new circuit instance to accompany a Quantum Advantage Tracker submission.
+labels: ['new circuit instance']
 body:
   - type: markdown
     attributes:
@@ -9,19 +9,19 @@ body:
 
         Thank you for sharing a new circuit instance to be used for submissions to the **Quantum Advantage Tracker**!
 
-       Once submitted to the repo, your circuit instance can be used as background information for your submission, or used by others looking to submit their own candidates to the trackers.
+        Once submitted to the repo, your circuit instance can be used as background information for your submission, or used by others looking to submit their own candidates to the trackers.
 
-       Please provide detailed information about your circuit instance below.
+        Please provide detailed information about your circuit instance below.
 
- - type: dropdown
+  - type: dropdown
     id: submissionPath
     attributes:
       label: Submission path
       description: Please select the path that this circuit instance supports
       options:
-        - Path 1: Observable estimations
-        - Path 2: Variational problems
-        - Path 3: Classically verifiable problems
+        - Path 1: 📊 Observable estimations
+        - Path 2: 🌀 Variational problems
+        - Path 3: 🗝️ Classically verifiable problems
     validations:
       required: true
 
@@ -30,20 +30,28 @@ body:
     attributes:
       label: Circuit isntance name
       description: Please provide a name for circuit instance. Should follow the naming schema "circuit-name_# of qubits_# of 2q gates"
-       placeholder: e.g., "peaked-circuits_peaked-circuit_53_1512"
+      placeholder: e.g., "peaked-circuits_peaked-circuit_53_1512"
     validations:
       required: true
 
-   - type: textarea
+  - type: textarea
     id: description
     attributes:
       label: Description
-      description: Please provide more information on the circuit's type, design, and any other relevant details. 
+      description: Please provide more information on the circuit's type, design, and any other relevant details.
       placeholder: |
         Provide at least one of:
         - Paper/preprint: https://arxiv.org/abs/...
         - Code repository: https://github.com/...
         - Method explanation: Detailed description of the approach
+    validations:
+      required: true
+
+  - type: textarea
+    id: qasmFile
+    attributes:
+      label: Circuit instance QASM file
+      description: Please provide an attachment or link to the QASM file for your circuit problem instance. The file should be publically available so maintainters can reviewand pull it into the repo.
     validations:
       required: true
 
@@ -56,16 +64,6 @@ body:
     validations:
       required: true
 
-      
-  - type: input
-    id: qasmFile
-    attributes:
-      label: Circuit instance QASM file
-      description: Please provide a link to the QASM file for your circuit problem instance. The file should be publically available so maintainters can reviewand pull it into the repo.
-    validations:
-      required: true
-  
-
   - type: markdown
     attributes:
       value: |
@@ -75,6 +73,6 @@ body:
 
         1. Maintainers will review your circuit details and QASM file
         2. Once approved, a new file will be created in the relevant [data folder](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data) for your selected submission path
-        3. You or others can then use the new link for the circuit instance to run and submit Quantum Advantage Tracker candidates. 
+        3. You or others can then use the new link for the circuit instance to run and submit Quantum Advantage Tracker candidates
 
         Thank you for contributing to the Quantum Advantage Tracker! 🚀
