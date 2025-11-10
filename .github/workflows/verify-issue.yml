@@ -74,13 +74,34 @@ jobs:
         run: |
           SUBMISSION=$(node -e "
             const data = JSON.parse(process.env.INPUT_JSON);
+
             data.circuit = data.circuit[0];
             delete data.methodProof;
-            console.log(JSON.stringify({
+
+            const numericFields = [
+              'runtimeQuantum',
+              'runtimeClassical',
+              'observableValue',
+              'errorBoundLow',
+              'errorBoundHigh',
+              'energyValue',
+              'value',
+            ];
+
+            for (const key of numericFields) {
+              if (!(key in data)) continue;
+              if (data[key] !== '') {
+                data[key] = Number(data[key]);
+              }
+            }
+
+            const output = {
               createdAt: process.env.ISSUE_CREATED_AT,
               url: process.env.ISSUE_URL,
-              ...data
-            }));
+              ...data,
+            };
+
+            console.log(JSON.stringify(output));
           ")
           echo "submission=$SUBMISSION" >> $GITHUB_OUTPUT
 
