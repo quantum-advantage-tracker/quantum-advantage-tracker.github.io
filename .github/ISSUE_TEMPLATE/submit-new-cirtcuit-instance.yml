@@ -39,7 +39,6 @@ body:
     attributes:
       label: Description
       description: Please provide more information on the circuit's type, design, and any other relevant details.
-      placeholder: 
     validations:
       required: true
 
