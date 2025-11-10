@@ -40,6 +40,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* TODO: Review these custom variables */
+  --color-nav-menu-selected-foreground: #24a148;
 }
 
 :root {

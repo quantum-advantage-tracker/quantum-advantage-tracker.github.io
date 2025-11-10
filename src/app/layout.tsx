@@ -1,8 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { GithubIcon } from '@/icons';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { NavMenu } from './NavMenu';
 
 import './globals.css';
 
@@ -30,29 +29,7 @@ export default function RootLayout(props: LayoutProps<'/'>) {
                 📐 Quantum Advantage Tracker
               </Link>
 
-              <ul className="flex flex-row gap-4">
-                <li>
-                  <Button asChild variant="ghost">
-                    <Link href="/trackers">Advantage trackers</Link>
-                  </Button>
-                </li>
-                <li>
-                  <Button asChild variant="ghost">
-                    <Link href="/participate">Participate</Link>
-                  </Button>
-                </li>
-                <li>
-                  <Button asChild variant="ghost" size="icon">
-                    <a
-                      href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <GithubIcon className="size-6" />
-                    </a>
-                  </Button>
-                </li>
-              </ul>
+              <NavMenu />
             </div>
           </nav>
         </header>
