@@ -27,7 +27,9 @@ body:
       label: Circuit
       description: The problem instance this submission addresses
       options:
-        - operator_loschmidt_echo_49x2400
+        - operator_loschmidt_echo_70x1872
+        - operator_loschmidt_echo_49x648
+        - operator_loschmidt_echo_49x1296
     validations:
       required: true
 
