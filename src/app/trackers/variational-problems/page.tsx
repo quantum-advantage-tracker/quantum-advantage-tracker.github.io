@@ -101,7 +101,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                 {submission.circuit}
               </TableCell>
               <TableCell>
-                <div>{submission.energyValue}</div>
+                <div>{submission.energy}</div>
                 <div>
                   [{submission.errorBoundHigh || 'N/A'},{' '}
                   {submission.errorBoundLow || 'N/A'}]

@@ -84,7 +84,6 @@ jobs:
               'observableValue',
               'errorBoundLow',
               'errorBoundHigh',
-              'energyValue',
               'value',
             ];
 

@@ -35,7 +35,7 @@ body:
     id: energy
     attributes:
       label: Energy
-      description: The ground-state energy value (upper bound) in UNIT OF MEASURE NEEDED.
+      description: The ground-state energy value (upper bound) including unit of measurement.
       placeholder: e.g., "-7.8823"
     validations:
       required: true
