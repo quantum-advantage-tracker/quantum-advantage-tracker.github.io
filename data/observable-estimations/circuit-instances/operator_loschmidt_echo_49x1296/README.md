@@ -1,6 +1,6 @@
 # Operator Loschmidt Echo 49x1296
 
-This circuit instance computes the Operator Loschmidt Echo (see below for description) for a 70-qubit lattice at $L = 6$, $\delta = 0.15$. The observable is $O = Z_{52} Z_{59} Z_{72}$.
+This circuit instance computes the Operator Loschmidt Echo (see below for description) for a 49-qubit lattice at $L = 6$, $\delta = 0.15$. The observable is $O = Z_{52} Z_{59} Z_{72}$.
 
 ## Description
 
