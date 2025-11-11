@@ -1,14 +1,16 @@
 # Quantum Advantage Tracker
 
-This repository hosts the source code for the Quantum Advantage Tracker website, a resource for understanding the pathways to achieving quantum advantage.
-
-## About the Project
-
-The website provides a collection of resources and explanations on various topics related to quantum computing, including:
+This repository hosts the source code for the Quantum Advantage Tracker project, which provides a place for the quantum community to track and discuss quantum advantage candidates across three primary pathways. These include:
 
 - Observable estimations
 - Variational problems
 - Classically verifiable problems
+
+## Viewing the website
+
+The website for the project is hosted on GitHub Pages and can be accessed at:
+
+[https://quantum-advantage-tracker.github.io](https://quantum-advantage-tracker.github.io)
 
 ## Running locally
 
