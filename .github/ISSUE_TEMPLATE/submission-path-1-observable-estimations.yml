@@ -47,7 +47,7 @@ body:
       description: Lower error bound
       placeholder: e.g., "-0.05"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: errorBoundHigh
@@ -65,7 +65,7 @@ body:
       description: Name for the method used in submission
       placeholder: e.g., "Global rescaling"
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: methodProof
