@@ -27,7 +27,7 @@ body:
       label: Circuit
       description: The problem instance this submission addresses
       options:
-        - lih_molecule
+        - four_impurity_model_64_3281
     validations:
       required: true
 
