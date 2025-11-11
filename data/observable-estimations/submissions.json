@@ -53,5 +53,16 @@
     "institutions": "Algorithmiq, Flatiron Institute",
     "runtimeClassical": 20040,
     "computeResourcesClassical": "1 x NVIDIA Ampere100 custom, 64GiB + 32 x Intel Xeon Platinum 8358"
+  },
+  {
+    "createdAt": "2025-11-11T22:48:36Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/22",
+    "name": "70x1892, BP-TN BD=512, rescaled",
+    "circuit": "operator_loschmidt_echo_70x1872",
+    "observableValue": 0.95247989,
+    "method": "Belief Propagation TN, BD=512 rescaled by delta = 0.0",
+    "institutions": "Algorithmiq, Flatiron Institute",
+    "runtimeClassical": 20040,
+    "computeResourcesClassical": "1 x NVIDIA Ampere100 custom, 64GiB + 32 x Intel Xeon Platinum 8358"
   }
 ]
