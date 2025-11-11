@@ -19,7 +19,7 @@ export function Contributors() {
           <Image
             src={contributor.logo}
             alt={`${contributor.name} logo`}
-            className="max-h-16 w-full grayscale"
+            className="h-16 w-auto grayscale"
           />
         </li>
       ))}
