@@ -117,7 +117,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                   {submission.runtimeClassical || '-'}
                 </div>
               </TableCell>
-              <TableCell>
+              <TableCell className="whitespace-normal">
                 <div>
                   <span title="Quantum">Q</span>:{' '}
                   {submission.computeResourcesQuantum || '-'}

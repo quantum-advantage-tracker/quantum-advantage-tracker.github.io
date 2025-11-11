@@ -119,7 +119,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                   {submission.runtimeClassical || '-'}
                 </div>
               </TableCell>
-              <TableCell>
+              <TableCell className="whitespace-normal">
                 <div>
                   <span title="Quantum">Q</span>:{' '}
                   {submission.computeResourcesQuantum || '-'}
