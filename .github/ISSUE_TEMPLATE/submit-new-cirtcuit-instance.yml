@@ -47,6 +47,7 @@ body:
     attributes:
       label: Circuit instance QASM file
       description: Please attach the QASM file for your circuit problem instance. It can either be attached as a .zip file or shared as a link to a public file that maintainers can review and pull into the project.  
+    validations:
       required: true
 
   - type: input
