@@ -72,7 +72,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
           <TableHead title="Expectation value [upper, lower bound]">
             Exp. value [upper, lower bound]
           </TableHead>
-          <TableHead>Runtime</TableHead>
+          <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
           <TableHead>Compute resources</TableHead>
           <TableHead>Institution</TableHead>
         </TableRow>
