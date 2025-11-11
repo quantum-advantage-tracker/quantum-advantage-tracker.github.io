@@ -69,7 +69,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
-          <TableHead>Energy</TableHead>
+          <TableHead>Energy [upper, lower bound]</TableHead>
           <TableHead>Runtime</TableHead>
           <TableHead>Compute resources</TableHead>
           <TableHead>Institution</TableHead>
@@ -101,8 +101,11 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                 {submission.circuit}
               </TableCell>
               <TableCell>
-                {submission.energyValue} [+
-                {submission.errorBoundHigh}, -{submission.errorBoundLow}]
+                <div>{submission.energyValue}</div>
+                <div>
+                  [{submission.errorBoundHigh || 'N/A'},{' '}
+                  {submission.errorBoundLow || 'N/A'}]
+                </div>
               </TableCell>
               <TableCell>
                 <div>

@@ -13,14 +13,14 @@ type BaseSubmission = {
 
 export type OESubmission = BaseSubmission & {
   observableValue: number;
-  errorBoundLow: number;
-  errorBoundHigh: number;
+  errorBoundLow?: number;
+  errorBoundHigh?: number;
 };
 
 export type VPSubmission = BaseSubmission & {
   energyValue: number;
-  errorBoundLow: number;
-  errorBoundHigh: number;
+  errorBoundLow?: number;
+  errorBoundHigh?: number;
 };
 
 export type CVPSubmission = BaseSubmission & {

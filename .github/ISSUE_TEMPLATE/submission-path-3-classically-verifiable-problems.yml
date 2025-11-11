@@ -41,24 +41,6 @@ body:
       required: true
 
   - type: input
-    id: errorBoundLow
-    attributes:
-      label: Error bound (low)
-      description: Lower error bound
-      placeholder: e.g., "-0.05"
-    validations:
-      required: true
-
-  - type: input
-    id: errorBoundHigh
-    attributes:
-      label: Error bound (high)
-      description: Upper error bound
-      placeholder: e.g., "+0.05"
-    validations:
-      required: true
-
-  - type: input
     id: method
     attributes:
       label: Method

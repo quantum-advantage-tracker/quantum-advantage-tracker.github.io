@@ -47,7 +47,7 @@ body:
       description: Lower error bound
       placeholder: e.g., "-0.05"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: errorBoundHigh
@@ -56,7 +56,7 @@ body:
       description: Upper error bound
       placeholder: e.g., "+0.05"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: method

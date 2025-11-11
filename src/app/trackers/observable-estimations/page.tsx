@@ -69,7 +69,9 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
-          <TableHead title="Expectation value">Exp. value</TableHead>
+          <TableHead title="Expectation value [upper, lower bound]">
+            Exp. value [upper, lower bound]
+          </TableHead>
           <TableHead>Runtime</TableHead>
           <TableHead>Compute resources</TableHead>
           <TableHead>Institution</TableHead>
@@ -101,8 +103,11 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                 {submission.circuit}
               </TableCell>
               <TableCell>
-                {submission.observableValue} [+{submission.errorBoundHigh}, -
-                {submission.errorBoundLow}]
+                <div>{submission.observableValue}</div>
+                <div>
+                  [{submission.errorBoundHigh || 'N/A'},{' '}
+                  {submission.errorBoundLow || 'N/A'}]
+                </div>
               </TableCell>
               <TableCell>
                 <div>
