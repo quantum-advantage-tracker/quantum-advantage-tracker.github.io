@@ -1,6 +1,6 @@
 # Variational problems circuit instances
 
-- ...
+- [four_impurity_model_64_3281](./four_impurity_model_64_3281/)
 
 ## Adding a new circuit instance
 
