@@ -9,5 +9,16 @@
     "institutions": "Algorithmiq, Flatiron Institute",
     "runtimeClassical": 118,
     "computeResourcesClassical": "Intel Xeon Platinum 8168"
+  },
+  {
+    "createdAt": "2025-11-11T22:43:06Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/18",
+    "name": "49x648, BP-TN BD=512, no rescaling",
+    "circuit": "operator_loschmidt_echo_49x648",
+    "observableValue": 0.821658489,
+    "method": "Belief Propagation TN, BD=512, no rescaling",
+    "institutions": "Algorithmiq, Flatiron Institute",
+    "runtimeClassical": 149,
+    "computeResourcesClassical": "Intel Xeon Platinum 8168"
   }
 ]
