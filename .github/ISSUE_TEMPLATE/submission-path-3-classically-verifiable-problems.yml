@@ -74,7 +74,7 @@ body:
   - type: input
     id: runtimeQuantum
     attributes:
-      label: Runtime (quantum)
+      label: Quantum runtime (seconds)
       description: Quantum execution time in seconds
       placeholder: e.g., "5"
     validations:
@@ -83,7 +83,7 @@ body:
   - type: input
     id: runtimeClassical
     attributes:
-      label: Runtime (classical)
+      label: Classical runtime (seconds)
       description: Classical computation time in seconds
       placeholder: e.g., "9000"
     validations:
