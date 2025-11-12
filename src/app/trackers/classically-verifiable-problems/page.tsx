@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
 import type { CVPSubmission } from '@/types/submissions';
-import { formatDate } from '@/utils';
+import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
@@ -80,7 +80,7 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
             <TableCell colSpan={8}>There are no submissions yet.</TableCell>
           </TableRow>
         ) : (
-          submissions.map((submission, index) => (
+          sortSubmissions(submissions).map((submission, index) => (
             <TableRow key={`submission-cvp-${index}`}>
               <TableCell>
                 <time

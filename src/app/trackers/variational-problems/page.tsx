@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
 import type { VPSubmission } from '@/types/submissions';
-import { formatDate } from '@/utils';
+import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
@@ -81,7 +81,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
             <TableCell colSpan={8}>There are no submissions yet.</TableCell>
           </TableRow>
         ) : (
-          submissions.map((submission, index) => (
+          sortSubmissions(submissions).map((submission, index) => (
             <TableRow key={`submission-vp-${index}`}>
               <TableCell>
                 <time

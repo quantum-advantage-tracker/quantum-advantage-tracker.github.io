@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
 import type { OESubmission } from '@/types/submissions';
-import { formatDate } from '@/utils';
+import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
@@ -83,7 +83,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
             <TableCell colSpan={8}>There are no submissions yet.</TableCell>
           </TableRow>
         ) : (
-          submissions.map((submission, index) => (
+          sortSubmissions(submissions).map((submission, index) => (
             <TableRow key={`submission-oe-${index}`}>
               <TableCell>
                 <time
