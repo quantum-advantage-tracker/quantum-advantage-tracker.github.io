@@ -22,5 +22,16 @@
     "institutions": "BlueQubit",
     "runtimeClassical": 2400,
     "computeResourcesClassical": "H100 GPU (90GB VRAM)"
+  },
+  {
+    "createdAt": "2025-11-12T13:32:36Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/47",
+    "name": "TNO + Iterative Cancellation for peaked_heavy_hex_49_4020",
+    "circuit": "peaked_heavy_hex_49_4020",
+    "value": "100%",
+    "method": "TNO + Iterative Cancellation",
+    "institutions": "IBM",
+    "runtimeClassical": 38,
+    "computeResourcesClassical": "Nvidia H100 GPU"
   }
 ]
