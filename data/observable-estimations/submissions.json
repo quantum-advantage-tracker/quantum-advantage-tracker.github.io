@@ -64,5 +64,16 @@
     "institutions": "Algorithmiq, Flatiron Institute",
     "runtimeClassical": 20040,
     "computeResourcesClassical": "1 x NVIDIA Ampere100 custom, 64GiB + 32 x Intel Xeon Platinum 8358"
+  },
+  {
+    "createdAt": "2025-11-12T01:09:44Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/38",
+    "name": "49x648, ibm_boston",
+    "circuit": "operator_loschmidt_echo_49x648",
+    "observableValue": 0.824,
+    "method": "Global rescaling",
+    "institutions": "IBM Quantum, Algorithmiq, Flatiron Institute",
+    "runtimeQuantum": 4260,
+    "computeResourcesQuantum": "ibm_boston"
   }
 ]
