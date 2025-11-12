@@ -69,7 +69,7 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
-          <TableHead>Energy [upper, lower bound]</TableHead>
+          <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
           <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
           <TableHead>Compute resources</TableHead>
           <TableHead>Institution</TableHead>
