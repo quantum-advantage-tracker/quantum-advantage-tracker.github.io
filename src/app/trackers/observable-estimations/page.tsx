@@ -86,7 +86,7 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
           submissions.map((submission, index) => (
             <TableRow key={`submission-oe-${index}`}>
               <TableCell>{formatDate(submission.createdAt)}</TableCell>
-              <TableCell>
+              <TableCell className="whitespace-normal">
                 <a
                   href={submission.url}
                   target="_blank"

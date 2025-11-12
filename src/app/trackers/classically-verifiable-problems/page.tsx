@@ -83,7 +83,7 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
           submissions.map((submission, index) => (
             <TableRow key={`submission-cvp-${index}`}>
               <TableCell>{formatDate(submission.createdAt)}</TableCell>
-              <TableCell>
+              <TableCell className="whitespace-normal">
                 <a
                   href={submission.url}
                   target="_blank"
