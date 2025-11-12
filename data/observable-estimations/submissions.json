@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "createdAt": "2025-11-11T22:08:27Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/15",
+    "name": "49x648, BP-TN BD=192, no rescaling",
+    "circuit": "operator_loschmidt_echo_49x648",
+    "observableValue": 0.8202512915,
+    "method": "Belief Propagation TN, BD=192, no rescaling",
+    "institutions": "Algorithmiq, Flatiron Institute",
+    "runtimeClassical": 118,
+    "computeResourcesClassical": "Intel Xeon Platinum 8168"
+  }
+]
