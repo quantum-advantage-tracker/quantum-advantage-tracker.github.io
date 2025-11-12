@@ -71,17 +71,7 @@ export default function Home() {
         <h3 className="mb-6 text-4xl">Three pathways to quantum advantage</h3>
         <p className="mx-auto max-w-2xl">
           To build confidence in advantage claims, this project explores three
-          pathways for analysis. Learn more about how these pathways were
-          identified in{' '}
-          <a
-            href="https://arxiv.org/pdf/2506.20658"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link-foreground hover:underline"
-          >
-            our paper
-          </a>
-          .
+          pathways for analysis. Learn more about the different paths below.
         </p>
         <ul className="mx-auto mt-20 grid max-w-7xl gap-4 text-left md:grid-cols-3">
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
