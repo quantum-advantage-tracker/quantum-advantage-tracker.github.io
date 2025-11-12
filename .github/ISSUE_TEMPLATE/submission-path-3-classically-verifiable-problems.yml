@@ -35,7 +35,7 @@ body:
     id: value
     attributes:
       label: Value
-      description: The claimed value (hamming distance for peak circuits)
+      description: The claimed value (% of bits guessed correctly)
       placeholder: e.g., "0.0023"
     validations:
       required: true
