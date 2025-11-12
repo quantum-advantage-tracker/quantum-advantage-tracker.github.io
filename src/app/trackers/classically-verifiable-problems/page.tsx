@@ -97,7 +97,14 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
                 {submission.method}
               </TableCell>
               <TableCell className="whitespace-normal">
-                {submission.circuit}
+                <a
+                  href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-instances/${submission.circuit}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-link-foreground hover:underline"
+                >
+                  {submission.circuit}
+                </a>
               </TableCell>
               <TableCell>{submission.value}</TableCell>
               <TableCell>
