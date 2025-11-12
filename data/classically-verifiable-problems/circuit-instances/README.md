@@ -1,6 +1,6 @@
 # Classically verifiable circuit instances
 
-- ...
+- [peaked_heavy_hex_49_4020](./peaked_heavy_hex_49_4020/)
 
 ## Adding a new circuit instance
 
