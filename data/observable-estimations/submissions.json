@@ -75,5 +75,16 @@
     "institutions": "IBM Quantum, Algorithmiq, Flatiron Institute",
     "runtimeQuantum": 4260,
     "computeResourcesQuantum": "ibm_boston"
+  },
+  {
+    "createdAt": "2025-11-12T01:00:18Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/37",
+    "name": "49x1296, ibm_boston",
+    "circuit": "operator_loschmidt_echo_49x1296",
+    "observableValue": 0.662,
+    "method": "Global rescaling",
+    "institutions": "IBM Quantum, Algorithmiq, Flatiron Institute",
+    "runtimeQuantum": 4260,
+    "computeResourcesQuantum": "ibm_boston"
   }
 ]
