@@ -31,5 +31,16 @@
     "institutions": "Algorithmiq, Flatiron Institute",
     "runtimeClassical": 1680,
     "computeResourcesClassical": "nVidia A100 80 GB"
+  },
+  {
+    "createdAt": "2025-11-11T22:46:11Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/20",
+    "name": "49x1296, BP-TN BD=512, rescaled",
+    "circuit": "operator_loschmidt_echo_49x1296",
+    "observableValue": 0.94257142,
+    "method": "Belief Propagation TN, BD=512, rescaled by delta = 0.0",
+    "institutions": "Algorithmiq, Flatiron Institute",
+    "runtimeClassical": 1680,
+    "computeResourcesClassical": "nVidia A100 80 GB"
   }
 ]
