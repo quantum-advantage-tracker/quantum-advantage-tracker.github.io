@@ -11,5 +11,16 @@
     "runtimeClassical": 197,
     "computeResourcesQuantum": "ibm_boston",
     "computeResourcesClassical": "Intel Ultra 9 185H, 16 cores"
+  },
+  {
+    "createdAt": "2025-11-11T23:28:18Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/27",
+    "name": "TNS+BP for peaked_heavy_hex_49_4020",
+    "circuit": "peaked_heavy_hex_49_4020",
+    "value": "0",
+    "method": "TNS+BP",
+    "institutions": "BlueQubit",
+    "runtimeClassical": 2400,
+    "computeResourcesClassical": "H100 GPU (90GB VRAM)"
   }
 ]
