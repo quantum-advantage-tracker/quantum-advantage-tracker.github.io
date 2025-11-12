@@ -18,7 +18,7 @@ export type OESubmission = BaseSubmission & {
 };
 
 export type VPSubmission = BaseSubmission & {
-  energy: string;
+  energy: number;
   errorBoundLow?: number;
   errorBoundHigh?: number;
 };
