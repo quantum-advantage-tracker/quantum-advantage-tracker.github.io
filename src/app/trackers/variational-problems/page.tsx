@@ -83,7 +83,14 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
         ) : (
           submissions.map((submission, index) => (
             <TableRow key={`submission-vp-${index}`}>
-              <TableCell>{formatDate(submission.createdAt)}</TableCell>
+              <TableCell>
+                <time
+                  dateTime={submission.createdAt}
+                  title={submission.createdAt}
+                >
+                  {formatDate(submission.createdAt)}
+                </time>
+              </TableCell>
               <TableCell className="whitespace-normal">
                 <a
                   href={submission.url}
