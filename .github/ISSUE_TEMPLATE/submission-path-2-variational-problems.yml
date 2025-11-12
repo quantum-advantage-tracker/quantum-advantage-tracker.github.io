@@ -34,8 +34,8 @@ body:
   - type: input
     id: energy
     attributes:
-      label: Energy
-      description: The ground-state energy value (upper bound) including unit of measurement.
+      label: Energy (Eh)
+      description: The ground-state energy value (upper bound), measured in Eh.
       placeholder: e.g., "-7.8823"
     validations:
       required: true
@@ -43,8 +43,8 @@ body:
   - type: input
     id: errorBoundLow
     attributes:
-      label: Error bound (low)
-      description: Lower error bound
+      label: Low error bound (Eh)
+      description: Lower error bound, measured in Eh
       placeholder: e.g., "-0.05"
     validations:
       required: false
@@ -52,8 +52,8 @@ body:
   - type: input
     id: errorBoundHigh
     attributes:
-      label: Error bound (high)
-      description: Upper error bound
+      label: High error bound (Eh)
+      description: Upper error bound, measured in Eh
       placeholder: e.g., "+0.05"
     validations:
       required: false
