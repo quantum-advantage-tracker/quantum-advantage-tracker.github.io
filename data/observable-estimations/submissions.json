@@ -46,7 +46,7 @@
   {
     "createdAt": "2025-11-11T22:47:46Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/21",
-    "name": "70x1892, BP-TN BD=512, no rescaling",
+    "name": "70x1872, BP-TN BD=512, no rescaling",
     "circuit": "operator_loschmidt_echo_70x1872",
     "observableValue": 0.873827508,
     "method": "Belief Propagation TN, BD=512 no rescaling",
@@ -57,7 +57,7 @@
   {
     "createdAt": "2025-11-11T22:48:36Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/22",
-    "name": "70x1892, BP-TN BD=512, rescaled",
+    "name": "70x1872, BP-TN BD=512, rescaled",
     "circuit": "operator_loschmidt_echo_70x1872",
     "observableValue": 0.95247989,
     "method": "Belief Propagation TN, BD=512 rescaled by delta = 0.0",
