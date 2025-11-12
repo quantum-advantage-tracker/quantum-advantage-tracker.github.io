@@ -85,7 +85,6 @@ jobs:
               'errorBoundLow',
               'errorBoundHigh',
               'energy',
-              'value',
             ];
 
             for (const key of numericFields) {

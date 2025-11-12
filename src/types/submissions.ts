@@ -24,5 +24,5 @@ export type VPSubmission = BaseSubmission & {
 };
 
 export type CVPSubmission = BaseSubmission & {
-  value: number;
+  value: string;
 };
