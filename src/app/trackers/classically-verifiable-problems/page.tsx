@@ -12,11 +12,9 @@ import type { CircuitInstances } from '@/types/circuitInstances';
 import type { CVPSubmission } from '@/types/submissions';
 import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
-import _circuitInstances from '../../../../data/classically-verifiable-problems/circuit-instances.json' assert { type: 'json' };
+import circuitInstances from '../../../../data/classically-verifiable-problems/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
-
-const circuitInstances = _circuitInstances as CircuitInstances;
 
 export const metadata: Metadata = {
   title: 'Classically verifiable problems',
@@ -53,7 +51,10 @@ export default async function TrackersCVP() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable submissions={submissions} />
+        <SubmissionsTable
+          submissions={submissions}
+          circuitInstances={circuitInstances}
+        />
       </div>
 
       <ParticipateSection />
@@ -61,8 +62,11 @@ export default async function TrackersCVP() {
   );
 }
 
-export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
-  const { submissions } = props;
+export function SubmissionsTable(props: {
+  submissions: CVPSubmission[];
+  circuitInstances: CircuitInstances;
+}) {
+  const { submissions, circuitInstances } = props;
 
   return (
     <Table>

@@ -12,11 +12,9 @@ import type { CircuitInstances } from '@/types/circuitInstances';
 import type { OESubmission } from '@/types/submissions';
 import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
-import _circuitInstances from '../../../../data/observable-estimations/circuit-instances.json' assert { type: 'json' };
+import circuitInstances from '../../../../data/observable-estimations/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
-
-const circuitInstances = _circuitInstances as CircuitInstances;
 
 export const metadata: Metadata = {
   title: 'Observable estimations',
@@ -54,7 +52,10 @@ export default async function TrackersOE() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable submissions={submissions} />
+        <SubmissionsTable
+          submissions={submissions}
+          circuitInstances={circuitInstances}
+        />
       </div>
 
       <ParticipateSection />
@@ -62,8 +63,11 @@ export default async function TrackersOE() {
   );
 }
 
-export function SubmissionsTable(props: { submissions: OESubmission[] }) {
-  const { submissions } = props;
+export function SubmissionsTable(props: {
+  submissions: OESubmission[];
+  circuitInstances: CircuitInstances;
+}) {
+  const { submissions, circuitInstances } = props;
 
   return (
     <Table>
