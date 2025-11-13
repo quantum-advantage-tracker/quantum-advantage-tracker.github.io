@@ -34,6 +34,24 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: qubits
+    attributes:
+      label: Qubits
+      description: Number of qubits
+      placeholder: e.g., "49"
+    validations:
+      required: true
+
+  - type: input
+    id: gates
+    attributes:
+      label: Gates
+      description: Number of gates
+      placeholder: e.g., "648"
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
@@ -46,7 +64,7 @@ body:
     id: qasmFile
     attributes:
       label: Circuit instance QASM file
-      description: Please attach the QASM file for your circuit problem instance. It can either be attached as a .zip file or shared as a link to a public file that maintainers can review and pull into the project.  
+      description: Please attach the QASM file for your circuit problem instance. It can either be attached as a .zip file or shared as a link to a public file that maintainers can review and pull into the project.
     validations:
       required: true
 

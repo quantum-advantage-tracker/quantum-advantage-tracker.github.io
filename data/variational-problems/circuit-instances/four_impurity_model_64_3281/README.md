@@ -1,5 +1,13 @@
 # four_impurity_model_64_3281
 
+## Qubits
+
+64
+
+## Gates
+
+3281
+
 ## Description
 
 Circuits representing different Trotter steps corresponding to Krylov states, as discussed in https://arxiv.org/abs/2501.09702

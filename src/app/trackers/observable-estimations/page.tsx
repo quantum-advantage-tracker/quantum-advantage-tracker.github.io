@@ -8,11 +8,15 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
+import type { CircuitInstances } from '@/types/circuitInstances';
 import type { OESubmission } from '@/types/submissions';
 import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
+import _circuitInstances from '../../../../data/observable-estimations/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
+
+const circuitInstances = _circuitInstances as CircuitInstances;
 
 export const metadata: Metadata = {
   title: 'Observable estimations',
@@ -69,6 +73,8 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
+          <TableHead>Qubits</TableHead>
+          <TableHead>Gates</TableHead>
           <TableHead title="Expectation value [upper, lower bound]">
             Exp. value [upper, lower bound]
           </TableHead>
@@ -115,6 +121,12 @@ export function SubmissionsTable(props: { submissions: OESubmission[] }) {
                 >
                   {submission.circuit}
                 </a>
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].qubits}
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].gates}
               </TableCell>
               <TableCell>
                 <div>{submission.observableValue}</div>

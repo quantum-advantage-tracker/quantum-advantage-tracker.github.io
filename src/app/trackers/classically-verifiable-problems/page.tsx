@@ -8,11 +8,15 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
+import type { CircuitInstances } from '@/types/circuitInstances';
 import type { CVPSubmission } from '@/types/submissions';
 import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
+import _circuitInstances from '../../../../data/classically-verifiable-problems/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
+
+const circuitInstances = _circuitInstances as CircuitInstances;
 
 export const metadata: Metadata = {
   title: 'Classically verifiable problems',
@@ -68,6 +72,8 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
+          <TableHead>Qubits</TableHead>
+          <TableHead>Gates</TableHead>
           <TableHead>Value</TableHead>
           <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
           <TableHead>Compute resources</TableHead>
@@ -112,6 +118,12 @@ export function SubmissionsTable(props: { submissions: CVPSubmission[] }) {
                 >
                   {submission.circuit}
                 </a>
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].qubits}
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].gates}
               </TableCell>
               <TableCell>{submission.value}</TableCell>
               <TableCell>
