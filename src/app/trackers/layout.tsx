@@ -16,7 +16,7 @@ export default function TrackersLayout(props: LayoutProps<'/trackers'>) {
       </div>
 
       <div>
-        <div className="mx-auto max-w-7xl px-6">{props.children}</div>
+        <div className="mx-auto max-w-384 px-6">{props.children}</div>
       </div>
     </div>
   );
