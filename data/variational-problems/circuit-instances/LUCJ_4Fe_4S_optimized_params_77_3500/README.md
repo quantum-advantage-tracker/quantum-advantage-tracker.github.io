@@ -1,5 +1,13 @@
 # LUCJ_4Fe_4S_optimized_params_77_3500
 
+## Qubits
+
+77
+
+## Gates
+
+3500
+
 ## Description
 
 Final LUCJ circuit obtained from the SQD energy optimization experiments in https://arxiv.org/abs/2511.00224
