@@ -8,11 +8,15 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
+import type { CircuitInstances } from '@/types/circuitInstances';
 import type { VPSubmission } from '@/types/submissions';
 import { formatDate, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
+import _circuitInstances from '../../../../data/variational-problems/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
+
+const circuitInstances = _circuitInstances as CircuitInstances;
 
 export const metadata: Metadata = {
   title: 'Variational problems',
@@ -69,6 +73,8 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
+          <TableHead>Qubits</TableHead>
+          <TableHead>Gates</TableHead>
           <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
           <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
           <TableHead>Compute resources</TableHead>
@@ -113,6 +119,12 @@ export function SubmissionsTable(props: { submissions: VPSubmission[] }) {
                 >
                   {submission.circuit}
                 </a>
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].qubits}
+              </TableCell>
+              <TableCell className="whitespace-normal">
+                {circuitInstances[submission.circuit].gates}
               </TableCell>
               <TableCell>
                 <div>{submission.energy}</div>
