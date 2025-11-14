@@ -1,6 +1,6 @@
 # Variational problems circuit instances
 
-- [four_impurity_model_64_3281](./four_impurity_model_64_3281/)
+- [four_impurity_model_64x3281](./four_impurity_model_64x3281/)
 - [lucj_4fe_4s_optimized_params_77x3500](./lucj_4fe_4s_optimized_params_77x3500/)
 
 ## Adding a new circuit instance
