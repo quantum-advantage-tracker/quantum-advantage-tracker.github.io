@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Participate',
+  description:
+    'Learn how to contribute a new advantage candidate from the list of provided problem instances or your own circuit specs. All are welcome to participate.',
 };
 
 export default function Participate() {

@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { TrackerTabs } from './TrackerTabs';
+
+export const metadata: Metadata = {
+  description:
+    'Track verifiable quantum advantage claims across three pathways, with clear evidence requirements and contributing institutions.',
+};
 
 export default function TrackersLayout(props: LayoutProps<'/trackers'>) {
   return (
