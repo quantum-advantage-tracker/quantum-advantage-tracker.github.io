@@ -56,7 +56,7 @@ export default function Home() {
             experimentation. Because quantum computers tackle problems that
             classical systems can’t easily replicate, direct comparison is
             challenging. Verifying any claim of advantage therefore demands
-            several multiple points of analysis.
+            multiple points of analysis.
           </p>
         </div>
         <div className="mx-auto max-w-3xl px-6">
