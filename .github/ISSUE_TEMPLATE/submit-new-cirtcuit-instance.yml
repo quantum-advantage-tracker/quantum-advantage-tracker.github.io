@@ -29,8 +29,8 @@ body:
     id: name
     attributes:
       label: Circuit isntance name
-      description: Please provide a name for circuit instance. Should follow the naming schema "circuit-name_# of qubits_# of 2q gates"
-      placeholder: e.g., "peaked-circuits_peaked-circuit_53_1512"
+      description: Please provide a name for circuit instance. Should follow the naming schema "circuit_name_{#_of_qubits}x{#_of_gates}"
+      placeholder: e.g., "peaked_circuit_53x1512"
     validations:
       required: true
 
