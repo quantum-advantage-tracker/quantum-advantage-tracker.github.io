@@ -2,8 +2,8 @@
   {
     "createdAt": "2025-11-12T12:57:53Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/43",
-    "name": "Quantum Runtime for peaked_heavy_hex_49_4020",
-    "circuit": "peaked_heavy_hex_49_4020",
+    "name": "Quantum Runtime for peaked_heavy_hex_49x4020",
+    "circuit": "peaked_heavy_hex_49x4020",
     "value": "100%",
     "method": "Quantum + Cluster Distillation",
     "institutions": "IBM",
@@ -15,8 +15,8 @@
   {
     "createdAt": "2025-11-11T23:28:18Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/27",
-    "name": "TNS+BP for peaked_heavy_hex_49_4020",
-    "circuit": "peaked_heavy_hex_49_4020",
+    "name": "TNS+BP for peaked_heavy_hex_49x4020",
+    "circuit": "peaked_heavy_hex_49x4020",
     "value": "100%",
     "method": "TNS+BP",
     "institutions": "BlueQubit",
@@ -26,8 +26,8 @@
   {
     "createdAt": "2025-11-12T13:32:36Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/47",
-    "name": "TNO + Iterative Cancellation for peaked_heavy_hex_49_4020",
-    "circuit": "peaked_heavy_hex_49_4020",
+    "name": "TNO + Iterative Cancellation for peaked_heavy_hex_49x4020",
+    "circuit": "peaked_heavy_hex_49x4020",
     "value": "100%",
     "method": "TNO + Iterative Cancellation",
     "institutions": "IBM",

@@ -27,7 +27,7 @@ body:
       label: Circuit
       description: The problem instance this submission addresses
       options:
-        - peaked_heavy_hex_49_4020
+        - peaked_heavy_hex_49x4020
     validations:
       required: true
 

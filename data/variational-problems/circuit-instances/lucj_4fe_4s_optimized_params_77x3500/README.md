@@ -1,4 +1,4 @@
-# LUCJ_4Fe_4S_optimized_params_77_3500
+# lucj_4fe_4s_optimized_params_77x3500
 
 ## Qubits
 
@@ -14,7 +14,7 @@ Final LUCJ circuit obtained from the SQD energy optimization experiments in http
 
 ## QASM file
 
-- [4Fe_4S_RIKEN_GB_last_not_transpiled.qpy](./4Fe_4S_RIKEN_GB_last_not_transpiled.qpy)
+[4Fe_4S_RIKEN_GB_last_not_transpiled.qpy](./4Fe_4S_RIKEN_GB_last_not_transpiled.qpy)
 
 ## Institutions
 
