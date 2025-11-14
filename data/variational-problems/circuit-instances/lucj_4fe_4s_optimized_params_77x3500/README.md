@@ -14,7 +14,7 @@ Final LUCJ circuit obtained from the SQD energy optimization experiments in http
 
 ## QASM file
 
-- [4Fe_4S_RIKEN_GB_last_not_transpiled.qpy](./4Fe_4S_RIKEN_GB_last_not_transpiled.qpy)
+[4Fe_4S_RIKEN_GB_last_not_transpiled.qpy](./4Fe_4S_RIKEN_GB_last_not_transpiled.qpy)
 
 ## Institutions
 

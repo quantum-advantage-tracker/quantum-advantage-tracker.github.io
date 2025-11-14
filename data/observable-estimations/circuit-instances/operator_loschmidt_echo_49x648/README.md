@@ -52,7 +52,7 @@ where $\mathcal P \subset \Lambda$ is a set of sites on the lattice.
 
 ## QASM file
 
-- [49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm](./49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm)
+[49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm](./49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm)
 
 ## Institutions
 
