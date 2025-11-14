@@ -1,4 +1,4 @@
-# LUCJ_4Fe_4S_optimized_params_77_3500
+# lucj_4fe_4s_optimized_params_77x3500
 
 ## Qubits
 
