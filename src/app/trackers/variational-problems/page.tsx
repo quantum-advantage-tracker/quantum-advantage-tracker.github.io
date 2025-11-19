@@ -10,7 +10,7 @@ import {
 import { GithubIcon } from '@/icons';
 import type { CircuitInstances } from '@/types/circuitInstances';
 import type { VPSubmission } from '@/types/submissions';
-import { formatDate, sortSubmissions } from '@/utils';
+import { formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import circuitInstances from '../../../../data/variational-problems/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
@@ -117,7 +117,10 @@ export function SubmissionsTable(props: {
                 </TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances/${submission.circuit}`}
+                    href={getCircuitInstanceUrl(
+                      'variational-problems',
+                      submission.circuit,
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"

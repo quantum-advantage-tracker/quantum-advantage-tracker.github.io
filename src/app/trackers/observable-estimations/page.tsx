@@ -10,7 +10,7 @@ import {
 import { GithubIcon } from '@/icons';
 import type { CircuitInstances } from '@/types/circuitInstances';
 import type { OESubmission } from '@/types/submissions';
-import { formatDate, sortSubmissions } from '@/utils';
+import { formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import circuitInstances from '../../../../data/observable-estimations/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
@@ -119,7 +119,10 @@ export function SubmissionsTable(props: {
                 </TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances/${submission.circuit}`}
+                    href={getCircuitInstanceUrl(
+                      'observable-estimations',
+                      submission.circuit,
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"

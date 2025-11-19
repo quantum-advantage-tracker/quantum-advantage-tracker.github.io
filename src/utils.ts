@@ -14,3 +14,7 @@ export function sortSubmissions<T extends { createdAt: string }>(
     return dateA - dateB;
   });
 }
+
+export function getCircuitInstanceUrl(path: string, circuitInstanceId: string) {
+  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/${path}/circuit-instances/${circuitInstanceId}`;
+}
