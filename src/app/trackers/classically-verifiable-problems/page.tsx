@@ -8,11 +8,16 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
-import type { CircuitInstances } from '@/types/circuitInstances';
+import type { CircuitModels } from '@/types/circuitModels';
 import type { CVPSubmission } from '@/types/submissions';
-import { formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
+import {
+  flattenCircuitInstances,
+  formatDate,
+  getCircuitInstanceUrl,
+  sortSubmissions,
+} from '@/utils';
 import type { Metadata } from 'next';
-import circuitInstances from '../../../../data/classically-verifiable-problems/circuit-instances.json' assert { type: 'json' };
+import circuitModels from '../../../../data/classically-verifiable-problems/circuit-models.json' assert { type: 'json' };
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
 
@@ -51,7 +56,7 @@ export default async function TrackersCVP() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable submissions={submissions} circuitInstances={circuitInstances} />
+        <SubmissionsTable submissions={submissions} circuitModels={circuitModels} />
       </div>
 
       <ParticipateSection />
@@ -61,9 +66,10 @@ export default async function TrackersCVP() {
 
 export function SubmissionsTable(props: {
   submissions: CVPSubmission[];
-  circuitInstances: CircuitInstances;
+  circuitModels: CircuitModels;
 }) {
-  const { submissions, circuitInstances } = props;
+  const { submissions, circuitModels } = props;
+  const circuitInstances = flattenCircuitInstances(circuitModels);
 
   return (
     <Table>
@@ -86,7 +92,9 @@ export function SubmissionsTable(props: {
           <TableBodyEmpty />
         ) : (
           sortSubmissions(submissions).map((submission, index) => {
-            const circuitInstance = circuitInstances[submission.circuit];
+            const circuitInstance = circuitInstances.find(
+              (instance) => instance.id === submission.circuit,
+            )!;
 
             return (
               <TableRow key={`submission-cvp-${index}`}>
@@ -108,15 +116,12 @@ export function SubmissionsTable(props: {
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={getCircuitInstanceUrl(
-                      'classically-verifiable-problems',
-                      submission.circuit,
-                    )}
+                    href={getCircuitInstanceUrl('classically-verifiable-problems', circuitInstance)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"
                   >
-                    {submission.circuit}
+                    {circuitInstance.id}
                   </a>
                 </TableCell>
                 <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>

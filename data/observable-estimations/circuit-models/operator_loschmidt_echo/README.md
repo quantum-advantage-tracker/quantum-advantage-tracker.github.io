@@ -1,16 +1,4 @@
-# Operator Loschmidt Echo 70x1872
-
-This circuit instance computes the Operator Loschmidt Echo (see below for description) for a 70-qubit lattice at $L = 6$, $\delta = 0.15$. The observable is $O = Z_{52} Z_{59} Z_{72}$.
-
-## Qubits
-
-70
-
-## Gates
-
-1872
-
-## Description
+# `operator_loschmidt_echo`
 
 The aim of this experiment is to compute the Operator Loschmidt Echo (OLE):
 
@@ -49,10 +37,6 @@ $X_u, Z_u$ are the Pauli operators on site $u\in\Lambda$, $E\in \mathcal E$ are 
 $$G = \sum_{u\in \mathcal P} X_i,$$
 
 where $\mathcal P \subset \Lambda$ is a set of sites on the lattice.
-
-## QASM file
-
-[70Q_OLE_circuit_L_6_b_0.25_delta0.15.qasm](./70Q_OLE_circuit_L_6_b_0.25_delta0.15.qasm)
 
 ## Institutions
 

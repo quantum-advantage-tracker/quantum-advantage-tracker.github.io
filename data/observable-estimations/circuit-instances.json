@@ -1,5 +1,0 @@
-{
-  "operator_loschmidt_echo_49x648": { "qubits": 49, "gates": 648 },
-  "operator_loschmidt_echo_49x1296": { "qubits": 49, "gates": 1296 },
-  "operator_loschmidt_echo_70x1872": { "qubits": 70, "gates": 1872 }
-}

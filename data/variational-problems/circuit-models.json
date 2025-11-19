@@ -1,0 +1,22 @@
+{
+  "four_impurity_model": {
+    "instances": [
+      {
+        "id": "four_impurity_model_64x3281",
+        "path": "",
+        "qubits": 64,
+        "gates": 3281
+      }
+    ]
+  },
+  "lucj_4fe_4s": {
+    "instances": [
+      {
+        "id": "lucj_4fe_4s_optimized_params_77x3500",
+        "path": "4Fe_4S_RIKEN_GB_last_not_transpiled.qasm",
+        "qubits": 77,
+        "gates": 3500
+      }
+    ]
+  }
+}
