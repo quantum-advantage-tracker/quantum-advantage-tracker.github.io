@@ -87,9 +87,7 @@ export function SubmissionsTable(props: {
       </TableHeader>
       <TableBody>
         {submissions.length === 0 ? (
-          <TableRow>
-            <TableCell colSpan={8}>There are no submissions yet.</TableCell>
-          </TableRow>
+          <TableBodyEmpty />
         ) : (
           sortSubmissions(submissions).map((submission, index) => {
             const circuitInstance = circuitInstances[submission.circuit];
@@ -169,5 +167,13 @@ export function SubmissionsTable(props: {
         )}
       </TableBody>
     </Table>
+  );
+}
+
+function TableBodyEmpty() {
+  return (
+    <TableRow>
+      <TableCell colSpan={8}>There are no submissions yet.</TableCell>
+    </TableRow>
   );
 }
