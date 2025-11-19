@@ -27,17 +27,17 @@ jobs:
           for LABEL in "${LABELS[@]}"; do
             case "$LABEL" in
               "path: observable-estimations")
-                ISSUE_TEMPLATE_PATH="submission-path-1-observable-estimations.yml"
+                ISSUE_TEMPLATE_PATH="01-submission-path-observable-estimations.yml"
                 SUBMISSIONS_PATH="data/observable-estimations/submissions.json"
                 break
                 ;;
               "path: variational-problems")
-                ISSUE_TEMPLATE_PATH="submission-path-2-variational-problems.yml"
+                ISSUE_TEMPLATE_PATH="02-submission-path-variational-problems.yml"
                 SUBMISSIONS_PATH="data/variational-problems/submissions.json"
                 break
                 ;;
               "path: classically-verifiable-problems")
-                ISSUE_TEMPLATE_PATH="submission-path-3-classically-verifiable-problems.yml"
+                ISSUE_TEMPLATE_PATH="03-submission-path-classically-verifiable-problems.yml"
                 SUBMISSIONS_PATH="data/classically-verifiable-problems/submissions.json"
                 break
                 ;;

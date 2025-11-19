@@ -42,7 +42,7 @@ export default async function TrackersOE() {
         </Button>
         <Button variant="secondary" size="lg" asChild>
           <a
-            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-1-observable-estimations.yml"
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=01-submission-path-observable-estimations.yml"
             target="_blank"
             rel="noopener noreferrer"
           >

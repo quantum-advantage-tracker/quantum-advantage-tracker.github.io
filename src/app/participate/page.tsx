@@ -68,7 +68,7 @@ export default function Participate() {
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submit-new-cirtcuit-instance.yml"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=04-submit-new-cirtcuit-instance.yml"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -88,7 +88,7 @@ export default function Participate() {
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-1-observable-estimations.yml"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=01-submission-path-observable-estimations.yml"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -97,7 +97,7 @@ export default function Participate() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-2-variational-problems.yml"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=02-submission-path-variational-problems.yml"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -106,7 +106,7 @@ export default function Participate() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=submission-path-3-classically-verifiable-problems.yml"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=03-submission-path-classically-verifiable-problems.yml"
                 target="_blank"
                 rel="noopener noreferrer"
               >
