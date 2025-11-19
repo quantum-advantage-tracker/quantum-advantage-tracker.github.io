@@ -5,9 +5,7 @@ export function formatDate(dateString: string) {
   return formattedDate;
 }
 
-export function sortSubmissions<T extends { createdAt: string }>(
-  arr: T[],
-): T[] {
+export function sortSubmissions<T extends { createdAt: string }>(arr: T[]): T[] {
   return arr.sort((a, b) => {
     const dateA = new Date(a.createdAt).getTime();
     const dateB = new Date(b.createdAt).getTime();

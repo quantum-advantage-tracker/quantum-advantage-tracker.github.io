@@ -28,6 +28,7 @@
       "prettier-plugin-packagejson",
       "prettier-plugin-tailwindcss"
     ],
+    "printWidth": 100,
     "quoteProps": "consistent",
     "singleQuote": true
   },

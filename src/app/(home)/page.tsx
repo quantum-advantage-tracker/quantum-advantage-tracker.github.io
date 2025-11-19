@@ -8,13 +8,10 @@ export default function Home() {
     <>
       <header className="bg-hero-gradient">
         <div className="px-6 py-20 text-center">
-          <h1 className="mx-auto max-w-lg text-5xl">
-            Benchmarking quantum advantage
-          </h1>
+          <h1 className="mx-auto max-w-lg text-5xl">Benchmarking quantum advantage</h1>
           <h2 className="mx-auto my-6 max-w-xl">
-            As claims of quantum advantage emerge, this project provides a
-            platform-agnostic framework to collect, validate, and compare
-            experimental results.
+            As claims of quantum advantage emerge, this project provides a platform-agnostic
+            framework to collect, validate, and compare experimental results.
           </h2>
           <div>
             <Button size="lg" asChild>
@@ -36,14 +33,13 @@ export default function Home() {
       <section className="mx-auto max-w-2xl px-6 py-20 text-center">
         <h3 className="mb-6 text-4xl">What is quantum advantage?</h3>
         <p>
-          Quantum advantage refers to performing an information processing task
-          more efficiently, cost-effectively, or accurately using a quantum
-          computer than is known to be possible with classical computers alone.
+          Quantum advantage refers to performing an information processing task more efficiently,
+          cost-effectively, or accurately using a quantum computer than is known to be possible with
+          classical computers alone.
         </p>
         <p className="mt-4">
-          But achieving this milestone requires more than raw performance - it
-          demands trust in the output of noisy quantum devices and scientific
-          rigor in how we validate results.
+          But achieving this milestone requires more than raw performance - it demands trust in the
+          output of noisy quantum devices and scientific rigor in how we validate results.
         </p>
       </section>
 
@@ -51,18 +47,16 @@ export default function Home() {
         <div className="mx-auto max-w-2xl px-6">
           <h3 className="mb-6 text-4xl">Why is it hard to verify?</h3>
           <p>
-            Quantum advantage isn’t a single milestone - it’s a falsifiable
-            scientific hypothesis that must be tested through rigorous
-            experimentation. Because quantum computers tackle problems that
-            classical systems can’t easily replicate, direct comparison is
-            challenging. Verifying any claim of advantage therefore demands
-            multiple points of analysis.
+            Quantum advantage isn’t a single milestone - it’s a falsifiable scientific hypothesis
+            that must be tested through rigorous experimentation. Because quantum computers tackle
+            problems that classical systems can’t easily replicate, direct comparison is
+            challenging. Verifying any claim of advantage therefore demands multiple points of
+            analysis.
           </p>
         </div>
         <div className="mx-auto max-w-3xl px-6">
           <pre className="bg-secondary mt-6 rounded-md border p-6 whitespace-pre-wrap">
-            ✏️ &quot;The test of all knowledge is experiment&quot; — R. P.
-            Feynman
+            ✏️ &quot;The test of all knowledge is experiment&quot; — R. P. Feynman
           </pre>
         </div>
       </section>
@@ -70,21 +64,16 @@ export default function Home() {
       <section className="mx-auto px-6 py-20 text-center">
         <h3 className="mb-6 text-4xl">Three pathways to quantum advantage</h3>
         <p className="mx-auto max-w-2xl">
-          To build confidence in advantage claims, this project explores three
-          pathways for analysis. Learn more about the different paths below.
+          To build confidence in advantage claims, this project explores three pathways for
+          analysis. Learn more about the different paths below.
         </p>
         <ul className="mx-auto mt-20 grid max-w-7xl gap-4 text-left md:grid-cols-3">
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
-            <div className="text-3xl md:max-w-72">
-              Observable estimations 📊
-            </div>
-            <div className="font-semibold">
-              Trust through rigorous error control.
-            </div>
+            <div className="text-3xl md:max-w-72">Observable estimations 📊</div>
+            <div className="font-semibold">Trust through rigorous error control.</div>
             <div className="flex-1">
-              Explore submissions that report expectation values for
-              observables, and include mathematically grounded error bars for
-              validating quantum computations.
+              Explore submissions that report expectation values for observables, and include
+              mathematically grounded error bars for validating quantum computations.
             </div>
             <Button asChild size="lg">
               <Link href="/trackers/observable-estimations">
@@ -98,9 +87,8 @@ export default function Home() {
               Certifiable quantum solutions via the variational principle.
             </div>
             <div className="flex-1">
-              Variational algorithm submissions offer guaranteed solution bounds
-              and enable benchmarking against classical methods - even when
-              exact answers are unknown.
+              Variational algorithm submissions offer guaranteed solution bounds and enable
+              benchmarking against classical methods - even when exact answers are unknown.
             </div>
             <Button asChild size="lg">
               <Link href="/trackers/variational-problems">
@@ -109,16 +97,13 @@ export default function Home() {
             </Button>
           </li>
           <li className="bg-secondary flex flex-col items-start gap-8 rounded-md border p-6">
-            <div className="text-3xl md:max-w-80">
-              Classically verifiable problems 🗝️
-            </div>
+            <div className="text-3xl md:max-w-80">Classically verifiable problems 🗝️</div>
             <div className="font-semibold">
               Leveraging classical resources to validate quantum outputs.
             </div>
             <div className="flex-1">
-              Submissions in this path enable efficient validation of quantum
-              outputs without requiring full classical simulation of the quantum
-              process.
+              Submissions in this path enable efficient validation of quantum outputs without
+              requiring full classical simulation of the quantum process.
             </div>
             <Button asChild size="lg">
               <Link href="/trackers/classically-verifiable-problems">

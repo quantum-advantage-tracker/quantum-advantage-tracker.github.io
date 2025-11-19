@@ -25,8 +25,8 @@ export default async function TrackersCVP() {
     <div className="flex flex-col gap-4 py-20 text-center">
       <h3 className="text-3xl">Classically verifiable problems 🗝️</h3>
       <h4 className="mx-auto max-w-xl">
-        Submissions must demonstrate quantum advantage by scoring solutions
-        against known answers or efficiently checkable witnesses.
+        Submissions must demonstrate quantum advantage by scoring solutions against known answers or
+        efficiently checkable witnesses.
       </h4>
 
       <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
@@ -51,10 +51,7 @@ export default async function TrackersCVP() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable
-          submissions={submissions}
-          circuitInstances={circuitInstances}
-        />
+        <SubmissionsTable submissions={submissions} circuitInstances={circuitInstances} />
       </div>
 
       <ParticipateSection />
@@ -94,10 +91,7 @@ export function SubmissionsTable(props: {
             return (
               <TableRow key={`submission-cvp-${index}`}>
                 <TableCell>
-                  <time
-                    dateTime={submission.createdAt}
-                    title={submission.createdAt}
-                  >
+                  <time dateTime={submission.createdAt} title={submission.createdAt}>
                     {formatDate(submission.createdAt)}
                   </time>
                 </TableCell>
@@ -111,9 +105,7 @@ export function SubmissionsTable(props: {
                     {submission.name}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">
-                  {submission.method}
-                </TableCell>
+                <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
                   <a
                     href={getCircuitInstanceUrl(
@@ -127,36 +119,26 @@ export function SubmissionsTable(props: {
                     {submission.circuit}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">
-                  {circuitInstance.qubits}
-                </TableCell>
-                <TableCell className="whitespace-normal">
-                  {circuitInstance.gates}
-                </TableCell>
+                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
+                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
                 <TableCell>{submission.value}</TableCell>
                 <TableCell>
                   <div>
-                    <span title="Quantum">Q</span>:{' '}
-                    {submission.runtimeQuantum || '-'}
+                    <span title="Quantum">Q</span>: {submission.runtimeQuantum || '-'}
                   </div>
                   <div>
-                    <span title="Classical">C</span>:{' '}
-                    {submission.runtimeClassical || '-'}
+                    <span title="Classical">C</span>: {submission.runtimeClassical || '-'}
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">
                   <div>
-                    <span title="Quantum">Q</span>:{' '}
-                    {submission.computeResourcesQuantum || '-'}
+                    <span title="Quantum">Q</span>: {submission.computeResourcesQuantum || '-'}
                   </div>
                   <div>
-                    <span title="Classical">C</span>:{' '}
-                    {submission.computeResourcesClassical || '-'}
+                    <span title="Classical">C</span>: {submission.computeResourcesClassical || '-'}
                   </div>
                 </TableCell>
-                <TableCell className="whitespace-normal">
-                  {submission.institutions}
-                </TableCell>
+                <TableCell className="whitespace-normal">{submission.institutions}</TableCell>
               </TableRow>
             );
           })
