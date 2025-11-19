@@ -10,7 +10,7 @@ import {
 import { GithubIcon } from '@/icons';
 import type { CircuitInstances } from '@/types/circuitInstances';
 import type { OESubmission } from '@/types/submissions';
-import { formatDate, sortSubmissions } from '@/utils';
+import { formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import circuitInstances from '../../../../data/observable-estimations/circuit-instances.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
@@ -25,9 +25,9 @@ export default async function TrackersOE() {
     <div className="flex flex-col gap-4 py-20 text-center">
       <h3 className="text-3xl">Observable estimations 📊</h3>
       <h4 className="mx-auto max-w-xl">
-        Submissions in this tracker report expectation values for observables
-        alongside rigorous error bars. Validation requires mathematically
-        provable confidence intervals over the reported value.
+        Submissions in this tracker report expectation values for observables alongside rigorous
+        error bars. Validation requires mathematically provable confidence intervals over the
+        reported value.
       </h4>
 
       <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
@@ -52,10 +52,7 @@ export default async function TrackersOE() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable
-          submissions={submissions}
-          circuitInstances={circuitInstances}
-        />
+        <SubmissionsTable submissions={submissions} circuitInstances={circuitInstances} />
       </div>
 
       <ParticipateSection />
@@ -89,83 +86,77 @@ export function SubmissionsTable(props: {
       </TableHeader>
       <TableBody>
         {submissions.length === 0 ? (
-          <TableRow>
-            <TableCell colSpan={8}>There are no submissions yet.</TableCell>
-          </TableRow>
+          <TableBodyEmpty />
         ) : (
-          sortSubmissions(submissions).map((submission, index) => (
-            <TableRow key={`submission-oe-${index}`}>
-              <TableCell>
-                <time
-                  dateTime={submission.createdAt}
-                  title={submission.createdAt}
-                >
-                  {formatDate(submission.createdAt)}
-                </time>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <a
-                  href={submission.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link-foreground hover:underline"
-                >
-                  {submission.name}
-                </a>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {submission.method}
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <a
-                  href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances/${submission.circuit}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link-foreground hover:underline"
-                >
-                  {submission.circuit}
-                </a>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {circuitInstances[submission.circuit].qubits}
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {circuitInstances[submission.circuit].gates}
-              </TableCell>
-              <TableCell>
-                <div>{submission.observableValue}</div>
-                <div>
-                  [{submission.errorBoundHigh || 'N/A'},{' '}
-                  {submission.errorBoundLow || 'N/A'}]
-                </div>
-              </TableCell>
-              <TableCell>
-                <div>
-                  <span title="Quantum">Q</span>:{' '}
-                  {submission.runtimeQuantum || '-'}
-                </div>
-                <div>
-                  <span title="Classical">C</span>:{' '}
-                  {submission.runtimeClassical || '-'}
-                </div>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <div>
-                  <span title="Quantum">Q</span>:{' '}
-                  {submission.computeResourcesQuantum || '-'}
-                </div>
-                <div>
-                  <span title="Classical">C</span>:{' '}
-                  {submission.computeResourcesClassical || '-'}
-                </div>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {submission.institutions}
-              </TableCell>
-            </TableRow>
-          ))
+          sortSubmissions(submissions).map((submission, index) => {
+            const circuitInstance = circuitInstances[submission.circuit];
+
+            return (
+              <TableRow key={`submission-oe-${index}`}>
+                <TableCell>
+                  <time dateTime={submission.createdAt} title={submission.createdAt}>
+                    {formatDate(submission.createdAt)}
+                  </time>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  <a
+                    href={submission.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link-foreground hover:underline"
+                  >
+                    {submission.name}
+                  </a>
+                </TableCell>
+                <TableCell className="whitespace-normal">{submission.method}</TableCell>
+                <TableCell className="whitespace-normal">
+                  <a
+                    href={getCircuitInstanceUrl('observable-estimations', submission.circuit)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link-foreground hover:underline"
+                  >
+                    {submission.circuit}
+                  </a>
+                </TableCell>
+                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
+                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
+                <TableCell>
+                  <div>{submission.observableValue}</div>
+                  <div>
+                    [{submission.errorBoundHigh || 'N/A'}, {submission.errorBoundLow || 'N/A'}]
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <span title="Quantum">Q</span>: {submission.runtimeQuantum || '-'}
+                  </div>
+                  <div>
+                    <span title="Classical">C</span>: {submission.runtimeClassical || '-'}
+                  </div>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  <div>
+                    <span title="Quantum">Q</span>: {submission.computeResourcesQuantum || '-'}
+                  </div>
+                  <div>
+                    <span title="Classical">C</span>: {submission.computeResourcesClassical || '-'}
+                  </div>
+                </TableCell>
+                <TableCell className="whitespace-normal">{submission.institutions}</TableCell>
+              </TableRow>
+            );
+          })
         )}
       </TableBody>
     </Table>
+  );
+}
+
+function TableBodyEmpty() {
+  return (
+    <TableRow>
+      <TableCell colSpan={8}>There are no submissions yet.</TableCell>
+    </TableRow>
   );
 }

@@ -119,7 +119,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "Add new submission from issue #${{ github.event.issue.number }}"
-          title: "Add new submission from issue #${{ github.event.issue.number }}"
-          body: "Closes #${{ github.event.issue.number }}."
+          commit-message: 'Add new submission from issue #${{ github.event.issue.number }}'
+          title: 'Add new submission from issue #${{ github.event.issue.number }}'
+          body: 'Closes #${{ github.event.issue.number }}.'
           branch: submission-issue-${{ github.event.issue.number }}

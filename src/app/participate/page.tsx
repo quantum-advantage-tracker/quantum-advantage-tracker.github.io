@@ -14,13 +14,10 @@ export default function Participate() {
     <>
       <header className="bg-hero-gradient">
         <div className="px-6 py-20 text-center">
-          <h1 className="mx-auto max-w-lg text-5xl">
-            Submit your quantum advantage candidate
-          </h1>
+          <h1 className="mx-auto max-w-lg text-5xl">Submit your quantum advantage candidate</h1>
           <h2 className="mx-auto my-6 max-w-xl">
-            Learn how to contribute a new advantage candidate from the list of
-            provided problem instances or your own circuit specs. All are
-            welcome to participate.
+            Learn how to contribute a new advantage candidate from the list of provided problem
+            instances or your own circuit specs. All are welcome to participate.
           </h2>
         </div>
       </header>
@@ -28,13 +25,11 @@ export default function Participate() {
       <div className="mx-auto flex max-w-7xl flex-col gap-20 px-6 py-20">
         <section className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <span className="text-primary">01</span> Choose a pathway and
-            circuit instance
+            <span className="text-primary">01</span> Choose a pathway and circuit instance
           </h3>
           <p className="max-w-2xl">
-            Select the pathway below that best aligns with your submission. Each
-            link takes you to a Github folder with circuit instances for you to
-            run your experiment with.
+            Select the pathway below that best aligns with your submission. Each link takes you to a
+            Github folder with circuit instances for you to run your experiment with.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
@@ -66,9 +61,9 @@ export default function Participate() {
             </Button>
           </div>
           <p className="max-w-2xl">
-            To submit your own circuit instance, fill out the following issue
-            template. Once it has been reviewed and moved to the relevant folder
-            above, you can link to it in your advantage tracker submission.
+            To submit your own circuit instance, fill out the following issue template. Once it has
+            been reviewed and moved to the relevant folder above, you can link to it in your
+            advantage tracker submission.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
@@ -87,9 +82,8 @@ export default function Participate() {
             <span className="text-primary">02</span> Enter your submission
           </h3>
           <p className="max-w-2xl">
-            Fill out the relevant issue template below and submit it. Don’t
-            worry about filling out any assignees, tags, etc. on the right side
-            of the template.
+            Fill out the relevant issue template below and submit it. Don’t worry about filling out
+            any assignees, tags, etc. on the right side of the template.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
@@ -123,8 +117,7 @@ export default function Participate() {
         </section>
         <section className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <span className="text-primary">03</span> Track your submission
-            status
+            <span className="text-primary">03</span> Track your submission status
           </h3>
           <div className="max-w-2xl">
             <p className="font-medium">
@@ -145,10 +138,7 @@ export default function Participate() {
               </li>
               <li>
                 Once your submission has been verified, it will show up in the{' '}
-                <Link
-                  href="/trackers"
-                  className="text-link-foreground hover:underline"
-                >
+                <Link href="/trackers" className="text-link-foreground hover:underline">
                   Advantage Tracker
                 </Link>
               </li>
@@ -159,10 +149,7 @@ export default function Participate() {
               <li>In review: project reviewer has been assigned</li>
               <li>Incomplete: submission missing details</li>
               <li>Verified: submission approved and added to tracker</li>
-              <li>
-                Closed: submission closed due to technical issues or
-                incompleteness
-              </li>
+              <li>Closed: submission closed due to technical issues or incompleteness</li>
             </ul>
           </div>
         </section>
