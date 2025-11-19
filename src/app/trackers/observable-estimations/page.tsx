@@ -93,77 +93,81 @@ export function SubmissionsTable(props: {
             <TableCell colSpan={8}>There are no submissions yet.</TableCell>
           </TableRow>
         ) : (
-          sortSubmissions(submissions).map((submission, index) => (
-            <TableRow key={`submission-oe-${index}`}>
-              <TableCell>
-                <time
-                  dateTime={submission.createdAt}
-                  title={submission.createdAt}
-                >
-                  {formatDate(submission.createdAt)}
-                </time>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <a
-                  href={submission.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link-foreground hover:underline"
-                >
-                  {submission.name}
-                </a>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {submission.method}
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <a
-                  href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances/${submission.circuit}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-link-foreground hover:underline"
-                >
-                  {submission.circuit}
-                </a>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {circuitInstances[submission.circuit].qubits}
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {circuitInstances[submission.circuit].gates}
-              </TableCell>
-              <TableCell>
-                <div>{submission.observableValue}</div>
-                <div>
-                  [{submission.errorBoundHigh || 'N/A'},{' '}
-                  {submission.errorBoundLow || 'N/A'}]
-                </div>
-              </TableCell>
-              <TableCell>
-                <div>
-                  <span title="Quantum">Q</span>:{' '}
-                  {submission.runtimeQuantum || '-'}
-                </div>
-                <div>
-                  <span title="Classical">C</span>:{' '}
-                  {submission.runtimeClassical || '-'}
-                </div>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                <div>
-                  <span title="Quantum">Q</span>:{' '}
-                  {submission.computeResourcesQuantum || '-'}
-                </div>
-                <div>
-                  <span title="Classical">C</span>:{' '}
-                  {submission.computeResourcesClassical || '-'}
-                </div>
-              </TableCell>
-              <TableCell className="whitespace-normal">
-                {submission.institutions}
-              </TableCell>
-            </TableRow>
-          ))
+          sortSubmissions(submissions).map((submission, index) => {
+            const circuitInstance = circuitInstances[submission.circuit];
+
+            return (
+              <TableRow key={`submission-oe-${index}`}>
+                <TableCell>
+                  <time
+                    dateTime={submission.createdAt}
+                    title={submission.createdAt}
+                  >
+                    {formatDate(submission.createdAt)}
+                  </time>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  <a
+                    href={submission.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link-foreground hover:underline"
+                  >
+                    {submission.name}
+                  </a>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  {submission.method}
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  <a
+                    href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances/${submission.circuit}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link-foreground hover:underline"
+                  >
+                    {submission.circuit}
+                  </a>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  {circuitInstance.qubits}
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  {circuitInstance.gates}
+                </TableCell>
+                <TableCell>
+                  <div>{submission.observableValue}</div>
+                  <div>
+                    [{submission.errorBoundHigh || 'N/A'},{' '}
+                    {submission.errorBoundLow || 'N/A'}]
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div>
+                    <span title="Quantum">Q</span>:{' '}
+                    {submission.runtimeQuantum || '-'}
+                  </div>
+                  <div>
+                    <span title="Classical">C</span>:{' '}
+                    {submission.runtimeClassical || '-'}
+                  </div>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  <div>
+                    <span title="Quantum">Q</span>:{' '}
+                    {submission.computeResourcesQuantum || '-'}
+                  </div>
+                  <div>
+                    <span title="Classical">C</span>:{' '}
+                    {submission.computeResourcesClassical || '-'}
+                  </div>
+                </TableCell>
+                <TableCell className="whitespace-normal">
+                  {submission.institutions}
+                </TableCell>
+              </TableRow>
+            );
+          })
         )}
       </TableBody>
     </Table>
