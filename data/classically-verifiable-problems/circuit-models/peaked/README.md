@@ -1,7 +1,0 @@
-# `peaked`
-
-TODO
-
-## Institutions
-
-BlueQubit
