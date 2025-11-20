@@ -29,12 +29,12 @@ export default function Participate() {
           </h3>
           <p className="max-w-2xl">
             Select the pathway below that best aligns with your submission. Each link takes you to a
-            Github folder with circuit instances for you to run your experiment with.
+            Github folder with circuit models and instances for you to run your experiment with.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-instances"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/observable-estimations/circuit-models"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -43,7 +43,7 @@ export default function Participate() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-models"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -52,7 +52,7 @@ export default function Participate() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-instances"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-models"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -61,18 +61,16 @@ export default function Participate() {
             </Button>
           </div>
           <p className="max-w-2xl">
-            To submit your own circuit instance, fill out the following issue template. Once it has
-            been reviewed and moved to the relevant folder above, you can link to it in your
-            advantage tracker submission.
+            To submit your own circuit model or instance, please read the documentation on how to do it.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/new?template=04-submit-new-cirtcuit-instance.yml"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/README.md"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Create a new circuit instance <GithubIcon />
+                Read the documentation <GithubIcon />
               </a>
             </Button>
           </div>
