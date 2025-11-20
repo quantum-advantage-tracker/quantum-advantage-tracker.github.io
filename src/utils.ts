@@ -31,6 +31,6 @@ export function getCircuitInstanceUrl(
   return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/${path}/circuit-models/${circuitInstance.type}/${circuitInstance.path}`;
 }
 
-export function getHamiltonianUrl(hamiltonian: { type: string; path: string }) {
-  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians/${hamiltonian.type}/${hamiltonian.path}`;
+export function getHamiltonianUrl(hamiltonianInstance: { type: string; path: string }) {
+  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians/${hamiltonianInstance.type}/${hamiltonianInstance.path}`;
 }
