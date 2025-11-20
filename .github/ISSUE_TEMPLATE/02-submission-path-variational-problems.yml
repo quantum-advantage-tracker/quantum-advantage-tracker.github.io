@@ -22,14 +22,33 @@ body:
       required: true
 
   - type: dropdown
-    id: circuit
+    id: hamiltonian
     attributes:
-      label: Circuit
-      description: The problem instance this submission addresses
+      label: Hamiltonian
+      description: The hamiltonian this submission addresses
       options:
-        - four_impurity_model_64x3281
+        - 4fe_4s
+        - four_impurity_model
     validations:
       required: true
+
+  - type: input
+    id: qubits
+    attributes:
+      label: Qubits
+      description: Number of qubits
+      placeholder: e.g., "49"
+    validations:
+      required: false
+
+  - type: input
+    id: gates
+    attributes:
+      label: Gates
+      description: Number of gates
+      placeholder: e.g., "648"
+    validations:
+      required: false
 
   - type: input
     id: energy
@@ -71,7 +90,7 @@ body:
     id: methodProof
     attributes:
       label: Method proof
-      description: Link to paper, code repository, or detailed explanation of the method (required for verification)
+      description: Link to paper, code repository, or detailed explanation of the method (required for verification). If method is Quantum, please attach the circuit.
       placeholder: |
         Provide at least one of:
         - Paper/preprint: https://arxiv.org/abs/...

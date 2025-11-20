@@ -1,0 +1,22 @@
+{
+  "4fe_4s": {
+    "instances": [
+      {
+        "id": "4fe_4s_54e_36o",
+        "path": "4Fe_4S_RIKEN_GB_last_not_transpiled.qasm",
+        "electrons": 54,
+        "orbitals": 36
+      }
+    ]
+  },
+  "four_impurity_model": {
+    "instances": [
+      {
+        "id": "four_impurity_model_64x3281",
+        "path": "",
+        "electrons": 0,
+        "orbitals": 0
+      }
+    ]
+  }
+}

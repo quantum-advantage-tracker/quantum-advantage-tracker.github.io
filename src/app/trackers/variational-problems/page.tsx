@@ -8,16 +8,14 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
-import type { CircuitModels } from '@/types/circuitModels';
+import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
 import {
-  flattenCircuitInstances,
   formatDate,
-  getCircuitInstanceUrl,
   sortSubmissions,
 } from '@/utils';
 import type { Metadata } from 'next';
-import circuitModels from '../../../../data/variational-problems/circuit-models.json' assert { type: 'json' };
+import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
 
@@ -56,7 +54,7 @@ export default async function TrackersVP() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable submissions={submissions} circuitModels={circuitModels} />
+        <SubmissionsTable submissions={submissions} hamiltonians={hamiltonians} />
       </div>
 
       <ParticipateSection />
@@ -66,10 +64,9 @@ export default async function TrackersVP() {
 
 export function SubmissionsTable(props: {
   submissions: VPSubmission[];
-  circuitModels: CircuitModels;
+  hamiltonians: Hamiltonians;
 }) {
-  const { submissions, circuitModels } = props;
-  const circuitInstances = flattenCircuitInstances(circuitModels);
+  const { submissions, hamiltonians } = props;
 
   return (
     <Table>
@@ -78,7 +75,7 @@ export function SubmissionsTable(props: {
           <TableHead>Date</TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
-          <TableHead>Circuit</TableHead>
+          <TableHead>Hamiltonian</TableHead>
           <TableHead>Qubits</TableHead>
           <TableHead>Gates</TableHead>
           <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
@@ -92,10 +89,6 @@ export function SubmissionsTable(props: {
           <TableBodyEmpty />
         ) : (
           sortSubmissions(submissions).map((submission, index) => {
-            const circuitInstance = circuitInstances.find(
-              (instance) => instance.id === submission.circuit,
-            )!;
-
             return (
               <TableRow key={`submission-vp-${index}`}>
                 <TableCell>
@@ -116,16 +109,16 @@ export function SubmissionsTable(props: {
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={getCircuitInstanceUrl('variational-problems', circuitInstance)}
+                    href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonian/${submission.hamiltonian}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"
                   >
-                    {circuitInstance.id}
+                    {submission.hamiltonian}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
+                <TableCell className="whitespace-normal">{submission.qubits}</TableCell>
+                <TableCell className="whitespace-normal">{submission.gates}</TableCell>
                 <TableCell>
                   <div>{submission.energy}</div>
                   <div>
