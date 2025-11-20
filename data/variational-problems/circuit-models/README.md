@@ -1,1 +1,0 @@
-# Variational problems - Circuit models

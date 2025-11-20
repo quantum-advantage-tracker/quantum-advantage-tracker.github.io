@@ -10,12 +10,7 @@ import {
 import { GithubIcon } from '@/icons';
 import type { CircuitModels } from '@/types/circuitModels';
 import type { CVPSubmission } from '@/types/submissions';
-import {
-  flattenCircuitInstances,
-  formatDate,
-  getCircuitInstanceUrl,
-  sortSubmissions,
-} from '@/utils';
+import { flattenInstances, formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import circuitModels from '../../../../data/classically-verifiable-problems/circuit-models.json' assert { type: 'json' };
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
@@ -69,7 +64,7 @@ export function SubmissionsTable(props: {
   circuitModels: CircuitModels;
 }) {
   const { submissions, circuitModels } = props;
-  const circuitInstances = flattenCircuitInstances(circuitModels);
+  const circuitInstances = flattenInstances(circuitModels);
 
   return (
     <Table>

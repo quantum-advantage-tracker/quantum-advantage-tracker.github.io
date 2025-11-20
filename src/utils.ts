@@ -1,5 +1,3 @@
-import type { CircuitModels } from './types/circuitModels';
-
 export function formatDate(dateString: string) {
   const date = new Date(dateString);
   // The locale 'en-CA' naturally formats dates as YYYY-MM-DD
@@ -15,19 +13,24 @@ export function sortSubmissions<T extends { createdAt: string }>(arr: T[]): T[] 
   });
 }
 
-type FlattenedCircuitInstance = CircuitModels[keyof CircuitModels]['instances'][number] & {
-  model: string;
-};
-
-export function flattenCircuitInstances(circuitModels: CircuitModels): FlattenedCircuitInstance[] {
-  return Object.entries(circuitModels).flatMap(([modelName, model]) =>
+export function flattenInstances<T>(
+  data: Record<string, { instances: T[] }>,
+): (T & { type: string })[] {
+  return Object.entries(data).flatMap(([type, model]) =>
     model.instances.map((instance) => ({
       ...instance,
-      model: modelName,
+      type,
     })),
   );
 }
 
-export function getCircuitInstanceUrl(path: string, circuitInstance: FlattenedCircuitInstance) {
-  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/${path}/circuit-models/${circuitInstance.model}/${circuitInstance.path}`;
+export function getCircuitInstanceUrl(
+  path: string,
+  circuitInstance: { type: string; path: string },
+) {
+  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/${path}/circuit-models/${circuitInstance.type}/${circuitInstance.path}`;
+}
+
+export function getHamiltonianUrl(hamiltonian: { type: string; path: string }) {
+  return `https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians/${hamiltonian.type}/${hamiltonian.path}`;
 }
