@@ -43,7 +43,7 @@ export default function Participate() {
             </Button>
             <Button variant="secondary" size="lg" asChild>
               <a
-                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-models"
+                href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -61,7 +61,8 @@ export default function Participate() {
             </Button>
           </div>
           <p className="max-w-2xl">
-            To submit your own circuit model or instance, please read the documentation on how to do it.
+            To submit your own circuit model or instance, please read the documentation on how to do
+            it.
           </p>
           <div className="flex flex-row flex-wrap gap-4">
             <Button variant="secondary" size="lg" asChild>
