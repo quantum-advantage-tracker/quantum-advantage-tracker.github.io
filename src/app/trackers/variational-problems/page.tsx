@@ -10,10 +10,7 @@ import {
 import { GithubIcon } from '@/icons';
 import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
-import {
-  formatDate,
-  sortSubmissions,
-} from '@/utils';
+import { flattenInstances, formatDate, getHamiltonianUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
 import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
@@ -67,6 +64,7 @@ export function SubmissionsTable(props: {
   hamiltonians: Hamiltonians;
 }) {
   const { submissions, hamiltonians } = props;
+  const hamiltonianInstances = flattenInstances(hamiltonians);
 
   return (
     <Table>
@@ -89,6 +87,10 @@ export function SubmissionsTable(props: {
           <TableBodyEmpty />
         ) : (
           sortSubmissions(submissions).map((submission, index) => {
+            const hamiltonianInstance = hamiltonianInstances.find(
+              (instance) => instance.id === submission.hamiltonian,
+            )!;
+
             return (
               <TableRow key={`submission-vp-${index}`}>
                 <TableCell>
@@ -109,7 +111,7 @@ export function SubmissionsTable(props: {
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={`https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonian/${submission.hamiltonian}`}
+                    href={getHamiltonianUrl(hamiltonianInstance)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"
