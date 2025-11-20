@@ -3,19 +3,17 @@
     "instances": [
       {
         "id": "4fe_4s_54e_36o",
-        "path": "4Fe_4S_RIKEN_GB_last_not_transpiled.qasm",
-        "electrons": 54,
-        "orbitals": 36
+        "path": "4fe_4s_54e_36o.fcidump",
+        "hilbert_space_size": 8.86e15
       }
     ]
   },
-  "four_impurity_model": {
+  "anderson_impurity_model": {
     "instances": [
       {
-        "id": "four_impurity_model_64x3281",
-        "path": "",
-        "electrons": 0,
-        "orbitals": 0
+        "id": "anderson_impurity_model_4i_28b_32e",
+        "path": "anderson_impurity_model_4i_28b_32e.fcidump",
+        "hilbert_space_size": 3.61e17
       }
     ]
   }

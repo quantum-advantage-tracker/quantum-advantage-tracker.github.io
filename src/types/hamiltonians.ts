@@ -3,8 +3,7 @@ export type Hamiltonians = {
     instances: {
       id: string;
       path: string;
-      electrons: number;
-      orbitals: number;
+      hilbert_space_size: number;
     }[];
   };
 };

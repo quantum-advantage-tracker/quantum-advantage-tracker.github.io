@@ -27,8 +27,8 @@ body:
       label: Hamiltonian
       description: The hamiltonian this submission addresses
       options:
-        - 4fe_4s
-        - four_impurity_model
+        - 4fe_4s_54e_36o
+        - anderson_impurity_model_4i_28b_32e
     validations:
       required: true
 
