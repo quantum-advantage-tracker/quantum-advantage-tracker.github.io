@@ -1,0 +1,12 @@
+{
+  "peaked_circuit": {
+    "instances": [
+      {
+        "id": "peaked_circuit_heavy_hex_49x4020",
+        "path": "peaked_circuit_heavy_hex_49x4020.qasm",
+        "qubits": 49,
+        "gates": 4020
+      }
+    ]
+  }
+}

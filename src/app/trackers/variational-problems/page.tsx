@@ -8,11 +8,11 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { GithubIcon } from '@/icons';
-import type { CircuitInstances } from '@/types/circuitInstances';
+import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
-import { formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
+import { flattenInstances, formatDate, getHamiltonianUrl, sortSubmissions } from '@/utils';
 import type { Metadata } from 'next';
-import circuitInstances from '../../../../data/variational-problems/circuit-instances.json' assert { type: 'json' };
+import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
 import { ParticipateSection } from '../ParticipateSection';
 
@@ -32,7 +32,7 @@ export default async function TrackersVP() {
       <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
         <Button variant="secondary" size="lg" asChild>
           <a
-            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances"
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-models"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -51,7 +51,7 @@ export default async function TrackersVP() {
       </div>
 
       <div className="text-left">
-        <SubmissionsTable submissions={submissions} circuitInstances={circuitInstances} />
+        <SubmissionsTable submissions={submissions} hamiltonians={hamiltonians} />
       </div>
 
       <ParticipateSection />
@@ -61,9 +61,10 @@ export default async function TrackersVP() {
 
 export function SubmissionsTable(props: {
   submissions: VPSubmission[];
-  circuitInstances: CircuitInstances;
+  hamiltonians: Hamiltonians;
 }) {
-  const { submissions, circuitInstances } = props;
+  const { submissions, hamiltonians } = props;
+  const hamiltonianInstances = flattenInstances(hamiltonians);
 
   return (
     <Table>
@@ -72,7 +73,7 @@ export function SubmissionsTable(props: {
           <TableHead>Date</TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
-          <TableHead>Circuit</TableHead>
+          <TableHead>Hamiltonian</TableHead>
           <TableHead>Qubits</TableHead>
           <TableHead>Gates</TableHead>
           <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
@@ -86,7 +87,9 @@ export function SubmissionsTable(props: {
           <TableBodyEmpty />
         ) : (
           sortSubmissions(submissions).map((submission, index) => {
-            const circuitInstance = circuitInstances[submission.circuit];
+            const hamiltonianInstance = hamiltonianInstances.find(
+              (instance) => instance.id === submission.hamiltonian,
+            )!;
 
             return (
               <TableRow key={`submission-vp-${index}`}>
@@ -108,16 +111,16 @@ export function SubmissionsTable(props: {
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
                   <a
-                    href={getCircuitInstanceUrl('variational-problems', submission.circuit)}
+                    href={getHamiltonianUrl(hamiltonianInstance)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-link-foreground hover:underline"
                   >
-                    {submission.circuit}
+                    {submission.hamiltonian}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
+                <TableCell className="whitespace-normal">{submission.qubits}</TableCell>
+                <TableCell className="whitespace-normal">{submission.gates}</TableCell>
                 <TableCell>
                   <div>{submission.energy}</div>
                   <div>

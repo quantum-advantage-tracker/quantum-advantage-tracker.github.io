@@ -1,0 +1,24 @@
+{
+  "operator_loschmidt_echo": {
+    "instances": [
+      {
+        "id": "operator_loschmidt_echo_49x648",
+        "path": "49Q_OLE_circuit_L_3_b_0.25_delta0.15.qasm",
+        "qubits": 49,
+        "gates": 648
+      },
+      {
+        "id": "operator_loschmidt_echo_49x1296",
+        "path": "49Q_OLE_circuit_L_6_b_0.25_delta0.15.qasm",
+        "qubits": 49,
+        "gates": 1296
+      },
+      {
+        "id": "operator_loschmidt_echo_70x1872",
+        "path": "70Q_OLE_circuit_L_6_b_0.25_delta0.15.qasm",
+        "qubits": 70,
+        "gates": 1872
+      }
+    ]
+  }
+}
