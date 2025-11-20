@@ -37,7 +37,7 @@ export default async function TrackersVP() {
       <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
         <Button variant="secondary" size="lg" asChild>
           <a
-            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-instances"
+            href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/circuit-models"
             target="_blank"
             rel="noopener noreferrer"
           >
