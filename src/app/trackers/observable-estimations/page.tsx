@@ -80,10 +80,14 @@ export function SubmissionsTable(props: {
           <TableHead>Circuit</TableHead>
           <TableHead>Qubits</TableHead>
           <TableHead>Gates</TableHead>
-          <TableHead title="Expectation value [upper, lower bound]">
-            Exp. value [upper, lower bound]
+          <TableHead>
+            <div>Expectation value</div>
+            <div>[upper, lower bound]</div>
           </TableHead>
-          <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
+          <TableHead>
+            <div>Runtime</div>
+            <div>(seconds)</div>
+          </TableHead>
           <TableHead>Compute resources</TableHead>
         </TableRow>
       </TableHeader>

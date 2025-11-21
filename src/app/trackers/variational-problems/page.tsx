@@ -79,8 +79,14 @@ export function SubmissionsTable(props: {
           <TableHead>Hamiltonian</TableHead>
           <TableHead>Qubits</TableHead>
           <TableHead>Gates</TableHead>
-          <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
-          <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
+          <TableHead>
+            <div>Energy (Eh)</div>
+            <div>[upper, lower bound]</div>
+          </TableHead>
+          <TableHead>
+            <div>Runtime</div>
+            <div>(seconds)</div>
+          </TableHead>
           <TableHead>Compute resources</TableHead>
         </TableRow>
       </TableHeader>

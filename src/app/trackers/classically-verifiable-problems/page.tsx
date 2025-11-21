@@ -80,7 +80,10 @@ export function SubmissionsTable(props: {
           <TableHead>Qubits</TableHead>
           <TableHead>Gates</TableHead>
           <TableHead>Value</TableHead>
-          <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
+          <TableHead>
+            <div>Runtime</div>
+            <div>(seconds)</div>
+          </TableHead>
           <TableHead>Compute resources</TableHead>
         </TableRow>
       </TableHeader>
