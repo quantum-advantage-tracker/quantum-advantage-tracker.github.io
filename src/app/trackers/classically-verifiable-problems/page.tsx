@@ -114,7 +114,7 @@ export function SubmissionsTable(props: {
                   </a>
 
                   <div className="mt-2">
-                    <span className="font-semibold">By:</span>{' '}
+                    <span className="text-by-foreground font-semibold">By:</span>{' '}
                     <span>{submission.institutions}</span>
                   </div>
                 </TableCell>

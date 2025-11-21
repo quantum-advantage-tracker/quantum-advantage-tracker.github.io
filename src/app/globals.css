@@ -48,6 +48,7 @@
   --color-nav-menu-selected-foreground: #24a148;
   --color-table-head: #343a3f;
   --color-table-head-foreground: #ffffff;
+  --color-by-foreground: #24a148;
 }
 
 :root {
