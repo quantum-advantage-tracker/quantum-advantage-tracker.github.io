@@ -1,13 +1,11 @@
 import Image from 'next/image';
 import AlgorithmiqLogo from './logo_algorithmiq.png';
 import BluequbitLogo from './logo_bluequbit.png';
-import FlatironLogo from './logo_flatiron.png';
 import IbmLogo from './logo_ibm.png';
 
 const contributors = [
   { name: 'Algorithmiq', logo: AlgorithmiqLogo },
   { name: 'Bluequbit', logo: BluequbitLogo },
-  { name: 'Flatiron', logo: FlatironLogo },
   { name: 'Ibm', logo: IbmLogo },
 ];
 
