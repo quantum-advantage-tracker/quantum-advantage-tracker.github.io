@@ -25,7 +25,12 @@ body:
     id: hamiltonian
     attributes:
       label: Hamiltonian
-      description: The hamiltonian this submission addresses
+      description: |
+        The hamiltonian instance this submission addresses.
+
+        You can find information about all the available ones here: [/data/variational-problems/hamiltonians](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians).
+
+        If your instance is not listed, please follow the instructions in [/data/README.md](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/README.md) to submit a new one.
       options:
         - 4fe_4s_54e_36o
         - anderson_impurity_model_4i_28b_32e

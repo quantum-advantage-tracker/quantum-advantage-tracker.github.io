@@ -25,7 +25,12 @@ body:
     id: circuit
     attributes:
       label: Circuit
-      description: The problem instance this submission addresses
+      description: |
+        The circuit instance this submission addresses.
+
+        You can find information about all the available ones here: [/data/classically-verifiable-problems/circuit-models](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-models).
+
+        If your instance is not listed, please follow the instructions in [/data/README.md](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/README.md) to submit a new one.
       options:
         - peaked_circuit_heavy_hex_49x4020
     validations:
