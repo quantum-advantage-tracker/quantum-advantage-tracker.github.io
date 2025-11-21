@@ -87,7 +87,6 @@ body:
     attributes:
       label: Institutions
       description: The institution(s) or organization(s) involved in the submission, separated by commas
-      placeholder:
     validations:
       required: true
 
