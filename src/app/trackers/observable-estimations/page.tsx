@@ -72,23 +72,23 @@ export function SubmissionsTable(props: {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>
+          <TableHead className="w-28">
             Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
           </TableHead>
-          <TableHead>Name / Institutions</TableHead>
+          <TableHead className="w-64">Name / Institutions</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
-          <TableHead>Qubits</TableHead>
-          <TableHead>Gates</TableHead>
+          <TableHead className="w-20">Qubits</TableHead>
+          <TableHead className="w-20">Gates</TableHead>
           <TableHead>
             <div>Expectation value</div>
             <div>[upper, lower bound]</div>
           </TableHead>
-          <TableHead>
+          <TableHead className="w-28">
             <div>Runtime</div>
             <div>(seconds)</div>
           </TableHead>
-          <TableHead>Compute resources</TableHead>
+          <TableHead className="w-56">Compute resources</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
