@@ -9,7 +9,7 @@ export function sortSubmissions<T extends { createdAt: string }>(arr: T[]): T[] 
   return arr.sort((a, b) => {
     const dateA = new Date(a.createdAt).getTime();
     const dateB = new Date(b.createdAt).getTime();
-    return dateA - dateB;
+    return dateB - dateA;
   });
 }
 

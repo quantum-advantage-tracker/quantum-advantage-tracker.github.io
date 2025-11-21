@@ -11,6 +11,7 @@ import { GithubIcon } from '@/icons';
 import type { CircuitModels } from '@/types/circuitModels';
 import type { OESubmission } from '@/types/submissions';
 import { flattenInstances, formatDate, getCircuitInstanceUrl, sortSubmissions } from '@/utils';
+import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import circuitModels from '../../../../data/observable-estimations/circuit-models.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
@@ -71,7 +72,9 @@ export function SubmissionsTable(props: {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Date</TableHead>
+          <TableHead>
+            Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
+          </TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>

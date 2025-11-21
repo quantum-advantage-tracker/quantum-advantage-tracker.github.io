@@ -11,6 +11,7 @@ import { GithubIcon } from '@/icons';
 import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
 import { flattenInstances, formatDate, getHamiltonianUrl, sortSubmissions } from '@/utils';
+import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
@@ -70,7 +71,9 @@ export function SubmissionsTable(props: {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Date</TableHead>
+          <TableHead>
+            Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
+          </TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Hamiltonian</TableHead>
