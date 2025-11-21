@@ -144,6 +144,14 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional notes
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |

@@ -7,6 +7,7 @@ type BaseSubmission = {
   runtimeClassical?: number;
   computeResourcesQuantum?: string;
   computeResourcesClassical?: string;
+  notes?: string;
   institutions: string;
 };
 
