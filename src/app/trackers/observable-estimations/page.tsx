@@ -75,7 +75,7 @@ export function SubmissionsTable(props: {
           <TableHead>
             Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
           </TableHead>
-          <TableHead>Name</TableHead>
+          <TableHead>Name / Institutions</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Circuit</TableHead>
           <TableHead>Qubits</TableHead>
@@ -85,7 +85,6 @@ export function SubmissionsTable(props: {
           </TableHead>
           <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
           <TableHead>Compute resources</TableHead>
-          <TableHead>Institution</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -113,6 +112,11 @@ export function SubmissionsTable(props: {
                   >
                     {submission.name}
                   </a>
+
+                  <div className="mt-2">
+                    <span className="font-semibold">By:</span>{' '}
+                    <span>{submission.institutions}</span>
+                  </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
@@ -149,7 +153,6 @@ export function SubmissionsTable(props: {
                     <span title="Classical">C</span>: {submission.computeResourcesClassical || '-'}
                   </div>
                 </TableCell>
-                <TableCell className="whitespace-normal">{submission.institutions}</TableCell>
               </TableRow>
             );
           })
