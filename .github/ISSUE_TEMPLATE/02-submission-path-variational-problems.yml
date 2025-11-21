@@ -100,6 +100,14 @@ body:
       required: true
 
   - type: input
+    id: authors
+    attributes:
+      label: Authors
+      description: The author(s) or individual(s) involved in the submission, separated by commas
+    validations:
+      required: false
+
+  - type: input
     id: institutions
     attributes:
       label: Institutions

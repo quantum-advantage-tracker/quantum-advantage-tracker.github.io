@@ -8,6 +8,7 @@ type BaseSubmission = {
   computeResourcesQuantum?: string;
   computeResourcesClassical?: string;
   notes?: string;
+  authors?: string;
   institutions: string;
 };
 
