@@ -11,6 +11,7 @@ import { GithubIcon } from '@/icons';
 import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
 import { flattenInstances, formatDate, getHamiltonianUrl, sortSubmissions } from '@/utils';
+import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
@@ -70,16 +71,23 @@ export function SubmissionsTable(props: {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Date</TableHead>
-          <TableHead>Name</TableHead>
+          <TableHead className="w-28">
+            Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
+          </TableHead>
+          <TableHead className="w-64">Name / Institutions</TableHead>
           <TableHead>Method</TableHead>
           <TableHead>Hamiltonian</TableHead>
-          <TableHead>Qubits</TableHead>
-          <TableHead>Gates</TableHead>
-          <TableHead>Energy (Eh) [upper, lower bound]</TableHead>
-          <TableHead title="Runtime (seconds)">Runtime (sec)</TableHead>
-          <TableHead>Compute resources</TableHead>
-          <TableHead>Institution</TableHead>
+          <TableHead className="w-20">Qubits</TableHead>
+          <TableHead className="w-20">Gates</TableHead>
+          <TableHead>
+            <div>Energy (Eh)</div>
+            <div>[upper, lower bound]</div>
+          </TableHead>
+          <TableHead className="w-28">
+            <div>Runtime</div>
+            <div>(seconds)</div>
+          </TableHead>
+          <TableHead className="w-56">Compute resources</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -107,6 +115,11 @@ export function SubmissionsTable(props: {
                   >
                     {submission.name}
                   </a>
+
+                  <div className="mt-2">
+                    <span className="text-by-foreground font-semibold">By:</span>{' '}
+                    <span>{submission.institutions}</span>
+                  </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
                 <TableCell className="whitespace-normal">
@@ -143,7 +156,6 @@ export function SubmissionsTable(props: {
                     <span title="Classical">C</span>: {submission.computeResourcesClassical || '-'}
                   </div>
                 </TableCell>
-                <TableCell className="whitespace-normal">{submission.institutions}</TableCell>
               </TableRow>
             );
           })
