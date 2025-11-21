@@ -160,7 +160,7 @@ body:
     id: notes
     attributes:
       label: Notes
-      description: Additional notes
+      description: Additional notes. Please keep to 60 characters
     validations:
       required: false
 
