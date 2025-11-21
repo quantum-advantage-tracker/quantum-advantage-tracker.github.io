@@ -25,7 +25,12 @@ body:
     id: hamiltonian
     attributes:
       label: Hamiltonian
-      description: The hamiltonian this submission addresses
+      description: |
+        The hamiltonian instance this submission addresses.
+
+        You can find information about all the available ones here: [/data/variational-problems/hamiltonians](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/variational-problems/hamiltonians).
+
+        If your instance is not listed, please follow the instructions in [/data/README.md](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/README.md) to submit a new one.
       options:
         - 4fe_4s_54e_36o
         - anderson_impurity_model_4i_28b_32e
@@ -100,11 +105,18 @@ body:
       required: true
 
   - type: input
+    id: authors
+    attributes:
+      label: Authors
+      description: The author(s) or individual(s) involved in the submission, separated by commas
+    validations:
+      required: false
+
+  - type: input
     id: institutions
     attributes:
       label: Institutions
       description: The institution(s) or organization(s) involved in the submission, separated by commas
-      placeholder:
     validations:
       required: true
 
@@ -141,6 +153,14 @@ body:
       label: Compute resources (classical)
       description: Classical hardware specification
       placeholder: e.g., "AMD EPYC 7763, 128 cores"
+    validations:
+      required: false
+
+  - type: input
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional notes. Please keep to 60 characters
     validations:
       required: false
 
