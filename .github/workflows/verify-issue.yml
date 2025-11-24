@@ -75,7 +75,14 @@ jobs:
           SUBMISSION=$(node -e "
             const data = JSON.parse(process.env.INPUT_JSON);
 
-            data.circuit = data.circuit[0];
+            if (data.circuit) {
+              data.circuit = data.circuit[0];
+            }
+
+            if (data.hamiltonian) {
+              data.hamiltonian = data.hamiltonian[0];
+            }
+
             delete data.methodProof;
 
             const numericFields = [
@@ -85,6 +92,8 @@ jobs:
               'errorBoundLow',
               'errorBoundHigh',
               'energy',
+              'qubits',
+              'gates',
             ];
 
             for (const key of numericFields) {
