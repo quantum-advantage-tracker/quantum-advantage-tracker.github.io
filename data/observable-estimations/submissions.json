@@ -108,5 +108,16 @@
     "institutions": "U Chicago, IBM, Algorithmiq, EPFL, Flatiron Institute",
     "runtimeClassical": 640,
     "computeResourcesClassical": "Apple M1 Max 64GB"
+  },
+  {
+    "createdAt": "2025-11-21T21:05:47Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/64",
+    "name": "Single_path_MC_49x1296",
+    "circuit": "operator_loschmidt_echo_49x1296",
+    "observableValue": 0.619,
+    "method": "Single-path Monte Carlo",
+    "institutions": "U Chicago, IBM, Algorithmiq, EPFL, Flatiron Institute",
+    "runtimeClassical": 1492,
+    "computeResourcesClassical": "Apple M1 Max 64GB"
   }
 ]
