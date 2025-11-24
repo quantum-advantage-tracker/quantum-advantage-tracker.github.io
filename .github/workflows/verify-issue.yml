@@ -126,9 +126,14 @@ jobs:
           jq ". += [${SUBMISSION}]" "$SUBMISSIONS_PATH" > "$tmp_file" && mv "$tmp_file" "$SUBMISSIONS_PATH"
 
       - name: Create pull request
+        id: create_pull_request
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'Add new submission from issue #${{ github.event.issue.number }}'
           title: 'Add new submission from issue #${{ github.event.issue.number }}'
           body: 'Closes #${{ github.event.issue.number }}.'
           branch: submission-issue-${{ github.event.issue.number }}
+
+      - name: Enable pull request auto-merge
+        if: steps.create_pull_request.outputs.pull-request-operation == 'created'
+        run: gh pr merge --merge --auto "${{ steps.create_pull_request.outputs.pull-request-number }}"
