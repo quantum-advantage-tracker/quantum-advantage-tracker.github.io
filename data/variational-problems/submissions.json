@@ -71,5 +71,14 @@
     "energy": -326.54741547585223,
     "method": "Restricted Hartree-Fock",
     "institutions": "IBM, RIKEN"
+  },
+  {
+    "createdAt": "2025-11-21T01:19:59Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/60",
+    "name": "[4Fe-4S] (54e, 36o) CISD",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.7421234190204,
+    "method": "Configuration Interaction with singled and doubles",
+    "institutions": "IBM, RIKEN"
   }
 ]
