@@ -30,5 +30,15 @@
     "runtimeClassical": 36000,
     "computeResourcesQuantum": "IBM Heron r2 | LUCJ circuit (one layer) ~3500 2-qubit gates",
     "computeResourcesClassical": "76032 nodes of Fugaku (One node has a Fujitsu A64FX CPU with 48 cores and 32 GiB or memory)"
+  },
+  {
+    "createdAt": "2025-11-20T22:46:25Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/56",
+    "name": "TrimCI_202511_1e3",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.81,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
   }
 ]
