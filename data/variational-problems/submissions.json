@@ -51,5 +51,16 @@
     "institutions": "University of Wisconsin – Madison",
     "runtimeClassical": 900,
     "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
+  },
+  {
+    "createdAt": "2025-11-20T22:51:19Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/58",
+    "name": "TrimCI_202511_6e7",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -327.175,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "runtimeClassical": 50400,
+    "computeResourcesClassical": "12 Node × 2 × AMD EPYC 7713 64C 2GHz = 1536 cores"
   }
 ]
