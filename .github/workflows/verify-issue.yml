@@ -137,3 +137,5 @@ jobs:
       - name: Enable pull request auto-merge
         if: steps.create_pull_request.outputs.pull-request-operation == 'created'
         run: gh pr merge --merge --auto "${{ steps.create_pull_request.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
