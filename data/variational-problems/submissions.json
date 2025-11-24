@@ -40,5 +40,16 @@
     "method": "TrimCI",
     "institutions": "University of Wisconsin – Madison",
     "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
+  },
+  {
+    "createdAt": "2025-11-20T22:47:38Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/57",
+    "name": "TrimCI_202511_1e4",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.913,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "runtimeClassical": 900,
+    "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
   }
 ]
