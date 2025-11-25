@@ -77,12 +77,14 @@ export function SubmissionsTable(props: {
           <TableHead className="w-18">Qubits</TableHead>
           <TableHead className="w-18">Gates</TableHead>
           <TableHead className="w-48">
-            <div>Energy (Eh)</div>
-            <div>[upper, lower bound]</div>
+            Energy (Eh)
+            <br />
+            [upper, lower bound]
           </TableHead>
           <TableHead className="w-28">
-            <div>Runtime</div>
-            <div>(seconds)</div>
+            Runtime
+            <br />
+            (seconds)
           </TableHead>
           <TableHead className="w-56">Compute resources</TableHead>
         </TableRow>

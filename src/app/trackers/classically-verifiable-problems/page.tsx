@@ -78,8 +78,9 @@ export function SubmissionsTable(props: {
           <TableHead className="w-18">Gates</TableHead>
           <TableHead className="w-48">Value</TableHead>
           <TableHead className="w-28">
-            <div>Runtime</div>
-            <div>(seconds)</div>
+            Runtime
+            <br />
+            (seconds)
           </TableHead>
           <TableHead className="w-56">Compute resources</TableHead>
         </TableRow>
