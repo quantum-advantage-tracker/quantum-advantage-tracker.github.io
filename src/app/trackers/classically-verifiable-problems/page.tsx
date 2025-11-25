@@ -15,7 +15,6 @@ import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import circuitModels from '../../../../data/classically-verifiable-problems/circuit-models.json' assert { type: 'json' };
 import submissions from '../../../../data/classically-verifiable-problems/submissions.json' assert { type: 'json' };
-import { ParticipateSection } from '../ParticipateSection';
 
 export const metadata: Metadata = {
   title: 'Classically verifiable problems',
@@ -23,14 +22,14 @@ export const metadata: Metadata = {
 
 export default async function TrackersCVP() {
   return (
-    <div className="flex flex-col gap-4 py-20 text-center">
+    <div className="flex flex-col gap-4">
       <h3 className="text-3xl">Classically verifiable problems 🗝️</h3>
       <h4 className="mx-auto max-w-xl">
         Submissions must demonstrate quantum advantage by scoring solutions against known answers or
         efficiently checkable witnesses.
       </h4>
 
-      <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
+      <div className="mx-auto flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
         <Button variant="secondary" size="lg" asChild>
           <a
             href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-models"
@@ -51,11 +50,9 @@ export default async function TrackersCVP() {
         </Button>
       </div>
 
-      <div className="text-left">
+      <div className="mt-14 text-left">
         <SubmissionsTable submissions={submissions} circuitModels={circuitModels} />
       </div>
-
-      <ParticipateSection />
     </div>
   );
 }
@@ -68,7 +65,7 @@ export function SubmissionsTable(props: {
   const circuitInstances = flattenInstances(circuitModels);
 
   return (
-    <Table className="min-w-332 table-fixed">
+    <Table className="min-w-336 table-fixed">
       <TableHeader>
         <TableRow>
           <TableHead className="w-28">
@@ -79,7 +76,7 @@ export function SubmissionsTable(props: {
           <TableHead className="w-36">Circuit</TableHead>
           <TableHead className="w-20">Qubits</TableHead>
           <TableHead className="w-20">Gates</TableHead>
-          <TableHead className="w-44">Value</TableHead>
+          <TableHead className="w-48">Value</TableHead>
           <TableHead className="w-28">
             <div>Runtime</div>
             <div>(seconds)</div>
