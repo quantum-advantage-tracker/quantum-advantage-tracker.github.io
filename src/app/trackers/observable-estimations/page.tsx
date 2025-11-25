@@ -15,7 +15,6 @@ import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import circuitModels from '../../../../data/observable-estimations/circuit-models.json' assert { type: 'json' };
 import submissions from '../../../../data/observable-estimations/submissions.json' assert { type: 'json' };
-import { ParticipateSection } from '../ParticipateSection';
 
 export const metadata: Metadata = {
   title: 'Observable estimations',
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 
 export default async function TrackersOE() {
   return (
-    <div className="flex flex-col gap-4 py-20 text-center">
+    <div className="flex flex-col gap-4">
       <h3 className="text-3xl">Observable estimations 📊</h3>
       <h4 className="mx-auto max-w-xl">
         Submissions in this tracker report expectation values for observables alongside rigorous
@@ -55,8 +54,6 @@ export default async function TrackersOE() {
       <div className="text-left">
         <SubmissionsTable submissions={submissions} circuitModels={circuitModels} />
       </div>
-
-      <ParticipateSection />
     </div>
   );
 }

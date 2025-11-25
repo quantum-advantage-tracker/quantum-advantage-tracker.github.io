@@ -15,7 +15,6 @@ import { ArrowDownIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import hamiltonians from '../../../../data/variational-problems/hamiltonians.json' assert { type: 'json' };
 import submissions from '../../../../data/variational-problems/submissions.json' assert { type: 'json' };
-import { ParticipateSection } from '../ParticipateSection';
 
 export const metadata: Metadata = {
   title: 'Variational problems',
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 
 export default async function TrackersVP() {
   return (
-    <div className="flex flex-col gap-4 py-20 text-center">
+    <div className="flex flex-col gap-4">
       <h3 className="text-3xl">Variational problems 🌀</h3>
       <h4 className="mx-auto max-w-xl">
         Submissions must bound the ground-state energy from above. Verified entries include evidence
@@ -54,8 +53,6 @@ export default async function TrackersVP() {
       <div className="text-left">
         <SubmissionsTable submissions={submissions} hamiltonians={hamiltonians} />
       </div>
-
-      <ParticipateSection />
     </div>
   );
 }
