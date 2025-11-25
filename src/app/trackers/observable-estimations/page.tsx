@@ -120,7 +120,7 @@ export function SubmissionsTable(props: {
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
-                <TableCell className="break-all whitespace-normal">
+                <TableCell className="wrap-break-word whitespace-normal">
                   <a
                     href={getCircuitInstanceUrl('observable-estimations', circuitInstance)}
                     target="_blank"
@@ -130,11 +130,11 @@ export function SubmissionsTable(props: {
                     {circuitInstance.id}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
-                <TableCell>
-                  <div className="break-all whitespace-normal">{submission.observableValue}</div>
-                  <div className="break-all whitespace-normal">
+                <TableCell>{circuitInstance.qubits}</TableCell>
+                <TableCell>{circuitInstance.gates}</TableCell>
+                <TableCell className="wrap-break-word whitespace-normal">
+                  <div>{submission.observableValue}</div>
+                  <div>
                     [{submission.errorBoundHigh || 'N/A'}, {submission.errorBoundLow || 'N/A'}]
                   </div>
                 </TableCell>

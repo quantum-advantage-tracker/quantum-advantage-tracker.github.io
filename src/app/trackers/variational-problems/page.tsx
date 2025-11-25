@@ -119,7 +119,7 @@ export function SubmissionsTable(props: {
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
-                <TableCell className="break-all whitespace-normal">
+                <TableCell className="wrap-break-word whitespace-normal">
                   <a
                     href={getHamiltonianUrl(hamiltonianInstance)}
                     target="_blank"
@@ -129,11 +129,11 @@ export function SubmissionsTable(props: {
                     {submission.hamiltonian}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">{submission.qubits}</TableCell>
-                <TableCell className="whitespace-normal">{submission.gates}</TableCell>
-                <TableCell>
-                  <div className="break-all whitespace-normal">{submission.energy}</div>
-                  <div className="break-all whitespace-normal">
+                <TableCell>{submission.qubits}</TableCell>
+                <TableCell>{submission.gates}</TableCell>
+                <TableCell className="wrap-break-word whitespace-normal">
+                  <div>{submission.energy}</div>
+                  <div>
                     [{submission.errorBoundHigh || 'N/A'}, {submission.errorBoundLow || 'N/A'}]
                   </div>
                 </TableCell>

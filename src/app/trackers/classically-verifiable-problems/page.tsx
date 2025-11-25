@@ -100,7 +100,7 @@ export function SubmissionsTable(props: {
                     {formatDate(submission.createdAt)}
                   </time>
                 </TableCell>
-                <TableCell className="whitespace-normal">
+                <TableCell className="wrap-break-word whitespace-normal">
                   <a
                     href={submission.url}
                     target="_blank"
@@ -116,7 +116,7 @@ export function SubmissionsTable(props: {
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
-                <TableCell className="break-all whitespace-normal">
+                <TableCell className="wrap-break-word whitespace-normal">
                   <a
                     href={getCircuitInstanceUrl('classically-verifiable-problems', circuitInstance)}
                     target="_blank"
@@ -126,8 +126,8 @@ export function SubmissionsTable(props: {
                     {circuitInstance.id}
                   </a>
                 </TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
-                <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
+                <TableCell>{circuitInstance.qubits}</TableCell>
+                <TableCell>{circuitInstance.gates}</TableCell>
                 <TableCell>{submission.value}</TableCell>
                 <TableCell>
                   <div>
