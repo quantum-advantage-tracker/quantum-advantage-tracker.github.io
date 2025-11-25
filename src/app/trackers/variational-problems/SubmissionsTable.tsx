@@ -19,10 +19,10 @@ export function SubmissionsTable(props: {
   const hamiltonianInstances = flattenInstances(hamiltonians);
 
   return (
-    <Table className="min-w-328 table-fixed">
+    <Table className="min-w-330 table-fixed">
       <TableHeader>
         <TableRow>
-          <TableHead className="w-24">
+          <TableHead className="w-26">
             Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
           </TableHead>
           <TableHead className="w-64 min-w-64">Name / Institutions</TableHead>
