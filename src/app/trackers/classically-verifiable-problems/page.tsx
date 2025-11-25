@@ -100,7 +100,7 @@ export function SubmissionsTable(props: {
                     {formatDate(submission.createdAt)}
                   </time>
                 </TableCell>
-                <TableCell className="break-all whitespace-normal">
+                <TableCell className="whitespace-normal">
                   <a
                     href={submission.url}
                     target="_blank"
