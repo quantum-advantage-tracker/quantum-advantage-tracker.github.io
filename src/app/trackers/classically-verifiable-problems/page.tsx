@@ -68,18 +68,18 @@ export function SubmissionsTable(props: {
   const circuitInstances = flattenInstances(circuitModels);
 
   return (
-    <Table>
+    <Table className="min-w-332 table-fixed">
       <TableHeader>
         <TableRow>
           <TableHead className="w-28">
             Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
           </TableHead>
-          <TableHead className="w-64">Name / Institutions</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead>Circuit</TableHead>
+          <TableHead className="w-64 min-w-64">Name / Institutions</TableHead>
+          <TableHead className="w-36">Method</TableHead>
+          <TableHead className="w-36">Circuit</TableHead>
           <TableHead className="w-20">Qubits</TableHead>
           <TableHead className="w-20">Gates</TableHead>
-          <TableHead>Value</TableHead>
+          <TableHead className="w-44">Value</TableHead>
           <TableHead className="w-28">
             <div>Runtime</div>
             <div>(seconds)</div>
@@ -103,7 +103,7 @@ export function SubmissionsTable(props: {
                     {formatDate(submission.createdAt)}
                   </time>
                 </TableCell>
-                <TableCell className="whitespace-normal">
+                <TableCell className="break-all whitespace-normal">
                   <a
                     href={submission.url}
                     target="_blank"
@@ -119,7 +119,7 @@ export function SubmissionsTable(props: {
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
-                <TableCell className="whitespace-normal">
+                <TableCell className="break-all whitespace-normal">
                   <a
                     href={getCircuitInstanceUrl('classically-verifiable-problems', circuitInstance)}
                     target="_blank"

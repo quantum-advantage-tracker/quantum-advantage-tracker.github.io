@@ -68,18 +68,18 @@ export function SubmissionsTable(props: {
   const hamiltonianInstances = flattenInstances(hamiltonians);
 
   return (
-    <Table>
+    <Table className="min-w-332 table-fixed">
       <TableHeader>
         <TableRow>
           <TableHead className="w-28">
             Date <ArrowDownIcon size={16} className="float-end mt-0.5" />
           </TableHead>
-          <TableHead className="w-64">Name / Institutions</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead>Hamiltonian</TableHead>
+          <TableHead className="w-64 min-w-64">Name / Institutions</TableHead>
+          <TableHead className="w-36">Method</TableHead>
+          <TableHead className="w-36">Hamiltonian</TableHead>
           <TableHead className="w-20">Qubits</TableHead>
           <TableHead className="w-20">Gates</TableHead>
-          <TableHead>
+          <TableHead className="w-44">
             <div>Energy (Eh)</div>
             <div>[upper, lower bound]</div>
           </TableHead>
@@ -106,7 +106,7 @@ export function SubmissionsTable(props: {
                     {formatDate(submission.createdAt)}
                   </time>
                 </TableCell>
-                <TableCell className="whitespace-normal">
+                <TableCell className="break-all whitespace-normal">
                   <a
                     href={submission.url}
                     target="_blank"
@@ -122,7 +122,7 @@ export function SubmissionsTable(props: {
                   </div>
                 </TableCell>
                 <TableCell className="whitespace-normal">{submission.method}</TableCell>
-                <TableCell className="whitespace-normal">
+                <TableCell className="break-all whitespace-normal">
                   <a
                     href={getHamiltonianUrl(hamiltonianInstance)}
                     target="_blank"
