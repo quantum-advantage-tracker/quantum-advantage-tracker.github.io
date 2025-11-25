@@ -69,7 +69,7 @@ export function SubmissionsTable(props: {
   const circuitInstances = flattenInstances(circuitModels);
 
   return (
-    <Table className="min-w-332 table-fixed">
+    <Table className="min-w-336 table-fixed">
       <TableHeader>
         <TableRow>
           <TableHead className="w-28">
@@ -80,7 +80,7 @@ export function SubmissionsTable(props: {
           <TableHead className="w-36">Circuit</TableHead>
           <TableHead className="w-20">Qubits</TableHead>
           <TableHead className="w-20">Gates</TableHead>
-          <TableHead className="w-44">
+          <TableHead className="w-48">
             <div>Expectation value</div>
             <div>[upper, lower bound]</div>
           </TableHead>
@@ -136,8 +136,8 @@ export function SubmissionsTable(props: {
                 <TableCell className="whitespace-normal">{circuitInstance.qubits}</TableCell>
                 <TableCell className="whitespace-normal">{circuitInstance.gates}</TableCell>
                 <TableCell>
-                  <div>{submission.observableValue}</div>
-                  <div>
+                  <div className="break-all whitespace-normal">{submission.observableValue}</div>
+                  <div className="break-all whitespace-normal">
                     [{submission.errorBoundHigh || 'N/A'}, {submission.errorBoundLow || 'N/A'}]
                   </div>
                 </TableCell>
