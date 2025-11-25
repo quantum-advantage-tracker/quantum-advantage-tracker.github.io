@@ -29,7 +29,7 @@ export default async function TrackersCVP() {
         efficiently checkable witnesses.
       </h4>
 
-      <div className="mx-auto mb-16 flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
+      <div className="mx-auto flex flex-row flex-wrap justify-center gap-x-6 gap-y-3">
         <Button variant="secondary" size="lg" asChild>
           <a
             href="https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-models"
@@ -50,7 +50,7 @@ export default async function TrackersCVP() {
         </Button>
       </div>
 
-      <div className="text-left">
+      <div className="mt-14 text-left">
         <SubmissionsTable submissions={submissions} circuitModels={circuitModels} />
       </div>
     </div>
