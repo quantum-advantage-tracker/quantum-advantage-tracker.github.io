@@ -6,6 +6,12 @@
         "path": "peaked_circuit_heavy_hex_49x4020.qasm",
         "qubits": 49,
         "gates": 4020
+      },
+      {
+        "id": "peaked_circuit_P9_Hqap_1917",
+        "path": "peaked_circuit_P9_Hqap_1917.qasm",
+        "qubits": 49,
+        "gates": 5807
       }
     ]
   }
