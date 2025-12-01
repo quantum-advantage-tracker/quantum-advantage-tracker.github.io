@@ -20,5 +20,15 @@
         "gates": 1872
       }
     ]
+  },
+  "bell_state_phi_plus": {
+    "instances": [
+      {
+        "id": "bell_state_phi_plus_2qubit",
+        "path": "bell_phi_plus.qasm",
+        "qubits": 2,
+        "gates": 2
+      }
+    ]
   }
 }

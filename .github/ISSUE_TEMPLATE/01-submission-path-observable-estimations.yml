@@ -35,6 +35,7 @@ body:
         - operator_loschmidt_echo_70x1872
         - operator_loschmidt_echo_49x648
         - operator_loschmidt_echo_49x1296
+        - bell_state_phi_plus_2qubit
     validations:
       required: true
 
