@@ -130,5 +130,16 @@
     "institutions": "U Chicago, IBM, Algorithmiq, EPFL, Flatiron Institute",
     "runtimeClassical": 1890,
     "computeResourcesClassical": "Apple M1 Max 64GB"
+  },
+  {
+    "createdAt": "2025-12-02T00:30:40Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/77",
+    "name": "49x1296, ibm_boston (layout 2)",
+    "circuit": "operator_loschmidt_echo_49x1296",
+    "observableValue": 0.657,
+    "method": "Global rescaling",
+    "institutions": "IBM Quantum, Algorithmiq, Flatiron Institute",
+    "runtimeQuantum": 4260,
+    "computeResourcesQuantum": "ibm_boston"
   }
 ]
