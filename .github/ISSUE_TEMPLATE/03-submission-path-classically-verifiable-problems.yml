@@ -36,6 +36,9 @@ body:
       options:
         - peaked_circuit_heavy_hex_49x4020
         - peaked_circuit_P9_Hqap_56x1917
+        - h2qec_surface_code_5x5
+        - h2qec_repetition_3q
+        - h2qec_repetition_5q
     validations:
       required: true
 

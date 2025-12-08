@@ -14,5 +14,27 @@
         "gates": 1917
       }
     ]
+  },
+  "h2qec": {
+    "instances": [
+      {
+        "id": "h2qec_surface_code_5x5",
+        "path": "h2qec/H2QEC_SURFACE_CODE_5x5.qasm",
+        "qubits": 49,
+        "gates": 163
+      },
+      {
+        "id": "h2qec_repetition_3q",
+        "path": "h2qec/H2QEC_REPETITION_CODE_3q.qasm",
+        "qubits": 4,
+        "gates": 13
+      },
+      {
+        "id": "h2qec_repetition_5q",
+        "path": "h2qec/H2QEC_REPETITION_CODE_5q.qasm",
+        "qubits": 6,
+        "gates": 23
+      }
+    ]
   }
 }
