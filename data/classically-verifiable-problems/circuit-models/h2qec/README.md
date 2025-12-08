@@ -22,14 +22,11 @@ H²Q (Hysteretic Quantum Error Correction) implements thermodynamic error mitiga
 - ✅ **Statistical validation completed** (p < 0.0000001, highly significant)
 
 **Hardware-Validated Result**: **79.7% false positive reduction** (validated on IBM Quantum hardware)
-- **Job ID**: `d4lutmiv0j9c73e5nvt0`
-- **Backend**: `ibm_fez` (127-qubit Eagle r3)
-- **Circuits Tested**: 10 circuits, 38,912 measurements
-- **Statistical Significance**: p < 0.0000001 (paired t-test)
-- **Effect Size**: Large (Cohen's d = 6.36)
-- **95% Confidence Interval**: 72.1% - 94.2% reduction
-- **Best Performance**: 100% reduction (complete elimination) in Circuits 1 and 7
-- **Logical Fidelity**: 97.63% (average)
+- **Backend**: IBM Quantum `ibm_fez`
+- **Statistical Significance**: Highly significant (p < 0.0000001)
+- **Effect Size**: Large effect
+- **Best Performance**: Up to 100% reduction (complete elimination) observed
+- **Logical Fidelity**: High fidelity maintained
 
 **Patent Reference**: US Provisional Application 63/927,371 (Filed Nov 29, 2025)
 
@@ -45,33 +42,17 @@ Independent Research, Kenneth A Mendoza
 
 ### Primary Validation Run (November 29, 2025)
 
-**Job ID**: `d4lutmiv0j9c73e5nvt0`  
-**Backend**: `ibm_fez` (127-qubit Eagle r3)  
+**Backend**: IBM Quantum `ibm_fez`  
 **Status**: ✅ **COMPLETED**
 
 **Key Results:**
 - **False Positive Reduction**: **79.7%** (validated)
-  - Baseline FP rate: 2.23% (867 events)
-  - H²Q FP rate: 0.45% (176 events)
-- **Statistical Significance**: p < 0.0000001 (highly significant)
-- **Effect Size**: Large (Cohen's d = 6.36)
-- **95% Confidence Interval**: 72.1% - 94.2% reduction
-- **Best-Case Performance**: 100% reduction (Circuits 1, 7)
-- **Logical Fidelity**: 97.63% (average)
+- **Statistical Significance**: Highly significant (p < 0.0000001)
+- **Effect Size**: Large effect
+- **Best-Case Performance**: Up to 100% reduction (complete elimination) observed
+- **Logical Fidelity**: High fidelity maintained
 
-**Circuit Performance Summary:**
-| Circuit | Reduction | Logical Error Rate |
-|---------|-----------|-------------------|
-| 0 | 93.9% | 0.00% |
-| 1 | **100.0%** | 2.15% |
-| 2 | 87.4% | 2.73% |
-| 3 | 73.7% | 1.95% |
-| 4 | 60.6% | 3.42% |
-| 5 | 54.7% | 3.42% |
-| 6 | 86.2% | 2.44% |
-| 7 | **100.0%** | 1.86% |
-| 8 | 87.1% | 3.03% |
-| 9 | 88.1% | 2.73% |
+*Detailed validation results are available upon request and will be published following patent filing.*
 
 ## Action Items: Submit Results to Tracker
 
@@ -81,9 +62,9 @@ After the PR is merged, submit the validated results via GitHub issue:
 
 Use the validated hardware results:
 - **Value**: 79.7% (validated false positive reduction)
-- **Quantum runtime**: IBM execution time from Job `d4lutmiv0j9c73e5nvt0`
+- **Quantum runtime**: IBM execution time
 - **Classical runtime**: Hysteresis post-processing time
-- **Statistical validation**: p < 0.0000001, 95% CI: 72.1% - 94.2%
+- **Statistical validation**: Highly significant (p < 0.0000001)
 
 ### 2. Calculate Your "Value" Metric
 
@@ -98,11 +79,10 @@ value = (errors_without_H2QEC - errors_with_H2QEC) / errors_without_H2QEC * 100%
 ### 3. Include Statistical Validation
 
 Include statistical validation metrics:
-- **Statistical test**: Paired t-test (n=10 circuits)
+- **Statistical test**: Paired t-test
 - **p-value**: < 0.0000001 (highly significant)
-- **Effect size**: Cohen's d = 6.36 (large effect)
-- **95% Confidence Interval**: 72.1% - 94.2% reduction
-- **Mean reduction**: 83.2% (95% CI: 72.1% - 94.2%)
+- **Effect size**: Large effect
+- **Statistical significance**: Confirmed
 
 ### 4. Submit Results via GitHub Issue
 
@@ -122,8 +102,7 @@ Once you have validation results:
    - **Institutions**: Independent Research
    - **Quantum runtime**: Your IBM execution time
    - **Classical runtime**: Your post-processing time
-   - **Compute resources (quantum)**: "IBM ibm_fez (127-qubit Eagle r3)"
-   - **Job ID**: `d4lutmiv0j9c73e5nvt0` (for reference)
+   - **Compute resources (quantum)**: "IBM ibm_fez"
 
 ### Notes
 
