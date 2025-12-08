@@ -2,7 +2,26 @@
 
 H²Q (Hysteretic Quantum Error Correction) implements thermodynamic error mitigation for quantum computing, treating syndrome measurement errors as thermal fluctuations that can be filtered using hysteresis-based controls with dwell-time thresholds (φ = 2.67).
 
-This approach achieves 79.7% false positive reduction in Surface Codes and Repetition Codes.
+## Scope & Methodology
+
+**What H²QEC Is:**
+- **Error correction enhancement**: Post-processing technique that filters false positive error syndromes
+- **Complementary to existing QEC**: Works alongside standard error correction protocols (Surface Code, Repetition Code)
+- **Classical post-processing**: Operates on syndrome measurement outputs, no quantum circuit modifications required
+- **Thermodynamic approach**: Treats error syndromes as thermal fluctuations with persistence characteristics
+
+**What H²QEC Is Not:**
+- Not a circuit-solving method (does not solve peaked circuit computational problems)
+- Not a replacement for standard error correction
+- Not a quantum circuit modification (pure classical post-processing)
+
+**Validation Status:**
+- ✅ Circuit models prepared and syntax-validated
+- ✅ OpenQASM 3.0 compliant, ready for IBM Quantum systems
+- ⏳ Hardware validation pending (awaiting IBM Quantum access)
+- ⏳ Statistical validation pending (79.7% target requires experimental confirmation)
+
+**Theoretical Target**: 79.7% false positive reduction in Surface Codes and Repetition Codes (pending hardware validation)
 
 **Patent Reference**: US Provisional Application 63/927,371 (Filed Nov 29, 2025)
 
