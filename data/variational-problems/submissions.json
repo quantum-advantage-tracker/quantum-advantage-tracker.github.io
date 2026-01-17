@@ -1,0 +1,84 @@
+[
+  {
+    "createdAt": "2025-11-10T21:41:25Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/5",
+    "name": "SKQD",
+    "hamiltonian": "anderson_impurity_model_4i_28b_32e",
+    "qubits": 64,
+    "gates": 3281,
+    "energy": -62.25668182839704,
+    "errorBoundHigh": -57.52492815,
+    "method": "SKQD",
+    "institutions": "IBM, ORNL, University of Maryland",
+    "runtimeQuantum": 3600,
+    "runtimeClassical": 345600,
+    "computeResourcesQuantum": "IBM Heron r2",
+    "computeResourcesClassical": "AMD Epyc 7713 \"Trento\""
+  },
+  {
+    "createdAt": "2025-11-11T16:34:49Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/8",
+    "name": "SQD [4Fe-4S] (54e, 36o)",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "qubits": 77,
+    "gates": 3500,
+    "energy": -326.913,
+    "errorBoundHigh": -326.54741547274006,
+    "method": "SQD with circuit and orbital optimization",
+    "institutions": "IBM, RIKEN",
+    "runtimeQuantum": 36000,
+    "runtimeClassical": 36000,
+    "computeResourcesQuantum": "IBM Heron r2 | LUCJ circuit (one layer) ~3500 2-qubit gates",
+    "computeResourcesClassical": "76032 nodes of Fugaku (One node has a Fujitsu A64FX CPU with 48 cores and 32 GiB or memory)"
+  },
+  {
+    "createdAt": "2025-11-20T22:46:25Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/56",
+    "name": "TrimCI_202511_1e3",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.81,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
+  },
+  {
+    "createdAt": "2025-11-20T22:47:38Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/57",
+    "name": "TrimCI_202511_1e4",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.913,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "runtimeClassical": 900,
+    "computeResourcesClassical": "Apple M1 Ultra, 20 cores"
+  },
+  {
+    "createdAt": "2025-11-20T22:51:19Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/58",
+    "name": "TrimCI_202511_6e7",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -327.175,
+    "method": "TrimCI",
+    "institutions": "University of Wisconsin – Madison",
+    "runtimeClassical": 50400,
+    "computeResourcesClassical": "12 Node × 2 × AMD EPYC 7713 64C 2GHz = 1536 cores"
+  },
+  {
+    "createdAt": "2025-11-21T01:17:09Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/59",
+    "name": "[4Fe-4S] (54e, 36o) RHF",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.54741547585223,
+    "method": "Restricted Hartree-Fock",
+    "institutions": "IBM, RIKEN"
+  },
+  {
+    "createdAt": "2025-11-21T01:19:59Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/60",
+    "name": "[4Fe-4S] (54e, 36o) CISD",
+    "hamiltonian": "4fe_4s_54e_36o",
+    "energy": -326.7421234190204,
+    "method": "Configuration Interaction with singled and doubles",
+    "institutions": "IBM, RIKEN"
+  }
+]

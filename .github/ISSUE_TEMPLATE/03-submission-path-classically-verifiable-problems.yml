@@ -1,0 +1,145 @@
+name: 🗝️ Path 3 - Classically verifiable problems submission
+description: Submit a problem solution for the classically verifiable problems tracker - When quantum outputs are hard to find but easy to check
+labels: ['path: classically-verifiable-problems', 'submission']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🗝️ Path 3 - Classically verifiable problems
+
+        Thank you for submitting a solution to the **classically verifiable problems tracker**!
+
+        This pathway focuses on solutions that are hard to generate classically but easy to verify. Your submission should demonstrate quantum generation with efficient classical verification.
+
+        Please provide detailed information about your submission below.
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Please provide a unique and identifiable name for your submission
+    validations:
+      required: true
+
+  - type: dropdown
+    id: circuit
+    attributes:
+      label: Circuit
+      description: |
+        The circuit instance this submission addresses.
+
+        You can find information about all the available ones here: [/data/classically-verifiable-problems/circuit-models](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/classically-verifiable-problems/circuit-models).
+
+        If your instance is not listed, please follow the instructions in [/data/README.md](https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/tree/main/data/README.md) to submit a new one.
+      options:
+        - peaked_circuit_heavy_hex_49x4020
+        - peaked_circuit_heavy_hex_49x5072
+        - peaked_circuit_P9_Hqap_56x1917
+    validations:
+      required: true
+
+  - type: input
+    id: value
+    attributes:
+      label: Value
+      description: The claimed value (% of bits guessed correctly)
+      placeholder: e.g., "0.0023"
+    validations:
+      required: true
+
+  - type: input
+    id: method
+    attributes:
+      label: Method
+      description: Name for the method used in submission
+      placeholder: e.g., "Quantum + clustering"
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodProof
+    attributes:
+      label: Method proof
+      description: Link to paper, code repository, or detailed explanation of the method (required for verification)
+      placeholder: |
+        Provide at least one of:
+        - Paper/preprint: https://arxiv.org/abs/...
+        - Code repository: https://github.com/...
+        - Method explanation: Detailed description of the approach
+    validations:
+      required: true
+
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      description: The author(s) or individual(s) involved in the submission, separated by commas
+    validations:
+      required: false
+
+  - type: input
+    id: institutions
+    attributes:
+      label: Institutions
+      description: The institution(s) or organization(s) involved in the submission, separated by commas
+    validations:
+      required: true
+
+  - type: input
+    id: runtimeQuantum
+    attributes:
+      label: Quantum runtime (seconds)
+      description: Quantum execution time in seconds
+      placeholder: e.g., "5"
+    validations:
+      required: false
+
+  - type: input
+    id: runtimeClassical
+    attributes:
+      label: Classical runtime (seconds)
+      description: Classical computation time in seconds
+      placeholder: e.g., "9000"
+    validations:
+      required: false
+
+  - type: input
+    id: computeResourcesQuantum
+    attributes:
+      label: Compute resources (quantum)
+      description: Quantum hardware specification
+      placeholder: e.g., "IBM Heron r2"
+    validations:
+      required: false
+
+  - type: input
+    id: computeResourcesClassical
+    attributes:
+      label: Compute resources (classical)
+      description: Classical hardware specification
+      placeholder: e.g., "AMD EPYC 7763, 128 cores"
+    validations:
+      required: false
+
+  - type: input
+    id: notes
+    attributes:
+      label: Notes
+      description: Additional notes. Please keep to 60 characters
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ### What happens next?
+
+        Maintainers will review your submission for:
+        - ✅ Reproducibility
+        - ✅ Compliance with validation criteria (efficient verification)
+        - ✅ Data fidelity and traceability
+        - ✅ Transparent documentation of assumptions and uncertainties
+
+        Thank you for contributing to the Quantum Advantage Tracker! 🚀

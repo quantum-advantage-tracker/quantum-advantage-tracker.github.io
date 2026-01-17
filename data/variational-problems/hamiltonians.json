@@ -1,0 +1,20 @@
+{
+  "4fe_4s": {
+    "instances": [
+      {
+        "id": "4fe_4s_54e_36o",
+        "path": "4fe_4s_54e_36o.fcidump",
+        "hilbert_space_size": 8.86e15
+      }
+    ]
+  },
+  "anderson_impurity_model": {
+    "instances": [
+      {
+        "id": "anderson_impurity_model_4i_28b_32e",
+        "path": "anderson_impurity_model_4i_28b_32e.fcidump",
+        "hilbert_space_size": 3.61e17
+      }
+    ]
+  }
+}

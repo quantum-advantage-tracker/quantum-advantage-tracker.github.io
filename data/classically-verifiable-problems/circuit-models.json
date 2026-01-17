@@ -1,0 +1,24 @@
+{
+  "peaked_circuit": {
+    "instances": [
+      {
+        "id": "peaked_circuit_heavy_hex_49x4020",
+        "path": "peaked_circuit_heavy_hex_49x4020.qasm",
+        "qubits": 49,
+        "gates": 4020
+      },
+      {
+        "id": "peaked_circuit_heavy_hex_49x5072",
+        "path": "peaked_circuit_heavy_hex_49x5072.qasm",
+        "qubits": 49,
+        "gates": 5072
+      },
+      {
+        "id": "peaked_circuit_P9_Hqap_56x1917",
+        "path": "peaked_circuit_P9_Hqap_56x1917.qasm",
+        "qubits": 56,
+        "gates": 1917
+      }
+    ]
+  }
+}
