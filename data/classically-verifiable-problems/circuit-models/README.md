@@ -1,1 +1,0 @@
-# Classically verifiable - Circuit models

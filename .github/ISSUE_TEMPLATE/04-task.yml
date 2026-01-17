@@ -1,9 +1,0 @@
-name: Task
-description: Create a new task for the repository. This cannot be used as a submission; the options above are for that purpose.
-body:
-  - type: textarea
-    id: description
-    attributes:
-      label: Add a description
-    validations:
-      required: true
