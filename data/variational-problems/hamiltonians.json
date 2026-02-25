@@ -18,15 +18,6 @@
       }
     ]
   },
-  "2fe_2s": {
-    "instances": [
-      {
-        "id": "2fe_2s_30e_20o",
-        "path": "2fe_2s_30e_20o.fcidump",
-        "hilbert_space_size": 2.40e8
-      }
-    ]
-  },
   "4fe_4s": {
     "instances": [
       {
