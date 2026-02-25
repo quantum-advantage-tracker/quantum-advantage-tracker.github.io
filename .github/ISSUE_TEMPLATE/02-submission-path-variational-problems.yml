@@ -34,6 +34,9 @@ body:
       options:
         - 4fe_4s_54e_36o
         - anderson_impurity_model_4i_28b_32e
+        - n2_3-00_14e_28o
+        - n2_2-10_14e_28o
+        - n2_1-20_14e_28o          
     validations:
       required: true
 
