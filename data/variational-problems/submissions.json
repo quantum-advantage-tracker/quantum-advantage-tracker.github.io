@@ -80,5 +80,18 @@
     "energy": -326.7421234190204,
     "method": "Configuration Interaction with singled and doubles",
     "institutions": "IBM, RIKEN"
+  },
+  {
+    "createdAt": "2026-03-05T14:48:50Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/137",
+    "name": "TAM_for_guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.58662506986455,
+    "method": "Truncated Arnoldi's method",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "computeResourcesClassical": "Macbook Pro, Apple M1 Max chip, 10 cores",
+    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh"
   }
 ]
