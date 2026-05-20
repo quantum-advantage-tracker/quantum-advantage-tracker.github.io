@@ -6,3 +6,24 @@ export function GithubIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function TableEmptyIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      width="81"
+      height="62"
+      viewBox="0 0 81 62"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path d="M76.653 0H3.6072C1.615 0 0 1.615 0 3.6072V57.7152C0 59.7074 1.615 61.3224 3.6072 61.3224H76.653C78.6452 61.3224 80.2602 59.7074 80.2602 57.7152V3.6072C80.2602 1.615 78.6452 0 76.653 0Z" fill="#DDE1E6"/>
+      <path d="M12.6249 16.2344H69.4382" stroke="black" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M12.6249 45.0938H69.4382" stroke="black" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M12.6249 30.6641H69.4382" stroke="black" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M56.8132 35.1664C59.3035 35.1664 61.3222 33.1477 61.3222 30.6574C61.3222 28.1672 59.3035 26.1484 56.8132 26.1484C54.3229 26.1484 52.3042 28.1672 52.3042 30.6574C52.3042 33.1477 54.3229 35.1664 56.8132 35.1664Z" fill="#42BE65"/>
+      <path d="M35.1704 49.5961C37.6606 49.5961 39.6794 47.5774 39.6794 45.0871C39.6794 42.5969 37.6606 40.5781 35.1704 40.5781C32.6801 40.5781 30.6614 42.5969 30.6614 45.0871C30.6614 47.5774 32.6801 49.5961 35.1704 49.5961Z" fill="#42BE65"/>
+      <path d="M23.4465 20.7446C25.9368 20.7446 27.9555 18.7258 27.9555 16.2356C27.9555 13.7453 25.9368 11.7266 23.4465 11.7266C20.9562 11.7266 18.9375 13.7453 18.9375 16.2356C18.9375 18.7258 20.9562 20.7446 23.4465 20.7446Z" fill="#42BE65"/>
+    </svg>
+  );
+}

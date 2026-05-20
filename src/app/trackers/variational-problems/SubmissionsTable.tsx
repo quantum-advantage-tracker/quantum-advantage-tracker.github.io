@@ -20,6 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { TableEmptyIcon } from '@/icons';
 import type { Hamiltonians } from '@/types/hamiltonians';
 import type { VPSubmission } from '@/types/submissions';
 import { flattenInstances, formatDate, getHamiltonianUrl, sortSubmissions } from '@/utils';
@@ -181,7 +182,7 @@ export function SubmissionsTable(props: {
         </TableHeader>
         <TableBody>
           {filteredSubmissions.length === 0 ? (
-            <TableBodyEmpty />
+            <TableBodyEmpty category={categoryFilter} />
           ) : (
             sortSubmissions(filteredSubmissions).map((submission, index) => {
               const hamiltonianInstance = hamiltonianInstances.find(
@@ -258,10 +259,15 @@ export function SubmissionsTable(props: {
   );
 }
 
-function TableBodyEmpty() {
+function TableBodyEmpty({ category }: { category: Category }) {
   return (
     <TableRow>
-      <TableCell colSpan={8}>There are no submissions yet.</TableCell>
+      <TableCell colSpan={9}>
+        <div className="flex flex-col items-center justify-center gap-3 h-64">
+          <TableEmptyIcon />
+          <p>There are no {category} submissions</p>
+        </div>
+      </TableCell>
     </TableRow>
   );
 }
