@@ -2,6 +2,7 @@ type BaseSubmission = {
   createdAt: string;
   url: string;
   name: string;
+  category: string;
   method: string;
   runtimeQuantum?: number;
   runtimeClassical?: number;

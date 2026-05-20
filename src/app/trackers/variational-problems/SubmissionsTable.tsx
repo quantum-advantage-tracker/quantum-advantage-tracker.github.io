@@ -1,5 +1,6 @@
 'use client';
 
+import { CATEGORIES, type Category, CategoryFilter } from '@/components/CategoryFilter';
 import { RuntimeSeconds } from '@/components/RuntimeSeconds';
 import { Button } from '@/components/ui/button';
 import {
@@ -33,6 +34,17 @@ export function SubmissionsTable(props: {
   const hamiltonianInstances = useMemo(() => flattenInstances(hamiltonians), [hamiltonians]);
   const hamiltonianOptions = useMemo(() => Object.keys(hamiltonians), [hamiltonians]);
 
+  const categoryCounts = useMemo(() => {
+    const counts = Object.fromEntries(CATEGORIES.map((c) => [c, 0])) as Record<Category, number>;
+    for (const submission of submissions) {
+      const category = submission.category as Category;
+      if (category in counts) counts[category] += 1;
+    }
+    return counts;
+  }, [submissions]);
+
+  const [categoryFilter, setCategoryFilter] = useState<Category>('active');
+
   const [hamiltonianFilter, setHamiltonianFilter] = useState(() => {
     return hamiltonianOptions.length === 1 ? hamiltonianOptions[0] : 'all';
   });
@@ -51,12 +63,13 @@ export function SubmissionsTable(props: {
       const instance = hamiltonianInstances.find((inst) => inst.id === submission.hamiltonian);
       if (!instance) return false;
 
+      const matchesCategory = submission.category === categoryFilter;
       const matchesHamiltonian = hamiltonianFilter === 'all' || instance.type === hamiltonianFilter;
       const matchesInstance = instanceFilter === 'all' || submission.hamiltonian === instanceFilter;
 
-      return matchesHamiltonian && matchesInstance;
+      return matchesCategory && matchesHamiltonian && matchesInstance;
     });
-  }, [submissions, hamiltonianInstances, hamiltonianFilter, instanceFilter]);
+  }, [submissions, hamiltonianInstances, categoryFilter, hamiltonianFilter, instanceFilter]);
 
   const instanceOptions = useMemo(() => {
     if (hamiltonianFilter === 'all') {
@@ -79,6 +92,14 @@ export function SubmissionsTable(props: {
 
   return (
     <div>
+      <div className="flex justify-center pb-6">
+        <CategoryFilter
+          value={categoryFilter}
+          onChange={setCategoryFilter}
+          counts={categoryCounts}
+        />
+      </div>
+
       <div className="flex flex-wrap items-center gap-4 pb-4">
         <Select
           value={hamiltonianFilter === 'all' ? '' : hamiltonianFilter}

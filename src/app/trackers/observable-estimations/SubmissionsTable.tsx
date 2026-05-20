@@ -1,5 +1,6 @@
 'use client';
 
+import { CATEGORIES, type Category, CategoryFilter } from '@/components/CategoryFilter';
 import { RuntimeSeconds } from '@/components/RuntimeSeconds';
 import { Button } from '@/components/ui/button';
 import {
@@ -33,6 +34,17 @@ export function SubmissionsTable(props: {
   const circuitInstances = useMemo(() => flattenInstances(circuitModels), [circuitModels]);
   const modelOptions = useMemo(() => Object.keys(circuitModels), [circuitModels]);
 
+  const categoryCounts = useMemo(() => {
+    const counts = Object.fromEntries(CATEGORIES.map((c) => [c, 0])) as Record<Category, number>;
+    for (const submission of submissions) {
+      const category = submission.category as Category;
+      if (category in counts) counts[category] += 1;
+    }
+    return counts;
+  }, [submissions]);
+
+  const [categoryFilter, setCategoryFilter] = useState<Category>('active');
+
   const [modelFilter, setModelFilter] = useState(() => {
     return modelOptions.length === 1 ? modelOptions[0] : 'all';
   });
@@ -49,12 +61,13 @@ export function SubmissionsTable(props: {
       const instance = circuitInstances.find((inst) => inst.id === submission.circuit);
       if (!instance) return false;
 
+      const matchesCategory = submission.category === categoryFilter;
       const matchesModel = modelFilter === 'all' || instance.type === modelFilter;
       const matchesInstance = instanceFilter === 'all' || submission.circuit === instanceFilter;
 
-      return matchesModel && matchesInstance;
+      return matchesCategory && matchesModel && matchesInstance;
     });
-  }, [submissions, circuitInstances, modelFilter, instanceFilter]);
+  }, [submissions, circuitInstances, categoryFilter, modelFilter, instanceFilter]);
 
   const instanceOptions = useMemo(() => {
     if (modelFilter === 'all') {
@@ -75,6 +88,14 @@ export function SubmissionsTable(props: {
 
   return (
     <div>
+      <div className="flex justify-center pb-6">
+        <CategoryFilter
+          value={categoryFilter}
+          onChange={setCategoryFilter}
+          counts={categoryCounts}
+        />
+      </div>
+
       <div className="flex flex-wrap items-center gap-4 pb-4">
         <Select
           value={modelFilter === 'all' ? '' : modelFilter}
