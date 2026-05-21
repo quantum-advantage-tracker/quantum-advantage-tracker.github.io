@@ -2,14 +2,18 @@
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-export const CATEGORIES = ['active', 'baseline', 'superseded'] as const;
+export const CATEGORIES = [
+  'Active Candidates',
+  'Baseline Benchmarks',
+  'Superseded Candidates',
+] as const;
 
 export type Category = (typeof CATEGORIES)[number];
 
 const LABELS: Record<Category, string> = {
-  active: 'Active',
-  baseline: 'Baseline',
-  superseded: 'Superseded',
+  'Active Candidates': 'Active',
+  'Baseline Benchmarks': 'Baseline',
+  'Superseded Candidates': 'Superseded',
 };
 
 export function CategoryFilter(props: {

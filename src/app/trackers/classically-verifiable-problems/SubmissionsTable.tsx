@@ -44,7 +44,7 @@ export function SubmissionsTable(props: {
     return counts;
   }, [submissions]);
 
-  const [categoryFilter, setCategoryFilter] = useState<Category>('active');
+  const [categoryFilter, setCategoryFilter] = useState<Category>('Active Candidates');
 
   const [modelFilter, setModelFilter] = useState(() => {
     return modelOptions.length === 1 ? modelOptions[0] : 'all';
@@ -255,7 +255,7 @@ function TableBodyEmpty({ category }: { category: Category }) {
       <TableCell colSpan={9}>
         <div className="flex flex-col items-center justify-center gap-3 h-64">
           <TableEmptyIcon />
-          <p>There are no {category} submissions</p>
+          <p>There are no {category.toLowerCase()}</p>
         </div>
       </TableCell>
     </TableRow>
