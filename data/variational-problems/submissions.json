@@ -80,5 +80,21 @@
     "energy": -326.7421234190204,
     "method": "Configuration Interaction with singled and doubles",
     "institutions": "IBM, RIKEN"
+  },
+  {
+    "createdAt": "2026-03-05T14:34:45Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/136",
+    "name": "SKQD_for_guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.58662506986455,
+    "method": "SKQD\n\n[qasm_circuits.zip](https://github.com/user-attachments/files/25845952/qasm_circuits.zip)",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "runtimeQuantum": 68400,
+    "runtimeClassical": 593,
+    "computeResourcesQuantum": "IBM Heron r3",
+    "computeResourcesClassical": "Mac Studio, Apple M3 Ultra chip, 32 cores",
+    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh\n\n### One page writeup\n\n[skqd_one_page_summary.docx](https://github.com/user-attachments/files/27523197/skqd_one_page_summary.docx)"
   }
 ]
