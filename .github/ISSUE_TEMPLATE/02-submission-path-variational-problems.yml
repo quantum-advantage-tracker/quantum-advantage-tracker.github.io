@@ -30,9 +30,9 @@ body:
         - **Active Candidates**: Problems that have met a higher bar of evidence suggesting quantum methods are credible contenders for advantage. To be clear, problems in this category are not necessarily provable examples of quantum advantage. These are merely problems where one may not yet have reliable classical benchmarks
         - **Superseded Candidates**: Previously active candidates for which classical methods have caught up or exceeded the quantum approach.
       options:
-        - Baseline
-        - Active
-        - Superseded
+        - Baseline Benchmarks
+        - Active Candidates
+        - Superseded Candidates
     validations:
       required: true
 

@@ -1,10 +1,6 @@
 const inputJsonString = process.argv[2];
 const data = JSON.parse(inputJsonString);
 
-if (data.category) {
-  data.category = data.category.toLowerCase();
-}
-
 if (data.circuit) {
   data.circuit = data.circuit[0];
 }
