@@ -95,6 +95,6 @@
     "runtimeClassical": 593,
     "computeResourcesQuantum": "IBM Heron r3",
     "computeResourcesClassical": "Mac Studio, Apple M3 Ultra chip, 32 cores",
-    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh\n\n### One page writeup\n\n[skqd_one_page_summary.docx](https://github.com/user-attachments/files/27523197/skqd_one_page_summary.docx)"
+    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh"
   }
 ]
