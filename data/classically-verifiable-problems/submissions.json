@@ -108,5 +108,19 @@
     "institutions": "IBM",
     "runtimeClassical": 4059,
     "computeResourcesClassical": "Nvidia A100 80GB"
+  },
+  {
+    "createdAt": "2026-04-29T23:24:42Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/151",
+    "name": "ibm_boston_rgs_nq70_depth70_checks27_basis_fstate",
+    "circuit": "random_graph_sampling_nq70_depth70_checks27_basis_fstate",
+    "value": "0.37 (inferred from the graph state fidelity)",
+    "method": "Quantum",
+    "authors": "Ali Javadi-Abhari, Simon Martiel, Jay-U Chung, Alireza Seif, Soumik Ghosh",
+    "institutions": "IBM, UChicago",
+    "runtimeQuantum": 1950,
+    "computeResourcesQuantum": "IBM Heron R3",
+    "computeResourcesClassical": "Intel Xeon Gold 6258R 28 cores with 1 TB memory (Qiskit Aer), Apple M1 Max 10 cores with 32 GB memory (Quimb)",
+    "notes": "The reported classical runtimes are extrapolated."
   }
 ]
