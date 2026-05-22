@@ -82,6 +82,73 @@
     "institutions": "IBM, RIKEN"
   },
   {
+    "createdAt": "2026-03-05T14:34:45Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/136",
+    "name": "SKQD_for_guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.58662506986455,
+    "method": "SKQD",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "runtimeQuantum": 68400,
+    "runtimeClassical": 593,
+    "computeResourcesQuantum": "IBM Heron r3",
+    "computeResourcesClassical": "Mac Studio, Apple M3 Ultra chip, 32 cores",
+    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh"
+  },
+  {
+    "createdAt": "2026-03-16T21:06:13Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/142",
+    "name": "DMRG solution of guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.58662506986444,
+    "method": "DMRG",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "runtimeClassical": 3063.32,
+    "computeResourcesClassical": "Macbook Pro, Apple M1 Max chip, 10 cores"
+  },
+  {
+    "createdAt": "2026-03-05T14:48:50Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/137",
+    "name": "TAM_for_guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.58662506986455,
+    "method": "Truncated Arnoldi's method",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "computeResourcesClassical": "Macbook Pro, Apple M1 Max chip, 10 cores",
+    "notes": "This is a synthetic spin Hamiltonian, so energies are not actually in Eh"
+  },
+  {
+
+    "createdAt": "2026-03-16T21:24:47Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/145",
+    "name": "ASCI solution of guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.55662506986455,
+    "method": "ASCI",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "computeResourcesClassical": "Intel Xeon Platinum 8260 CPU @ 2.40GHz. 96 cores. 2.95 TiB RAM"
+  },
+  {
+    "createdAt": "2026-03-16T21:16:11Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/143",
+    "name": "CIPSI solution of guided_sparse_ground_state_problem_49Q_v1",
+    "hamiltonian": "guided_sparse_ground_state_problem_49Q_v1",
+    "qubits": 49,
+    "energy": -85.57662506986455,
+    "method": "CIPSI",
+    "authors": "William Kirby, Bibek Pokharel, Javier Robledo Moreno, Kevin C. Smith, Sergey Bravyi, Abhinav Deshpande, Constantinos Evangelinos, Bryce Fuller, James R. Garrison, Ben Jaderberg, Caleb Johnson, Petar Jurcevic, Su-un Lee, Simon Martiel, Mario Motta, Seetharami Seelam, Oles Shtanko, Kevin J. Sung, Minh Tran, Vinay Tripathi, Kazuhiro Seki, Kazuya Shinjo, Han Xu, Lukas Broers, Tomonori Shirakawa, Seiji Yunoki, Kunal Sharma, Antonio Mezzacapo",
+    "institutions": "IBM, RIKEN, University of Chicago",
+    "computeResourcesClassical": "Intel Xeon Platinum 8260 CPU @ 2.40GHz. 96 cores. 2.95 TiB RAM"
+  },
+  {
     "createdAt": "2026-03-16T21:20:27Z",
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/144",
     "name": "HCI solution of guided_sparse_ground_state_problem_49Q_v1",
