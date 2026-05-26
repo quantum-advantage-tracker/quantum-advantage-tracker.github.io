@@ -114,7 +114,7 @@
     "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/151",
     "name": "ibm_boston_rgs_nq70_depth70_checks27_basis_fstate",
     "circuit": "random_graph_sampling_nq70_depth70_checks27_basis_fstate",
-    "value": "0.37 (inferred from the graph state fidelity)",
+    "value": "0.37",
     "method": "Quantum",
     "authors": "Ali Javadi-Abhari, Simon Martiel, Jay-U Chung, Alireza Seif, Soumik Ghosh",
     "institutions": "IBM, UChicago",
