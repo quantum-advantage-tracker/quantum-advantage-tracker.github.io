@@ -208,5 +208,17 @@
     "institutions": "Qedma, IBM, Riken, BlueQubit",
     "runtimeClassical": 7960,
     "computeResourcesClassical": "12,288 Fugaku nodes (utilizing 65,536 Fugaku cores)"
+  },
+  {
+    "createdAt": "2026-07-09T16:27:47Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/227",
+    "name": "su2_hadron_MPS",
+    "circuit": "su2_hadron_dynamics_lsh_x_100_meson",
+    "observableValue": 59.9985,
+    "method": "MPS circuit simulation",
+    "runtimeClassical": 3003,
+    "computeResourcesClassical": "Apple M3 Pro Macbook pro",
+    "notes": "This submission is for both the meson and SCV circuit instances",
+    "institutions": "Caltech"
   }
 ]
