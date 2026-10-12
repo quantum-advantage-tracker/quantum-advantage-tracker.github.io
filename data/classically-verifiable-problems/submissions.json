@@ -164,5 +164,20 @@
     "notes": "50 shots; one duplicate frame repaired; no advantage claim",
     "authors": "Monit Sharma, Hoong Chuin Lau",
     "institutions": "Singapore Management University"
+  },
+  {
+    "createdAt": "2026-09-18T05:53:07Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/247",
+    "name": "Quantinuum Helios-1 recovery for peaked_circuit_P12_Hqap_98x2457",
+    "circuit": "peaked_circuit_P12_Hqap_98x2457",
+    "value": "100",
+    "method": "Quantinuum Helios-1 hardware with frequency, Hamming-space medoid, and cluster-consensus reconstruction",
+    "runtimeQuantum": 237.588,
+    "runtimeClassical": 0.010313208,
+    "computeResourcesQuantum": "Quantinuum Helios-1",
+    "computeResourcesClassical": "Apple Silicon Mac; local deterministic Python post-processing",
+    "notes": "200 shots; framing repaired; no advantage claim",
+    "authors": "Monit Sharma, Hoong Chuin Lau",
+    "institutions": "Singapore Management University"
   }
 ]
