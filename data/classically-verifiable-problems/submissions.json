@@ -149,5 +149,20 @@
     "notes": "The reported classical runtimes are extrapolated.",
     "authors": "Ali Javadi-Abhari, Simon Martiel, Jay-U Chung, Alireza Seif, Ian Hincks, Jay Gambetta, Soumik Ghosh, Bill Fefferman",
     "institutions": "IBM, UChicago"
+  },
+  {
+    "createdAt": "2026-09-18T05:45:40Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/246",
+    "name": "Quantinuum Helios-1 recovery for peaked_circuit_P11_Hqap_98x1999",
+    "circuit": "peaked_circuit_P11_Hqap_98x1999",
+    "value": "100",
+    "method": "Quantinuum Helios-1 hardware with Hamming-space medoid and cluster-consensus reconstruction",
+    "runtimeQuantum": 229.924343,
+    "runtimeClassical": 0.004782625,
+    "computeResourcesQuantum": "Quantinuum Helios-1",
+    "computeResourcesClassical": "Apple Silicon Mac; local deterministic Python post-processing",
+    "notes": "50 shots; one duplicate frame repaired; no advantage claim",
+    "authors": "Monit Sharma, Hoong Chuin Lau",
+    "institutions": "Singapore Management University"
   }
 ]
