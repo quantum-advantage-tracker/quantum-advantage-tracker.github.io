@@ -179,5 +179,17 @@
     "notes": "200 shots; framing repaired; no advantage claim",
     "authors": "Monit Sharma, Hoong Chuin Lau",
     "institutions": "Singapore Management University"
+  },
+  {
+    "createdAt": "2026-08-15T07:11:17Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/242",
+    "name": "temporal_exact_tn_nq70_depth70",
+    "circuit": "doped_random_graph_sampling_nq70_depth70_checks27",
+    "value": "100",
+    "method": "exact TN contraction + GPU",
+    "runtimeClassical": 2236,
+    "computeResourcesClassical": "32 nodes, each equipped with eight NVIDIA H100 GPUs",
+    "authors": "Hidetaka Manabe, Hanfeng Gu, Feng Pan",
+    "institutions": "Singapore University of Technology and Design (SUTD), NVIDIA Corporation"
   }
 ]
