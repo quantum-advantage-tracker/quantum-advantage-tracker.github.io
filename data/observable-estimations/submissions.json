@@ -220,5 +220,18 @@
     "computeResourcesClassical": "Apple M3 Pro Macbook pro",
     "notes": "This submission is for both the meson and SCV circuit instances",
     "institutions": "Caltech"
+  },
+  {
+    "createdAt": "2026-10-04T16:24:16Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/250",
+    "name": "SU(2) LSH hadron dynamics, 120 qubits: Pauli propagation",
+    "circuit": "su2_hadron_dynamics_lsh_x_100_meson",
+    "observableValue": 60.00129,
+    "method": "Pauli propagation (monoprop)",
+    "runtimeClassical": 306,
+    "computeResourcesClassical": "Apple M5 CPU (10 cores), 32 GB RAM (Apple Macbook Pro)",
+    "notes": "ClaudeCode (Claude Opus 5) helped with this submission",
+    "authors": "Matteo A. C. Rossi",
+    "institutions": "Algorithmiq"
   }
 ]
