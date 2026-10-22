@@ -1,0 +1,839 @@
+README.txt
+
+Quantum Advantage Tracker submission update
+Instance: su2_lsh_hadron_dynamics_N60_x100_dt0p0015_t20
+
+This README is an updated submission note prepared in response to the tracker
+review comments. It supplements the earlier summary with:
+(1) the qubit Hamiltonian used in the submitted quantum simulation,
+(2) explicit computational-basis initial states,
+(3) observables written in Pauli/Z language,
+(4) the IBM Boston observable value for the submitted instance,
+(5) the comparative error-bar prescription actually used in the work, and
+(6) a reproducibility manifest for circuit files and raw data.
+
+========================================================================
+SHORT RESPONSE SUMMARY TO THE TRACKER REVIEW POINTS
+========================================================================
+
+(1) Hamiltonian in qubit/Pauli form:
+    Added in Section 2.
+
+(2) Explicit computational-basis initial states:
+    Added in Section 3.
+
+(3) Observables in Pauli/Z language:
+    Added in Section 4.
+
+(4) IBM Boston observable values and error-bar clarification for the submitted
+    instances t = 5, 10, 15, 20:
+    Added in Sections 5, 6, and 7. The README now explicitly states that the
+    quoted error bars are inter-method comparative estimates combined with an
+    exactly known symmetry-violation diagnostic, not shot-noise bars.
+
+(5) Copies of circuits, raw data, and a circuit figure from the methods section:
+    Submission-package manifest added in Sections 8 and 11.
+
+========================================================================
+0. HOW ERROR BARS ARE TREATED IN THIS SUBMISSION
+========================================================================
+
+The quoted error bars in this submission are NOT statistical shot-noise error
+bars.
+
+For the dynamical observable n_f(t), the exact noiseless value is not known at
+the scale of the 60-site / 120-qubit experiment. Therefore, within the present
+study, the only principled uncertainty estimate available is a comparative
+inter-method estimate, supplemented by an error diagnostic from violation of an
+exactly conserved quantity.
+
+Concretely:
+- the observable n_f(t) is computed independently using four methods:
+      TN, PP_CPU, PP_GPU, and QPU;
+- the spread across these four values measures inter-method uncertainty;
+- the conserved global charge Q is exactly known in the chosen sector;
+- deviation of the measured/simulated Q from its exact value gives a direct
+  diagnostic of error in that measurement;
+- the final quoted error estimate combines the two in quadrature.
+
+Thus, the uncertainty quoted here is a comparative cross-method error estimate
+with symmetry-violation diagnosis built in. It is not a shot-noise bar.
+
+========================================================================
+1. PROBLEM INSTANCE
+========================================================================
+
+We study real-time dynamics in a (1+1)-dimensional SU(2) lattice gauge theory
+with staggered fermions, encoded in the gauge-invariant Loop-String-Hadron
+(LSH) basis and implemented on IBM Boston.
+
+Submitted instance:
+- system size: N = 60 lattice sites
+- qubits: 120 (2 qubits per site)
+- coupling: x = 100
+- mass ratio: m/g = 1
+- Trotter step size: dt = 0.0015
+- number of Trotter steps in the original submitted instance: 20
+  (this reply includes instances for time steps 5, 10, 15 in addition to 20)
+- hardware backend: IBM Boston (156-qubit Heron processor)
+- shot budget: 10,000 shots per Trotter step
+- readout mitigation: measurement-error mitigation only
+
+The main reported dynamical observable is built from a differential protocol:
+one run evolves the strong-coupling vacuum (SCV), a second run evolves a
+centered meson in the same background, and the reported signal is the
+difference of the corresponding observables.
+
+========================================================================
+2. HAMILTONIAN AND QUBIT MAPPING
+========================================================================
+
+2.1 Dimensionless Hamiltonian
+
+The scaled SU(2) Kogut-Susskind Hamiltonian is written as
+
+    W = H_E + mu H_M + x H_I
+
+with
+    x  = 1 / (g^2 a^2)
+    mu = 2 (m/g) sqrt(x)
+
+For the submitted instance x = 100 and m/g = 1, so
+
+    mu = 20(sqrt(x))
+
+The quantum circuit uses the large-x / weak-coupling LSH approximation discussed
+in the paper and methods supplement.
+
+2.2 LSH variables and qubit encoding
+
+At each site r there are two binary LSH string-end occupations:
+    n_i(r) in {0,1}
+    n_o(r) in {0,1}
+
+These are encoded directly in qubits. In operator form,
+
+    n_i(r) = (I - Z_i(r)) / 2
+    n_o(r) = (I - Z_o(r)) / 2
+
+where Z_i(r) and Z_o(r) are Pauli-Z operators on the two qubits associated with
+site r.
+
+The loop variable n_l(r) is not stored as a separate qubit in this 1D setup; in
+the weak-coupling approximation it is replaced by a large incoming boundary flux
+l_i and treated analytically.
+
+2.3 Approximate Hamiltonian used for the quantum circuit
+
+The approximate electric term is
+
+    H_E^(approx) = const + A sum_r P_01(r),
+
+where
+    A = l_i / 2 + 3/4
+
+and P_01(r) is the projector onto the local two-qubit basis state
+|n_i(r), n_o(r)> = |0,1>.
+
+In Pauli form,
+
+    P_01(r) = [(I + Z_i(r)) (I - Z_o(r))] / 4
+            = [I - Z_o(r) + Z_i(r) - Z_i(r) Z_o(r)] / 4.
+
+So, up to an irrelevant global constant,
+
+    H_E^(approx) = (A/4) sum_r [I - Z_o(r) + Z_i(r) - Z_i(r) Z_o(r)].
+
+The approximate mass term is
+
+    H_M^(approx) = sum_r (-1)^r [n_i(r) + n_o(r)].
+
+Since n = (I - Z)/2 and N = 60 is even, this is equivalently
+
+    H_M^(approx) = -(1/2) sum_r (-1)^r [Z_i(r) + Z_o(r)].
+
+The approximate interaction term is
+
+    H_I^(approx)
+      = sum_r [ chi_o^+(r) chi_o^-(r+1) + chi_o^+(r+1) chi_o^-(r)
+              + chi_i^+(r) chi_i^-(r+1) + chi_i^+(r+1) chi_i^-(r) ].
+
+After Jordan-Wigner mapping this becomes an XY hopping Hamiltonian on the i and
+o chains. In Pauli form,
+
+    H_I^(approx)
+      = - sum_{r=0}^{N-2} [ X_i(r) X_i(r+1) + Y_i(r) Y_i(r+1) ]
+        - sum_{r=0}^{N-2} [ X_o(r) X_o(r+1) + Y_o(r) Y_o(r+1) ].
+
+Equivalently, in the logical ordering where the first N qubits are the i chain
+and the next N qubits are the o chain,
+
+    H_I^(approx)
+      = - sum_{r != N-1} [ X_r X_{r+1} + Y_r Y_{r+1} ].
+
+This is the Pauli Hamiltonian implemented by the digital circuit up to the
+large-x approximation and the omission of global phases.
+
+2.4 Numerical couplings used in the submitted x = 100 simulation
+
+For the first-order Trotter step,
+    dt = 0.0015
+
+The interaction block uses
+    c = dt * x = 0.0015 * 100 = 0.15.
+
+The mass block uses
+    m_tilde = dt * mu = 0.0015 * 20 = 0.03.
+
+The electric block uses a site-pair phase
+    theta = -dt * (l_i/2 + 3/4),
+with the exact numerical theta fixed by the chosen large-flux approximation and
+encoded directly in the submitted circuit files.
+
+The Trotter step is applied in the order
+
+    exp[-i m_tilde H_M] exp[-i dt H_E] exp[-i c H_I]
+
+using first-order Lie-Trotter decomposition.
+
+========================================================================
+3. INITIAL STATES (COMPUTATIONAL BASIS STATES)
+========================================================================
+
+The submission uses two product states, both in the same global charge sector.
+
+3.1 Strong-coupling vacuum (SCV)
+
+In site language, the SCV is
+
+- for even sites r:  (n_i(r), n_o(r)) = (0,0)
+- for odd  sites r:  (n_i(r), n_o(r)) = (1,1)
+
+This gives n_f(r) = 0 on every site.
+
+In per-site-pair notation
+    [(n_i(1),n_o(1)), (n_i(2),n_o(2)), ...]
+the SCV is
+
+    (00,11,00,11,00,11,...,00,11).
+
+In the initialization ordering used for the first Trotter step,
+    [n_i(1), n_i(2), n_o(1), n_o(2), n_i(3), n_i(4), n_o(3), n_o(4), ...],
+the SCV is the computational-basis bitstring
+
+    01010101...0101
+
+(i.e. repeating "0101").
+
+In the simple zigzag ordering
+    [n_i(1), n_o(1), n_i(2), n_o(2), ...],
+the same state is
+
+    00110011...0011
+
+(i.e. repeating "0011").
+
+The chosen initial ordering results in one fewer layer of SWAP gates in the time-evolution circuit.
+
+3.2 Centered hadron (Baryon-anti-baryon) state
+
+The hadron state is obtained from the SCV by placing  hadronic excitations
+on the two central staggered sites.
+
+In site language (1-based site labels), the centered hadron is chosen as
+
+- site 30 (even): (n_i, n_o) = (1,1)
+- site 31 (odd):  (n_i, n_o) = (0,0)
+
+with all other sites identical to the SCV.
+
+This gives
+    n_f(30) = 2,
+    n_f(31) = 2,
+and n_f(r) = 0 elsewhere.
+
+In per-site-pair notation this is
+
+    (00,11,...,00,11, 11,00, 00,11,...,00,11).
+
+In the initialization ordering
+    [n_i(1), n_i(2), n_o(1), n_o(2), ...],
+the state is again the SCV bitstring except for the central 4-bit block
+corresponding to sites 30 and 31:
+- SCV central block:   0101
+- Hadron central block: 1100
+
+One can also start with a central block 0110.
+So the 120-bit initialization string is the same as the SCV except that the
+central "0101" is replaced by "0110".
+
+If one instead uses the charge-conjugate/reflected hadron orientation, the
+central block would be "1001". These two choices are symmetry-related. The
+exact choice used in the submission is fixed by the supplied circuit files.
+
+All initial states are computational-basis product states and are prepared using
+only X gates on the qubits whose bit value is 1.
+
+========================================================================
+4. OBSERVABLES IN PAULI FORM
+========================================================================
+
+4.1 Qubit occupancies
+
+For each site r,
+
+    n_i(r) = (I - Z_i(r)) / 2
+    n_o(r) = (I - Z_o(r)) / 2
+
+These are obtained experimentally from
+
+    P(1) = [1 - <Z>] / 2
+
+for each qubit.
+
+4.2 Local staggered fermion number
+
+The local fermion number is staggered:
+
+- on even sites:
+      n_f(r) = n_i(r) + n_o(r)
+             = 1 - [Z_i(r) + Z_o(r)] / 2
+
+- on odd sites:
+      n_f(r) = 2 - [n_i(r) + n_o(r)]
+             = 1 + [Z_i(r) + Z_o(r)] / 2
+
+Thus n_f(r) is a diagonal Pauli observable built entirely from local Z
+expectation values.
+
+4.3 Differential observable used in the experiment
+
+The reported site-resolved signal is
+
+    Delta n_f(r,t) = n_f^hadron(r,t) - n_f^SCV(r,t).
+
+This differential measurement protocol cancels part of the hardware bias and
+removes the background dynamical contribution of the vacuum.
+
+4.4 Scalar observable used in the present tracker instance
+
+For the present tracker instance, we report the scalar trace
+
+    n_f(t) = sum_{r=1}^{60} Delta n_f(r,t),
+
+evaluated at Trotter step t = 20.
+
+4.5 Conserved global charge
+
+The exactly conserved charge used as a diagnostic is
+
+    Q = sum_r [ n_i(r) + n_o(r) ] = 60
+
+for the symmetry sector used here.
+
+In Pauli form,
+
+    Q = 60 - (1/2) sum_r [ Z_i(r) + Z_o(r) ].
+
+========================================================================
+5. IBM BOSTON VALUES FOR THE SUBMITTED INSTANCES
+========================================================================
+
+The tracker-facing scalar observable is reported for four explicit circuit
+instances at x = 100 and dt = 0.0015, corresponding to Trotter steps
+t = 5, 10, 15, and 20. For each instance, the measured QPU value is listed
+together with the TN, PP_CPU, and PP_GPU benchmark values and the
+charge-violation diagnostics from the exactly known conserved quantity Q = 60.
+
+========================================================================
+5A. IBM BOSTON VALUE AND BENCHMARK DATA FOR t = 5
+========================================================================
+
+Submitted scalar observable:
+- instance: x = 100, dt = 0.0015, Trotter step = 5
+- backend: IBM Boston
+- measured value:
+      n_f(5) = -0.3550984939
+
+Independent benchmark values for the same observable at step 5:
+- TN      = -0.4957689977
+- PP_CPU  = -0.4510787869
+- PP_GPU  = -0.47774275
+- QPU     = -0.3550984939
+
+Because the exact value of n_f(5) is not known at this scale, the uncertainty
+assigned to this observable is obtained by comparing the four independent method
+estimates above, together with a diagnostic based on violation of the exactly
+known conserved charge Q.
+
+For the same step, the conserved-charge values are:
+- TN      = 60.00000000
+- PP_CPU  = 59.99991818
+- PP_GPU  = 60.00016050
+- QPU     = 59.95749581
+
+The exact conserved value in this sector is
+
+      Q = 60.
+
+Hence the corresponding charge-violation diagnostics are:
+- Delta Q_TN(5)      =  0.00000000
+- Delta Q_PP_CPU(5)  = -0.00008182
+- Delta Q_PP_GPU(5)  =  0.00016050
+- Delta Q_QPU(5)     = -0.04250419
+
+Equivalently, for the IBM Boston data,
+
+      |Delta Q_QPU(5)| = |59.95749581 - 60| = 0.04250419.
+
+This quantity is not itself the quoted error bar on n_f(5). Rather, it is the
+symmetry-violation component used in the full comparative error estimate.
+
+Comparative error estimate for t = 5:
+- inter-method spread:
+      sigma_std(5) = 0.062633290079
+- charge-diagnostic aggregation:
+      Delta Q_rms(5)          = 0.021252285891
+      Delta Q_rms(5)/sqrt(60) = 0.002743658311
+- final shared comparative error estimate:
+      sigma_shared(5)         = 0.062693354409
+
+========================================================================
+5B. IBM BOSTON VALUE AND BENCHMARK DATA FOR t = 10
+========================================================================
+
+Submitted scalar observable:
+- instance: x = 100, dt = 0.0015, Trotter step = 10
+- backend: IBM Boston
+- measured value:
+      n_f(10) = 0.1431540203
+
+Independent benchmark values for the same observable at step 10:
+- TN      = 0.3744026048
+- PP_CPU  = 0.4805343441
+- PP_GPU  = 0.394226
+- QPU     = 0.1431540203
+
+Because the exact value of n_f(10) is not known at this scale, the uncertainty
+assigned to this observable is obtained by comparing the four independent method
+estimates above, together with a diagnostic based on violation of the exactly
+known conserved charge Q.
+
+For the same step, the conserved-charge values are:
+- TN      = 60.00000000
+- PP_CPU  = 59.99959358
+- PP_GPU  = 59.99729810
+- QPU     = 60.02942661
+
+The exact conserved value in this sector is
+
+      Q = 60.
+
+Hence the corresponding charge-violation diagnostics are:
+- Delta Q_TN(10)      =  0.00000000
+- Delta Q_PP_CPU(10)  = -0.00040642
+- Delta Q_PP_GPU(10)  = -0.00270190
+- Delta Q_QPU(10)     =  0.02942661
+
+Equivalently, for the IBM Boston data,
+
+      |Delta Q_QPU(10)| = |60.02942661 - 60| = 0.02942661.
+
+This quantity is not itself the quoted error bar on n_f(10). Rather, it is the
+symmetry-violation component used in the full comparative error estimate.
+
+Comparative error estimate for t = 10:
+- inter-method spread:
+      sigma_std(10) = 0.144177140195
+- charge-diagnostic aggregation:
+      Delta Q_rms(10)          = 0.014776593120
+      Delta Q_rms(10)/sqrt(60) = 0.001907649969
+- final shared comparative error estimate:
+      sigma_shared(10)         = 0.144189759980
+
+========================================================================
+5C. IBM BOSTON VALUE AND BENCHMARK DATA FOR t = 15
+========================================================================
+
+Submitted scalar observable:
+- instance: x = 100, dt = 0.0015, Trotter step = 15
+- backend: IBM Boston
+- measured value:
+      n_f(15) = 0.00494274374
+
+Independent benchmark values for the same observable at step 15:
+- TN      = -0.1131674269
+- PP_CPU  = -0.03107728475
+- PP_GPU  = -0.096355725
+- QPU     = 0.00494274374
+
+Because the exact value of n_f(15) is not known at this scale, the uncertainty
+assigned to this observable is obtained by comparing the four independent method
+estimates above, together with a diagnostic based on violation of the exactly
+known conserved charge Q.
+
+For the same step, the conserved-charge values are:
+- TN      = 60.00000000
+- PP_CPU  = 60.01033665
+- PP_GPU  = 60.00620690
+- QPU     = 59.91796245
+
+The exact conserved value in this sector is
+
+      Q = 60.
+
+Hence the corresponding charge-violation diagnostics are:
+- Delta Q_TN(15)      =  0.00000000
+- Delta Q_PP_CPU(15)  =  0.01033665
+- Delta Q_PP_GPU(15)  =  0.00620690
+- Delta Q_QPU(15)     = -0.08203755
+
+Equivalently, for the IBM Boston data,
+
+      |Delta Q_QPU(15)| = |59.91796245 - 60| = 0.08203755.
+
+This quantity is not itself the quoted error bar on n_f(15). Rather, it is the
+symmetry-violation component used in the full comparative error estimate.
+
+Comparative error estimate for t = 15:
+- inter-method spread:
+      sigma_std(15) = 0.055371122250
+- charge-diagnostic aggregation:
+      Delta Q_rms(15)          = 0.041459412535
+      Delta Q_rms(15)/sqrt(60) = 0.005352387143
+- final shared comparative error estimate:
+      sigma_shared(15)         = 0.055629211996
+
+========================================================================
+5D. IBM BOSTON VALUE AND BENCHMARK DATA FOR t = 20
+========================================================================
+
+Submitted scalar observable:
+- instance: x = 100, dt = 0.0015, Trotter step = 20
+- backend: IBM Boston
+- measured value:
+      n_f(20) = -0.07723426024
+
+Independent benchmark values for the same observable at step 20:
+- TN      = 0.2778348725
+- PP_CPU  = 0.4081775866
+- PP_GPU  = 0.2456276125
+- QPU     = -0.07723426024
+
+Because the exact value of n_f(20) is not known at this scale, the uncertainty
+assigned to this observable is obtained by comparing the four independent method
+estimates above, together with a diagnostic based on violation of the exactly
+known conserved charge Q.
+
+For the same step, the conserved-charge values are:
+- TN      = 60.00000000
+- PP_CPU  = 60.00538161
+- PP_GPU  = 59.99313828
+- QPU     = 59.99402699
+
+The exact conserved value in this sector is
+
+      Q = 60.
+
+Hence the corresponding charge-violation diagnostics are:
+- Delta Q_TN(20)      =  0.00000000
+- Delta Q_PP_CPU(20)  =  0.00538161
+- Delta Q_PP_GPU(20)  = -0.00686172
+- Delta Q_QPU(20)     = -0.00597301
+
+Equivalently, for the IBM Boston data,
+
+      |Delta Q_QPU(20)| = |59.99402699 - 60| = 0.00597301.
+
+This quantity is not itself the quoted error bar on n_f(20). Rather, it is the
+symmetry-violation component used in the full comparative error estimate.
+
+Comparative error estimate for t = 20:
+- inter-method spread:
+      sigma_std(20) = 0.206233598084
+- charge-diagnostic aggregation:
+      Delta Q_rms(20)          = 0.005284926111
+      Delta Q_rms(20)/sqrt(60) = 0.000682281027
+- final shared comparative error estimate:
+      sigma_shared(20)         = 0.206234726673
+
+========================================================================
+6. ERROR-BAR PRESCRIPTION USED IN THIS WORK
+========================================================================
+
+The error bars quoted for the dynamical observable n_f(t) are defined by a
+comparative inter-method prescription together with an exactly known symmetry
+diagnostic. This is the prescription used in the methods supplement.
+
+6.1 Four independent estimates of the observable
+
+For each time slice t, we obtain four estimates
+
+    n_f^(m)(t),   m in {TN, PP_CPU, PP_GPU, QPU}.
+
+Because the exact value of n_f(t) is not known at this scale, these four values
+are treated as independent method estimates of the same quantity.
+
+6.2 Inter-method spread
+
+The methods supplement defines the inter-method spread using the mean across the
+four estimates:
+
+    mean_n_f(t) = (1/4) sum_m n_f^(m)(t)
+
+    sigma_std(t) = sqrt[ (1/3) sum_m ( n_f^(m)(t) - mean_n_f(t) )^2 ].
+
+This term quantifies the method-to-method spread of the observable.
+
+6.3 Symmetry-violation diagnostic from the exactly known conserved charge
+
+The global charge is exactly known:
+
+    Q = sum_r [n_i(r) + n_o(r)] = 60.
+
+For each method m, define the charge violation
+
+    Delta Q^(m)(t) = Q^(m)(t) - 60.
+
+Since Q is a sum over L = 60 sites, the methods supplement converts this into a
+conservative per-site diagnostic scale and then aggregates over methods through
+
+    Delta Q_rms(t) = sqrt[ (1/4) sum_m (Delta Q^(m)(t))^2 ].
+
+The corresponding per-site symmetry-violation scale is
+
+    Delta Q_rms(t) / sqrt(60).
+
+This term is directly grounded in an exactly known physical constraint.
+
+6.4 Final shared error estimate
+
+The final shared uncertainty band used in the methods supplement is the
+quadrature combination
+
+    sigma_shared(t)
+      = sqrt[ sigma_std(t)^2 + ( Delta Q_rms(t) / sqrt(60) )^2 ].
+
+This is the comparative error estimate quoted for the observable. It combines:
+- inter-method spread in the observable itself, and
+- diagnosed symmetry violation through the exactly known conserved charge.
+
+6.5 Method-specific error estimate
+
+The supplement also defines an individual method-specific error bar
+
+    sigma_m(t)
+      = sqrt[ sigma_pair,m(t)^2 + ( |Delta Q^(m)(t)| / sqrt(60) )^2 ],
+
+where
+
+    sigma_pair,m(t) = | n_f^(m)(t) - n_ref(t) |.
+
+This is the per-method comparative error estimate.
+
+6.6 Important clarification
+
+These quoted error bars are NOT statistical shot-noise bars. They are not
+derived from repeated sampling around a known exact observable value. Instead,
+they are the uncertainty estimates used in this work precisely because:
+- the exact value of n_f(t) is not known at the present scale,
+- multiple classical/quantum methods are available for comparison, and
+- the exactly known conserved quantity Q provides a direct diagnostic of
+  measurement/simulation error.
+
+========================================================================
+7. NUMERICAL ERROR-ESTIMATE SUMMARY FOR THE SUBMITTED INSTANCES
+========================================================================
+
+The table below collects the comparative error-estimate ingredients for the four
+explicitly reported circuit instances.
+
+Step   sigma_std(t)    DeltaQ_rms/sqrt(60)    sigma_shared(t)   |DeltaQ_QPU|
+5      0.062633290079  0.002743658311         0.062693354409    0.04250419
+10     0.144177140195  0.001907649969         0.144189759980    0.02942661
+15     0.055371122250  0.005352387143         0.055629211996    0.08203755
+20     0.206233598084  0.000682281027         0.206234726673    0.00597301
+
+Thus, for all four submitted instances, the quoted uncertainty is dominated by
+the inter-method spread among TN / PP_CPU / PP_GPU / QPU values, while the
+symmetry-violation term from the exactly known conserved charge provides a
+direct additional diagnostic.
+
+========================================================================
+8. QUANTUM CIRCUITS USED
+========================================================================
+
+The submission requires two circuit families for each reported Trotter step:
+(1) SCV evolution circuits
+(2) centered-hadron evolution circuits
+
+Because the observable is differential, both circuits are required to reproduce
+the reported data.
+
+The explicit submitted circuit instances are:
+- t = 5
+- t = 10
+- t = 15
+- t = 20
+
+Circuit structure:
+- first-order Trotterization
+- interaction block for H_I^(approx)
+- electric block for H_E^(approx)
+- mass block for H_M^(approx)
+- SWAP layers to mediate nearest-neighbor interactions in the hardware layout
+- measurement of all 120 qubits in the Z basis
+
+Depth information:
+- two-qubit depth for t Trotter steps: 13 t - 1
+- for t = 5:   two-qubit depth = 64
+- for t = 10:  two-qubit depth = 129
+- for t = 15:  two-qubit depth = 194
+- for t = 20:  two-qubit depth = 259
+- for reference, at t = 25 the circuit has two-qubit depth 324,
+  17,660 two-qubit gates, and 90,955 total gates
+
+A cropped version of the circuit figure from the methods section is included
+with this submission package as:
+
+- figures/circuit_figure_methods.png
+
+========================================================================
+9. CLASSICAL BENCHMARK METHODS
+========================================================================
+
+9.1 Tensor Network (TN)
+
+The TN benchmark evolves the full LSH Hamiltonian using an MPS/MPO
+representation and 2-site TDVP, with maximum bond dimension 200 and bosonic
+cutoff j_max = 5/2.
+
+For x = 100, the maximum reported TN truncation error in the Schmidt spectrum
+reaches 1e-4 by Trotter step 20.
+
+9.2 Pauli Propagation on CPU (PP_CPU)
+
+The CPU PP benchmark simulates the noiseless circuit in the Heisenberg picture.
+For x = 100, the safe upper bound used for the non-truncated PP term count is
+12,500 terms. This is treated as effectively exact up to floating-point
+tolerances.
+
+9.3 Pauli Propagation on GPU (PP_GPU)
+
+The GPU PP benchmark uses NVIDIA cuQuantum / cuPauliProp with
+coefficient-based truncation. The coefficient cutoff is
+
+    epsilon = 1e-5.
+
+This is a controlled circuit-level approximation that substantially reduces
+memory and runtime.
+
+========================================================================
+10. RUNTIME DATA FOR THE SUBMITTED INSTANCES
+========================================================================
+
+The supplementary runtime table for x = 100 gives the following values for the
+explicitly reported instances:
+
+Step   QPU (s)   TN (s)      PP_CPU (s)   PP_GPU (s)
+5      20        584.092     477.4471     547.5810
+10     20        4936.112    1111.2079    1186.1290
+15     20        11300.992   1798.2811    1990.1430
+20     20        8949.110    2484.3693    2930.4400
+
+========================================================================
+11. REPRODUCIBILITY FILE MANIFEST
+========================================================================
+
+The tracker review requested:
+- a copy of the quantum circuits used to compute the observable
+- the raw data from which the observable is computed
+
+Accordingly, the final submission package should include the following files
+(or files with equivalent content and different names):
+
+11.1 Circuit files
+
+SCV circuits:
+- circuits/scv_N60_x100_dt0p0015_steps05.qasm
+- circuits/scv_N60_x100_dt0p0015_steps10.qasm
+- circuits/scv_N60_x100_dt0p0015_steps15.qasm
+- circuits/scv_N60_x100_dt0p0015_steps20.qasm
+
+Centered-hadron circuits:
+- circuits/hadron_N60_x100_dt0p0015_steps05.qasm
+- circuits/hadron_N60_x100_dt0p0015_steps10.qasm
+- circuits/hadron_N60_x100_dt0p0015_steps15.qasm
+- circuits/hadron_N60_x100_dt0p0015_steps20.qasm
+
+
+11.2 Raw experimental data
+
+Raw experimental data is available at: https://github.com/mathew0036/lsh_data
+
+
+11.5 README note on exact observables
+
+For the current submission observable n_f(r,t), per-qubit Z expectations are
+sufficient because the observable is diagonal and linear in the single-site
+occupancies. Full bitstring counts are nevertheless preferable because they
+allow independent recomputation of additional observables.
+
+========================================================================
+12. SUBMITTED BENCHMARK TABLES
+========================================================================
+
+12.1 Scalar observable n_f(t)
+
+Step  TN            PP_CPU       PP_GPU        QPU            Median         St.dev
+1     1.824222901   1.825335615  1.825336      1.77264257     1.824779258    0.02616639397
+2     1.343818565   1.34880517   1.347871      1.234719061    1.345844782    0.05609802779
+3     0.6852977079  0.698419082  0.693895      0.7005505103   0.696157041    0.006757945893
+4     0.01781852652 0.04434743353 0.0317106    0.1125808617   0.03802901676  0.04206360493
+5    -0.4957689977 -0.4510787869 -0.47774275  -0.3550984939  -0.4644107685   0.0626332901
+6    -0.7447406887 -0.6794112084 -0.725069325 -0.4792900767  -0.7022402667   0.1216756278
+7    -0.6994223897 -0.6144203611 -0.68012595  -0.405844541   -0.6472731556   0.1344237824
+8    -0.4149706965 -0.3149685829 -0.3959514   -0.3160420563  -0.3559967282   0.05251500138
+9    -0.009710517986 0.09777330494 0.010149475 -0.01701975315 0.0002194785072 0.05291043151
+10    0.3744026048  0.4805343441 0.394226      0.1431540203   0.3843143024   0.1441771402
+11    0.6163184396  0.7136997525 0.6325666     0.3540697043   0.6244425198   0.1559910262
+12    0.6514199805  0.7369940536 0.6619868     0.4092782333   0.6567033902   0.142288607
+13    0.4873750145  0.5641770138 0.4951614125  0.2630479833   0.4912682135   0.1308944493
+14    0.1962856389  0.2712616284 0.2069994     0.1957298805   0.2016425194   0.0361687867
+15   -0.1131674269 -0.03107728475 -0.096355725 0.00494274374 -0.06371650487  0.05537112224
+16   -0.3336240614 -0.2318235614 -0.314319025 -0.08874021367 -0.2730712932   0.1113808299
+17   -0.3941897866 -0.2691116404 -0.3787042075 -0.1962503187 -0.323907924    0.09384077972
+18   -0.2807460955 -0.1325140013 -0.272586375 -0.1673053457  -0.2199458603   0.07462290823
+19   -0.03330018147 0.1236920782 -0.035842523 -0.1490836294  -0.03457135223  0.1120789393
+20    0.2778348725  0.4081775866 0.2456276125 -0.07723426024  0.2617312425   0.2062335981
+
+12.2 Conserved charge Q
+
+Step  TN           PP_CPU       PP_GPU       QPU          error_diagnostic
+1     60           60           60           60.07076187  0.03538093432
+2     60           60           60           60.01556783  0.007783914764
+3     60           59.99999892  60.0000295   59.97441541  0.01279704071
+4     60           59.99998537  60.000264    59.98574097  0.007172217667
+5     60           59.99991818  60.0001605   59.95749581  0.02126544441
+6     60           59.99985924  59.99994432  59.9228317   0.03855145367
+7     60           59.99978099  60.0001445   59.97723002  0.0113735536
+8     60           60.00033369  59.99693215  60.01516427  0.008182322904
+9     60           60.00063853  59.99640159  60.09153313  0.04629746559
+10    60           59.99959358  59.9972981   60.02942661  0.01527773734
+11    60           60.00017695  60.0023345   59.95262885  0.02412750108
+12    60           59.99506226  60.0064158   59.97553288  0.01331739931
+13    60           59.99594391  60.00947415  59.95853503  0.02236597107
+14    60           60.00326018  60.0093484   60.09813368  0.04712493522
+15    60           60.01033665  60.0062069   59.91796245  0.04398168579
+16    60           60.01345623  59.99751846  59.92227266  0.04129079
+17    60           60.00953873  59.98460915  59.92904491  0.03599839525
+18    60           59.99695801  59.9810714   60.07128097  0.04016899441
+19    60           59.99513071  59.98358415  60.08671777  0.04740887609
+20    60           60.00538161  59.99313828  59.99402699  0.005710650099
+
+========================================================================
+
+
+========================================================================
+END OF README
+========================================================================
