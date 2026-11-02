@@ -47,7 +47,7 @@ jobs:
             }' -F project="$PROJECT_ID" -F item="$ITEM_ID" -F field="$FIELD_ID" -F option="$OPTION_ID" >/dev/null
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Parse submission
         id: parse
@@ -83,7 +83,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Parse submission
         id: parse
@@ -153,7 +153,7 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.APPLIER_TOKEN }}
 
@@ -165,7 +165,7 @@ jobs:
           tmp_file=$(mktemp)
           jq ". += [${SUBMISSION}]" "$SUBMISSIONS_PATH" > "$tmp_file" && mv "$tmp_file" "$SUBMISSIONS_PATH"
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: 'package.json'
           cache: 'npm'
