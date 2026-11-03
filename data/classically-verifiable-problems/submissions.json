@@ -191,5 +191,17 @@
     "computeResourcesClassical": "32 nodes, each equipped with eight NVIDIA H100 GPUs",
     "authors": "Hidetaka Manabe, Hanfeng Gu, Feng Pan",
     "institutions": "Singapore University of Technology and Design (SUTD), NVIDIA Corporation"
+  },
+  {
+    "createdAt": "2026-09-11T17:12:33Z",
+    "url": "https://github.com/quantum-advantage-tracker/quantum-advantage-tracker.github.io/issues/245",
+    "circuit": "ibm_boston_dcs_nq64_depth73_checks12",
+    "name": "ibm_boston_dcs_nq64_depth73_checks12",
+    "value": "0.38",
+    "method": "Quantum",
+    "runtimeQuantum": 870,
+    "computeResourcesQuantum": "IBM Heron r3 (ibm_boston)",
+    "authors": "Simon Martiel, Jay-U Chung, Alireza Seif, Soumik Ghosh, Ian Hincks, Abhinav Deshpande, Hidetaka Manabe, Hanfeng Gu, Feng Pan, Bill Fefferman, Jay M. Gambetta, and Ali Javadi-Abhari",
+    "institutions": "IBM, UChicago, Singapore University of Technology and Design, Nvidia"
   }
 ]
