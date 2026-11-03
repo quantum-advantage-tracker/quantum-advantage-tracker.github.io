@@ -12,8 +12,30 @@ jobs:
   create_preview:
     runs-on: ubuntu-latest
 
+    # Runs when an assignee confirms they verified a submission issue, either by
+    # posting a new comment or by editing an existing one to add the phrase.
+    # (Comments can't go inside the `if:` block: in a folded scalar they would be
+    # part of the expression, so every condition is explained here instead.)
+    #
+    #  1. Trigger: a new comment ('created'), or an edited comment ('edited')
+    #     whose PREVIOUS text (`changes.body.from`) contained neither verification
+    #     phrase. This way only the edit that adds the phrase triggers; later
+    #     edits (typo fixes, rewording the phrase) don't post duplicate previews.
+    #  2. The comment is on an issue, not on a pull request.
+    #  3. The issue has the `submission` label.
+    #  4. The NEW comment text contains one of the accepted verification phrases.
+    #  5. The comment author is one of the issue's assignees. This also keeps the
+    #     bot's own preview comments from triggering this job (the bot isn't an
+    #     assignee), which matters because the other jobs edit those comments.
     if: >-
-      github.event.action == 'created' &&
+      (
+        github.event.action == 'created' ||
+        (
+          github.event.action == 'edited' &&
+          !contains(github.event.changes.body.from, 'I verified the submission') &&
+          !contains(github.event.changes.body.from, 'I verified this submission')
+        )
+      ) &&
       github.event.issue.pull_request == null &&
       contains(github.event.issue.labels.*.name, 'submission') &&
       (contains(github.event.comment.body, 'I verified the submission') || contains(github.event.comment.body, 'I verified this submission')) &&
